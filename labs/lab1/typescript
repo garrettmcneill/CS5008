@@ -1,0 +1,10 @@
+Script started on Thu 20 May 2021 10:24:07 PM EDT
+[?1034hbash-4.2$ gcc test.c -o test
+bash-4.2$ ls
+test  test.c  typescript
+bash-4.2$ ./test
+Hello world .
+bash-4.2$ exit
+exit
+
+Script done on Thu 20 May 2021 10:25:02 PM EDT
