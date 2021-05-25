@@ -23,6 +23,19 @@ vector_t* makeVector(int initCapacity){
     return vector;
 }
 
+void freeVector(vector_t* vector){
+    if ( vector == NULL ){
+        return 0;
+    }
+    // first: delete data array, then delete vector from heap
+    if ( vector->data != NULL ){
+        free(vector->data);
+    }
+    free(vector);
+
+}
+
+
 int main(){
     return 0;
 }
