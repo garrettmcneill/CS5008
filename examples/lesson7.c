@@ -19,22 +19,26 @@ int main(){
     printf("sizeof(int): %d\n", sizeof(int));
     printf("\n");
 
-    // shorthand
+    // shorthand bracket operator (memory address)
+    printf("\nshorthand bracket operator (memory address):\n")
     printf("%p\n", &numbers[0]);
     printf("%p\n", &numbers[1]);
     printf("%p\n", &numbers[2]);
 
     // pointer arithmetic
+    printf("\npointer arithmetic (memory address):\n")
     printf("%p\n", numbers);
     printf("%p\n", numbers+1);
     printf("%p\n", numbers+2);
 
-    // shorthand bracket notation
+    // shorthand bracket operator
+    printf("\nshorthand bracket operator (digit):\n")
     printf("%d\n", numbers[0]);
     printf("%d\n", numbers[1]);
     printf("%d\n", numbers[2]);
 
-    // old fashioned way
+    // print using star notation
+    printf("\nstar notation (digit):\n")
     printf("%d\n", *numbers);
     printf("%d\n", *numbers+1);
     printf("%d\n", *numbers+2);
