@@ -5,10 +5,16 @@ void updateArray1(int array[]){
     array[0] = 10;
 }
 
+void updateArray2(int* array[]){
+    array[0] = 10;
+}
+
 int main(){
     int numbers[3] = {1,2,3};
 
     updateArray1(numbers);
+
+    updateArray2(numbers);
 
     printf("sizeof(int): %d\n", sizeof(int));
     printf("\n");
