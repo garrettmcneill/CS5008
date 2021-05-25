@@ -14,7 +14,7 @@ typedef struct node{
  * @param node
  */
 void printNodes(node_t* node){
-    node_t itr = node;
+    node_t* itr = node;
 
     while( itr != NULL ){
         printf("%d", itr->data);
