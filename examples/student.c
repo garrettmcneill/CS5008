@@ -17,11 +17,11 @@ void updateStudent(student_t* aStudent, int age, int id){
     (*aStudent).id = id;
 }
 
-student_t makeStudent(int age, int id){
+student_t* makeStudent(int age, int id){
     student_t aStudent;
     aStudent.age = age;
     aStudent.id = id;
-    return aStudent;
+    return &aStudent;
 }
 
 
