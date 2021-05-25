@@ -8,6 +8,8 @@ void updateArray1(int array[]){
 int main(){
     int numbers[3] = {1,2,3};
 
+    updateArray1(&numbers);
+
     printf("sizeof(int): %d\n", sizeof(int));
     printf("\n");
 
