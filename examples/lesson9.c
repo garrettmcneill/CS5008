@@ -9,6 +9,13 @@ typedef struct vector{
     int capacity;
 }vector_t;
 
+vector_t* makeVector(int initCapacity){
+    vector_t* vector = (vector_t*)malloc(sizeof(vector_t);
+    if ( vector == NULL ){
+        return NULL;
+    }
+}
+
 int main(){
     return 0;
 }
