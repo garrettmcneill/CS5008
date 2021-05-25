@@ -20,5 +20,10 @@ int main(){
     printf("Student ID: %d, Age: %d\n", s1.id, s1.age);
     printf("Student ID: %d, Age: %d\n", s2.id, s2.age);
 
+    s2.id = 1003;
+
+    printf("Student ID: %d, Age: %d\n", s2.id, s2.age);
+
+
     return 0;
 }
