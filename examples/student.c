@@ -21,6 +21,7 @@ student_t makeStudent(int age, int id){
     student_t aStudent;
     aStudent.age = age;
     aStudent.id = id;
+    return aStudent;
 }
 
 
