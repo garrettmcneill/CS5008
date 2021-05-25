@@ -40,8 +40,8 @@ int main(){
     // print using star notation
     printf("\nstar notation (digit):\n");
     printf("%d\n", *numbers);
-    printf("%d\n", *numbers+1);
-    printf("%d\n", *numbers+2);
+    printf("%d\n", *(numbers+1));
+    printf("%d\n", *(numbers+2));
 
 
     return 0;
