@@ -30,7 +30,7 @@ void printNodes(node_t *node) {
  * @param data - int data to store in a node
  * @return a newNode of type node_t
  */
-node_t *makeNode(int data) {
+node_t* makeNode(int data) {
     node_t* = newNode = (node_t *) malloc(sizeof(node_t));
     if (newNode = NULL) {
         return NULL;
