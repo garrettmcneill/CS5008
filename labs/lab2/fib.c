@@ -8,5 +8,14 @@ typedef struct student{
 int main(){
     student_t s1;
     student_t s2;
+
+    //let's assign some values to s1, s2
+
+    s1.id = 1001;
+    s1.age  = 23;
+
+    s2.id = 1002;
+    s2.age = 24;
+
     return 0;
 }
