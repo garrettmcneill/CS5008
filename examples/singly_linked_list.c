@@ -17,7 +17,8 @@ void printNodes(node_t* node){
     node_t* itr = node;
 
     while( itr != NULL ){
-        printf("%d", itr->data);
+        // print node data
+        printf("%d ", itr->data);
         // set to next ...
         itr = itr->next;
     }
