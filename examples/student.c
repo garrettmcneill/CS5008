@@ -8,14 +8,14 @@ typedef struct student{
 
 void printStudent(student_t* aStudent){
     printf("Student ID: %d, Age: %d\n",
-           aStudent->id, (*aStudent).age);
+           aStudent->id, aStudent->age);
     // use the -> to dereference without needing a star and dot
 }
 
 
 void updateStudent(student_t* aStudent, int age, int id){
-    (*aStudent).age = age;
-    (*aStudent).id = id;
+    aStudent->age = age;
+    aStudent->id = id;
 }
 
 student_t* makeStudent(int age, int id){
