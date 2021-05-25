@@ -17,10 +17,16 @@ void updateStudent(student_t* aStudent, int age, int id){
     (*aStudent).id = id;
 }
 
+student_t makeStudent(int age, int id){
+    student_t aStudent;
+    aStudent->age = age;
+    aStudent->id = id;
+}
+
 
 int main(){
-    student_t s1;
-    student_t s2;
+    student_t s1 = makeStudent(23, 1001);
+    student_t s2 = makeStudent(24, 1002);
 
     //let's assign some values to s1, s2
 
