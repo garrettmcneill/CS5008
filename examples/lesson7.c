@@ -6,7 +6,7 @@ void updateArray1(int array[]){
 }
 
 void updateArray2(int* array[]){
-    array[0] = 10;
+    array[0] -> 10;
 }
 
 int main(){
