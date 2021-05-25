@@ -23,6 +23,12 @@ int main(){
     printf("%p\n", &numbers[1]);
     printf("%p\n", &numbers[2]);
 
+    // pointer arithmetic
+    printf("%p\n", numbers);
+    printf("%p\n", numbers+1);
+    printf("%p\n", numbers+2);
+
+
     printf("%d\n", numbers[0]);
     printf("%d\n", numbers[1]);
     printf("%d\n", numbers[2]);
