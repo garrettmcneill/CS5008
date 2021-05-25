@@ -18,10 +18,12 @@ void updateStudent(student_t* aStudent, int age, int id){
 }
 
 student_t* makeStudent(int age, int id){
-    student_t aStudent;
-    aStudent.age = age;
-    aStudent.id = id;
-    return &aStudent;
+    stuednt_t* p_aStudent =
+            (student_t*)malloc(sizeof(student_t));
+    student_t p_aStudent;
+    p_aStudent.age = age;
+    p_aStudent.id = id;
+    return p_aStudent;
 }
 
 
