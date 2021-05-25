@@ -37,7 +37,7 @@ int main(){
     printStudent(s1);
     printStudent(s2);
 
-    updateStudent(s2, s2.age, 1003);
+    updateStudent(s2, s2->age, 1003);
 
     printStudent(s2);
 
