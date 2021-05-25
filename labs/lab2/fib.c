@@ -22,11 +22,11 @@ int main(){
     s2.id = 1002;
     s2.age = 24;
 
-    printStudent(s1);
-    printStudent(s2);
+    printStudent(&s1);
+    printStudent(&s2);
     s2.id = 1003;
 
-    printStudent(s2);
+    printStudent(&s2);
 
 
     return 0;
