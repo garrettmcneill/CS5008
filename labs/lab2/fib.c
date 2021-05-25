@@ -15,6 +15,7 @@ int main(){
     *p_value = 69;
 
     update(value);
+    printf("The update value at p_value is: %d\n", *p_value);
     printf("Value updated is: %d\n", value);
     return 0;
 }
