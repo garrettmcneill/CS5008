@@ -8,7 +8,7 @@ void updateArray1(int array[]){
 int main(){
     int numbers[3] = {1,2,3};
 
-    updateArray1(&numbers);
+    updateArray1(numbers);
 
     printf("sizeof(int): %d\n", sizeof(int));
     printf("\n");
@@ -16,6 +16,10 @@ int main(){
     printf("%p\n", &numbers[0]);
     printf("%p\n", &numbers[1]);
     printf("%p\n", &numbers[2]);
+
+    printf("%d\n", numbers[0]);
+    printf("%d\n", numbers[1]);
+    printf("%d\n", numbers[2]);
 
     return 0;
 }
