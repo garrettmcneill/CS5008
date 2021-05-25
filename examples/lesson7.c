@@ -20,7 +20,7 @@ int main(){
     printf("\n");
 
     // shorthand bracket operator (memory address)
-    printf("\nshorthand bracket operator (memory address):\n");
+    printf("shorthand bracket operator (memory address):\n");
     printf("%p\n", &numbers[0]);
     printf("%p\n", &numbers[1]);
     printf("%p\n", &numbers[2]);
