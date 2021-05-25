@@ -11,6 +11,9 @@ int main(){
     printf("Value is: %d\n", value);
     printf("The address of value is: %p\n", p_value);
     printf("The value at p_value is: %d\n", *p_value);
+
+    *p_value = 69;
+
     update(value);
     printf("Value updated is: %d\n", value);
     return 0;
