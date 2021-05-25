@@ -60,9 +60,9 @@ int main() {
     node_t *node3 = makeNode(3);
 
     // traverse
-    node1.next = &node2;
-    node2.next = &node3;
-    node3.next = NULL;
+    node1->next = &node2;
+    node2->next = &node3;
+    node3->next = NULL;
 
     // print
     printNodes(&node1);
