@@ -12,7 +12,7 @@ void updateArray2(int* array[]){
 int main(){
     int numbers[3] = {1,2,3};
 
-    updateArray1(numbers);
+  //  updateArray1(numbers);
 
     updateArray2(numbers);
 
