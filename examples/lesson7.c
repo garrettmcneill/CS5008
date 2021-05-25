@@ -14,7 +14,7 @@ int main(){
 
   //  updateArray1(numbers);
 
-    updateArray2(numbers);
+    updateArray2(&numbers);
 
     printf("sizeof(int): %d\n", sizeof(int));
     printf("\n");
