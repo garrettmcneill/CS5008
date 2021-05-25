@@ -23,11 +23,8 @@ int main(){
 
     //let's assign some values to s1, s2
 
-    s1.id = 1001;
-    s1.age  = 23;
-
-    s2.id = 1002;
-    s2.age = 24;
+    updateStudent(&s1, 23, 1001);
+    updateStudent(&s2, 24, 1002);
 
     printStudent(&s1);
     printStudent(&s2);
