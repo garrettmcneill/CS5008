@@ -45,5 +45,7 @@ int main(){
     printStudent(s2);
 
 
+    free(s1);
+    free(s2);
     return 0;
 }
