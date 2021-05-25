@@ -5,9 +5,9 @@ typedef struct student{
     int age;
 }student_t;
 
-void printStudent(student_t aStudent){
+void printStudent(student_t* aStudent){
     printf("Student ID: %d, Age: %d\n",
-           aStudent.id, aStudent.age);
+                    (*aStudent).id, (*aStudent).age);
 }
 
 int main(){
