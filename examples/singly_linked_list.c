@@ -55,9 +55,9 @@ void freeNode(node_t *node) {
 
 int main() {
     // init nodes
-    node_t *node1 = makeNode(1);
-    node_t *node2 = makeNode(2);
-    node_t *node3 = makeNode(3);
+    node_t* node1 = makeNode(1);
+    node_t* node2 = makeNode(2);
+    node_t* node3 = makeNode(3);
 
     // traverse
     node1->next = &node2;
