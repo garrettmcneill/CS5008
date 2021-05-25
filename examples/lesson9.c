@@ -10,7 +10,7 @@ typedef struct vector{
 }vector_t;
 
 vector_t* makeVector(int initCapacity){
-    vector_t* vector = (vector_t*)malloc(sizeof(vector_t);
+    vector_t* vector = (vector_t*)malloc(sizeof(vector_t));
     if ( vector == NULL ){
         return NULL;
     }
