@@ -10,6 +10,13 @@ void printStudent(student_t* aStudent){
                     (*aStudent).id, (*aStudent).age);
 }
 
+
+void updateStudent(student_t* aStudent, int age, int id){
+    (*aStudent).age = age;
+    (*aStudent).id = id;
+}
+
+
 int main(){
     student_t s1;
     student_t s2;
