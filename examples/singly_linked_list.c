@@ -25,7 +25,6 @@ void printNodes(node_t *node) {
     printf("\n");
 }
 
-
 /**
  * node constructor
  * @param data - int data to store in a node
@@ -40,6 +39,10 @@ node_t *makeNode(int data) {
     return newNode;
 }
 
+/**
+ * helper function to remove nodes from memory.
+ * @param node - a pointer to a node to free from memory.
+ */
 void freeNode(node_t *node) {
     if (node == NULL) {
         return;
@@ -52,9 +55,9 @@ void freeNode(node_t *node) {
 
 int main() {
     // init nodes
-    node_t* node1 = makeNode(1);
-    node_t* node2 = makeNode(2);
-    node_t* node3 = makeNode(3);
+    node_t *node1 = makeNode(1);
+    node_t *node2 = makeNode(2);
+    node_t *node3 = makeNode(3);
 
     // traverse
     node1.next = &node2;
