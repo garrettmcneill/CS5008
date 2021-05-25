@@ -14,6 +14,13 @@ vector_t* makeVector(int initCapacity){
     if ( vector == NULL ){
         return NULL;
     }
+
+    // allocate memory for our data array
+    vector->data = (int*)malloc(sizeof(int) *initCapacity);
+    vector->size = 0;
+    vector->capacity =initCapacity;
+
+    return vector;
 }
 
 int main(){
