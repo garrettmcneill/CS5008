@@ -31,15 +31,15 @@ int main(){
 
     //let's assign some values to s1, s2
 
-    updateStudent(&s1, 23, 1001);
-    updateStudent(&s2, 24, 1002);
+    updateStudent(s1, 23, 1001);
+    updateStudent(s2, 24, 1002);
 
-    printStudent(&s1);
-    printStudent(&s2);
+    printStudent(s1);
+    printStudent(s2);
 
-    updateStudent(&s2, s2.age, 1003);
+    updateStudent(s2, s2.age, 1003);
 
-    printStudent(&s2);
+    printStudent(s2);
 
 
     return 0;
