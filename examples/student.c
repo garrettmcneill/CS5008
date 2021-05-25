@@ -21,8 +21,8 @@ student_t* makeStudent(int age, int id){
     stuednt_t* p_aStudent =
             (student_t*)malloc(sizeof(student_t));
     //student_t p_aStudent;
-    p_aStudent.age = age;
-    p_aStudent.id = id;
+    p_aStudent->age = age;
+    p_aStudent->id = id;
     return p_aStudent;
 }
 
