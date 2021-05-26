@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 
-int fib(int n){
+long fib(long n){
     // unsigned long array to store fib numbers up to n
-    int f[n];
-    int i;
+    long f[n];
+    long i;
 
     // where fib(0) = 0, fib (1) = 1
     f[0] = 0;
@@ -21,12 +21,12 @@ int fib(int n){
 int main(){
 
     // declare total fib numbers to generate
-    int n = 50;
+    long n = 50;
     // iterator
-    int itr;
+    long itr;
 
     for(itr = 2; itr < n; itr++)
-        printf("%20lu ", fib(itr));
+        printf(" %20lu ", fib(itr));
     printf("\n");
     return 0;
 }
