@@ -22,11 +22,11 @@ int main(){
 
     // declare starting value of the fib sequence
     long n = 9;
-    long ptr = fib(n);
+    long *fib_p = fib(n);
     long itr;
 
     for(itr = 0; itr < n; itr++)
-        printf("%20lu ", ptr);
+        printf("%20lu ", &fib_p);
     printf("\n");
     return 0;
 }
