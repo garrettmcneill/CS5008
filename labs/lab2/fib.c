@@ -25,8 +25,8 @@ int main(){
     // iterator
     long itr;
 
-    for(itr = 0; itr < 50; itr++)
-        printf("%20lu ", fib(n));
+    for(itr = 0; itr < n; itr++)
+        printf("%20lu ", fib(itr));
     printf("\n");
     return 0;
 }
