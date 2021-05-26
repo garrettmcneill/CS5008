@@ -22,7 +22,7 @@ int main(){
 
     // declare total fib numbers to generate
     long n = 2;
-    // iterator
+    // declare iterator
     long itr;
 
     for(itr = n; itr < n+50; itr++)
