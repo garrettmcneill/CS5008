@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-long fib(long *n){
+long fib(long n){
     // unsigned long array to store fib numbers up to n
     long f[n];
     long i;
@@ -22,11 +22,10 @@ int main(){
 
     // declare starting value of the fib sequence
     long n = 9;
-    long *fib_p = fib(*n);
     long itr;
 
     for(itr = 0; itr < n; itr++)
-        printf("%20lu ", fib(*n));
+        printf("%20lu ", fib(n));
     printf("\n");
     return 0;
 }
