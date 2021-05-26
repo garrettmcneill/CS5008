@@ -21,11 +21,11 @@ long fib(long n){
 int main(){
 
     // declare total fib numbers to generate
-    long n = 50;
+    long n = 2;
     // iterator
     long itr;
 
-    for(itr = n; itr < 50; itr++)
+    for(itr = n; itr < n+50; itr++)
         printf(" %20lu ", fib(itr));
     return 0;
 }
