@@ -20,12 +20,12 @@ long fib(long n){
 
 int main(){
 
-    // declare starting value of the fib sequence
-    long n = 9;
+    // declare total fib numbers to generate
+    long n = 50;
     // iterator
     long itr;
 
-    for(itr = 0; itr < n; itr++)
+    for(itr = 2; itr < n; itr++)
         printf("%20lu ", fib(itr));
     printf("\n");
     return 0;
