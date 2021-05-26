@@ -20,5 +20,6 @@ int main(){
 
     long n = 9;
     printf("%20d", fib(n));
+    printf("\n");
     return 0;
 }
