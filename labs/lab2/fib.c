@@ -20,8 +20,8 @@ long fib(long n){
 
 int main(){
 
-    long n = 50;
-    printf("%20lu", fib(n));
+    long n = 9;
+    printf("%20lu ", fib(n));
     printf("\n");
     return 0;
 }
