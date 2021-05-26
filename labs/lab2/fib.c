@@ -27,7 +27,6 @@ int main(){
 
     for(itr = 2; itr < n; itr++)
         printf(" %20lu ", fib(itr));
-    printf("\n");
     return 0;
 }
 
