@@ -2,7 +2,7 @@
 
 
 long fib(long n){
-    // unsigned long array to store fib numbers up
+    // unsigned long array to store fib numbers up to n
     long f[n];
     long i;
 
@@ -20,8 +20,12 @@ long fib(long n){
 
 int main(){
 
+    // declare starting value of the fib sequence
     long n = 9;
-    printf("%20lu ", fib(n));
+    int loop;
+
+    for(loop = 0; loop < n; loop++)
+        printf("%20lu ", fib(n));
     printf("\n");
     return 0;
 }
