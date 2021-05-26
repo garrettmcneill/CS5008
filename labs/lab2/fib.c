@@ -19,6 +19,6 @@ long fib(long n){
 int main(){
 
     long n = 9;
-    printf("%20lu", fib(n));
+    printf("%20d", fib(n));
     return 0;
 }
