@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-long fib(int n){
+int fib(int n){
     // unsigned long array to store fib numbers up to n
     int f[n];
     int i;
