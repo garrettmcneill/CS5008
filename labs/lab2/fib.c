@@ -20,7 +20,5 @@ int main(){
 
     long n = 9;
     printf("%20lu", fib(n));
-    getchar();
-
     return 0;
 }
