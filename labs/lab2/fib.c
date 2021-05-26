@@ -25,7 +25,7 @@ int main(){
     long itr;
 
     for(itr = 0; itr < n; itr++)
-        printf("%20lu ", fib(n));
+        printf("%20lu ", fib(itr));
     printf("\n");
     return 0;
 }
