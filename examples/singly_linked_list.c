@@ -10,6 +10,53 @@ typedef struct node {
 } node_t;
 
 /**
+ * data structure for singly linked list
+ */
+typedef struct slist{
+    node_t* head;
+    node_t* tail;
+    int size;
+}slist_t;
+
+/**
+ * Singly linked list constructor
+ * @return a singly linked list
+ */
+slist_t* makeSlist(){
+    slist_t* newList = (slist_t*) malloc(sizeof(slist));
+    if ( newList != NULL ){
+        return;
+    }
+    newList->head = NULL;
+    newList->tail = NULL;
+    newList->size = 0;
+}
+
+/**
+ * Push node to front of list
+ * @param slist
+ * @param value
+ * @return
+ */
+int push_front(slist_t* slist, int value){
+    if ( slist == NULL ){
+        return 0;
+    }
+
+    node_t* newNode = makeNode(value);
+    if ( newNode == NULL ){
+        return 0;
+    }
+
+    // if head and tail are both null, then head and tail will both become new node
+
+    // if the head is not null, then next pointer of newNode will point to head,
+    // and the head will becoome the newNode
+}
+
+
+
+/**
  * Print nodes helper function.
  * @param node
  */

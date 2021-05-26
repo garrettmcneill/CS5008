@@ -1,39 +1,26 @@
 #include <stdio.h>
 
-typedef struct student{
-    int id;
-    int age;
-}student_t;
 
-void printStudent(student_t* aStudent){
-    printf("Student ID: %d, Age: %d\n",
-                    aStudent->id, (*aStudent).age);
-    // use the -> to dereference without needing a star and dot
-}
+long fib(long n){
+    // unsigned long array to store fib numbers up
+    long f[50];
+    long i;
 
+    f[0] = 0;
+    f[1] = 1;
 
-void updateStudent(student_t* aStudent, int age, int id){
-    (*aStudent).age = age;
-    (*aStudent).id = id;
+    for (i = 2; i <= n; i++){
+        f[i] = f[i-1] + f[i-2];
+    }
+    return f[n];
 }
 
 
 int main(){
-    student_t s1;
-    student_t s2;
 
-    //let's assign some values to s1, s2
-
-    updateStudent(&s1, 23, 1001);
-    updateStudent(&s2, 24, 1002);
-
-    printStudent(&s1);
-    printStudent(&s2);
-
-    updateStudent(&s2, s2.age, 1003);
-
-    printStudent(&s2);
-
+    long n = 9;
+    printf("%20lu", fib(n));
+    getchar();
 
     return 0;
 }
