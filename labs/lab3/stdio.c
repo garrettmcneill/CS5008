@@ -8,7 +8,7 @@ int main() {
     int i;
 
     printf("\ninput a string (QUIT for done): ");
-    gets(input);
+    fgets(input);
 
 /*
     for (i=0; i< strlen(input); i++) {
