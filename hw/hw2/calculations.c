@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(){
+int main() {
 
     // Problem Inputs
     double x = 10.0;
@@ -10,7 +10,7 @@ int main(){
     double sum = x + y;
     double difference = x - y;
     double product = x * y;
-    double quotient = x/y;
+    double quotient = x / y;
 
     // Print Statements
     printf("--------- First Value Set -----------\n");
@@ -27,7 +27,7 @@ int main(){
     sum = x + y;
     difference = x - y;
     product = x * y;
-    quotient = x/y;
+    quotient = x / y;
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
@@ -40,7 +40,7 @@ int main(){
     sum = x + y;
     difference = x - y;
     product = x * y;
-    quotient = x/y;
+    quotient = x / y;
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
@@ -53,7 +53,7 @@ int main(){
     sum = x + y;
     difference = x - y;
     product = x * y;
-    quotient = x/y;
+    quotient = x / y;
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
