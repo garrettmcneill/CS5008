@@ -23,14 +23,15 @@ int main() {
 */
 
 
-    for (i=0; i< strlen(input); i++) {
+    for (i = 0; i < strlen(input); i++) {
 
-        if ( ('a' <= input[i]) && ( input[i] <= 'z') ) {
-            printf("%c -- 0x%x\n", input[i]-0x20, input[i]-0x20);
+        if (('a' <= input[i]) && (input[i] <= 'z')) {
+            printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
         } else {
             printf("\n");
-    }
+        }
 
+    }
 
     return 0;
 }
