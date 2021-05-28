@@ -21,8 +21,8 @@ int main(){
     printf("Quotient: %f\n", quotient);
 
     // update x,y to (40, 8) ... print it again!
-    x = 40;
-    y = 8;
+    double x = 40;
+    double y = 8;
     printf("\n--------- Second Value Set -----------\n");
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
@@ -31,8 +31,8 @@ int main(){
     printf("Quotient: %f\n", quotient);
 
     // update x,y to (1, 4) ... print it again!
-    x = 1;
-    y = 4;
+    double x = 1;
+    double y = 4;
     printf("\n--------- Third Value Set -----------\n");
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
@@ -41,8 +41,8 @@ int main(){
     printf("Quotient: %f\n", quotient);
 
     // update x,y to (15, 30) ... print it again!
-    x = 15;
-    y = 30;
+    double x = 15;
+    double y = 30;
     printf("\n--------- Fourth Value Set -----------\n");
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
