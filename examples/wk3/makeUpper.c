@@ -9,7 +9,7 @@ int main() {
         printf("%c %.3d %x", input[i], input[i], input[i]);
 
         if ( ('a' <= input[i]) && ( input[i] <= 'z') ) {
-            printf("-- upper case %c\n", input[i]-0x20);
+            printf("-- upper case! %c\n", input[i]-0x20);
         } else {
             printf("\n");
         }
