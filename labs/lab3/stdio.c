@@ -12,7 +12,7 @@ int main() {
 
 
     for (i=0; i< strlen(input); i++) {
-        printf("%c: 0x%.3d %x", input[i], input[i], input[i]);
+        printf("%c: %.3d 0x%x", input[i], input[i], input[i]);
 
         if ( ('a' <= input[i]) && ( input[i] <= 'z') ) {
             printf("-- upper case! %c\n", input[i]-0x20);
