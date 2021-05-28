@@ -19,5 +19,32 @@ int main(){
     printf("Product: %f\n", product);
     printf("Quotient: %f\n", quotient);
 
+    // update x,y to (40, 8) ... print it again!
+    x = 40;
+    y = 8;
+    printf("Two Values:L %f and %f\n", x, y);
+    printf("Sum: %f\n", sum);
+    printf("Difference: %f\n", difference);
+    printf("Product: %f\n", product);
+    printf("Quotient: %f\n", quotient);
+
+    // update x,y to (1, 4) ... print it again!
+    x = 1;
+    y = 4;
+    printf("Two Values:L %f and %f\n", x, y);
+    printf("Sum: %f\n", sum);
+    printf("Difference: %f\n", difference);
+    printf("Product: %f\n", product);
+    printf("Quotient: %f\n", quotient);
+
+    // update x,y to (15, 30) ... print it again!
+    x = 15;
+    y = 30;
+    printf("Two Values:L %f and %f\n", x, y);
+    printf("Sum: %f\n", sum);
+    printf("Difference: %f\n", difference);
+    printf("Product: %f\n", product);
+    printf("Quotient: %f\n", quotient);
+
     return 0;
 }
