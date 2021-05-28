@@ -28,7 +28,7 @@ int main() {
         if (('a' <= input[i]) && (input[i] <= 'z')) {
             printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
         } else {
-            printf(" -- 0x20\n");
+            printf("  -- 0x20\n");
         }
 
     }
