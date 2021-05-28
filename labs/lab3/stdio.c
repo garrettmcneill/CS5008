@@ -7,7 +7,7 @@ int main() {
     char input[140];
     int i;
 
-    printf(\n"input a string (QUIT for done): ");
+    printf("\ninput a string (QUIT for done): ");
     gets(input);
 
 
