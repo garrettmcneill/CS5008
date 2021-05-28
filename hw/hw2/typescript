@@ -1,0 +1,34 @@
+Script started on Thu 27 May 2021 09:33:17 PM EDT
+[?1034hbash-4.2$ gcc calculations.c 
+bash-4.2$ ./a.out 
+--------- First Value Set -----------
+Two Values:L 10.000000 and 5.000000
+Sum: 15.000000
+Difference: 5.000000
+Product: 50.000000
+Quotient: 2.000000
+
+--------- Second Value Set -----------
+Two Values:L 40.000000 and 8.000000
+Sum: 48.000000
+Difference: 32.000000
+Product: 320.000000
+Quotient: 5.000000
+
+--------- Third Value Set -----------
+Two Values:L 1.000000 and 4.000000
+Sum: 5.000000
+Difference: -3.000000
+Product: 4.000000
+Quotient: 0.250000
+
+--------- Fourth Value Set -----------
+Two Values:L 15.000000 and 30.000000
+Sum: 45.000000
+Difference: -15.000000
+Product: 450.000000
+Quotient: 0.500000
+bash-4.2$ exit
+exit
+
+Script done on Thu 27 May 2021 09:33:32 PM EDT
