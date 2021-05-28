@@ -20,34 +20,40 @@ int main(){
     printf("Product: %f\n", product);
     printf("Quotient: %f\n", quotient);
 
-    // update x,y to (40, 8) ... print it again!
+    // serially hardcoded values from this point forward
+    printf("\n--------- Second Value Set -----------\n");
     x = 40;
     y = 8;
     sum = x + y;
     difference = x - y;
     product = x * y;
     quotient = x/y;
-    printf("\n--------- Second Value Set -----------\n");
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
     printf("Product: %f\n", product);
     printf("Quotient: %f\n", quotient);
 
-    // update x,y to (1, 4) ... print it again!
+    printf("\n--------- Third Value Set -----------\n");
     x = 1;
     y = 4;
-    printf("\n--------- Third Value Set -----------\n");
+    sum = x + y;
+    difference = x - y;
+    product = x * y;
+    quotient = x/y;
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
     printf("Product: %f\n", product);
     printf("Quotient: %f\n", quotient);
 
-    // update x,y to (15, 30) ... print it again!
+    printf("\n--------- Fourth Value Set -----------\n");
     x = 15;
     y = 30;
-    printf("\n--------- Fourth Value Set -----------\n");
+    sum = x + y;
+    difference = x - y;
+    product = x * y;
+    quotient = x/y;
     printf("Two Values:L %f and %f\n", x, y);
     printf("Sum: %f\n", sum);
     printf("Difference: %f\n", difference);
