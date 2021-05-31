@@ -1,10 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-//stack overflow https://stackoverflow.com/questions/55033405/type-quit-to-quit-c-program/55033679
+#define MAXC 200    /* constant - maximum characters in string */
 
-int main()
+void empty_stdin (void)
 {
+    int c = getchar();
+    while (c != EOF && c != '\n')
+        c = getchar();
+}
+
+int main (void) {
+
+    char string[MAXC];    /* use constants for array bounds */
 
     do {
         char c;     /* final character read */
