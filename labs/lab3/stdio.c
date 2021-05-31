@@ -6,6 +6,7 @@ int main() {
 
     char input[140];
     int i;
+    int j;
 
     do {
         printf("\ninput a string (QUIT for done): ");
