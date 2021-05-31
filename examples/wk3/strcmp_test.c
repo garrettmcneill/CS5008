@@ -35,7 +35,29 @@ int main (void) {
             empty_stdin();
         }
         else    /* good input, output string */
-            printf ("string: %s\n", string);
+            // parse input for chars
+            for (i = 0; i < strlen(input); i++) {
+
+                // parse & print lowercase chars
+                if (('a' <= input[i]) && (input[i] <= 'z')) {
+                    printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
+                }
+                    // PARSE & PRINT UPPERCASE CHARS
+                else if (('A' <= input[i]) && (input[i] <= 'Z')) {
+                    printf("%c -- 0x%x\n", input[i], input[i]);
+                }
+                    // parse & print punctuation!?
+                else if (('!' <= input[i]) && (input[i] <= '?')) {
+                    printf("%c -- 0x%x\n", input[i], input[i]);
+                }
+                    // parse blank spaces
+                else {
+                    printf("  -- 0x20\n");
+                }
+
+            }
+        // print line break at end because prompt shows it
+        printf("\\n  -- 0x20\n");
 
     } while (strcmp (string,"quit") != 0);
 
