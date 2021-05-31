@@ -3,6 +3,8 @@
 
 #define MAXC 200    /* constant - maximum characters in string */
 
+int i;
+
 void empty_stdin (void)
 {
     int c = getchar();
@@ -38,7 +40,7 @@ int main (void) {
 
 
             // parse input for chars
-            int i;
+
             for (i = 0; i < strlen(retn); i++) {
 
                 // parse & print lowercase chars
