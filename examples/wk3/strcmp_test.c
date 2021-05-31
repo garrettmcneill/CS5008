@@ -11,12 +11,11 @@ int main(void) {
     // https://stackoverflow.com/questions/55033405/type-quit-to-quit-c-program/55033679
     // validates input was read correctly and removes any
     do {
-        char c;     /* final character read */
-        int retn;   /* variable to save scanf return */
+      //  int retn;   /* variable to save scanf return */
         /* prompt */
         fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
-        retn = scanf(" %199[^\n]%c", input, &c);
+      //  retn = scanf(" %199[^\n]%c", input, &c);
 
         // parse input for chars
         int i;
