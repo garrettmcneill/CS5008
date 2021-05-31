@@ -15,7 +15,7 @@ int main(void) {
 
         // get user input & validate
         fputs("input a string (QUIT for done): ", stdout);
-        retn = scanf(" %199[^\n]%c", input, &c);
+        retn = scanf(" %199[^\n]%c", input);
 
         // check to see if user wants to quit
         if ( (strcmp(input, "QUIT") == 0 ) || (strcmp(input, "quit") == 0) ){
