@@ -60,7 +60,7 @@ int main(void) {
             printf("\\n  -- 0x20\n");
 
         }
-    } while ((strcmp(input, "quit", "QUIT") != 0));
+    } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
 
     return 0;
 }
