@@ -17,8 +17,7 @@ int main(void) {
         fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
-        if (retn == EOF) {      /* check the return against EOF */
-           // fputs("(user canceled input)\n", stderr);
+        if ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0)) {
             return 0;
         } else {
 
