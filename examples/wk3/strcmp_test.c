@@ -36,19 +36,19 @@ int main (void) {
         }
         else    /* good input, output string */
             // parse input for chars
-            for (i = 0; i < strlen(input); i++) {
+            for (i = 0; i < strlen(retn); i++) {
 
                 // parse & print lowercase chars
-                if (('a' <= input[i]) && (input[i] <= 'z')) {
-                    printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
+                if (('a' <= retn[i]) && (retn[i] <= 'z')) {
+                    printf("%c -- 0x%x\n", retn[i] - 0x20, retn[i] - 0x20);
                 }
                     // PARSE & PRINT UPPERCASE CHARS
-                else if (('A' <= input[i]) && (input[i] <= 'Z')) {
-                    printf("%c -- 0x%x\n", input[i], input[i]);
+                else if (('A' <= retn[i]) && (retn[i] <= 'Z')) {
+                    printf("%c -- 0x%x\n", retn[i], retn[i]);
                 }
                     // parse & print punctuation!?
-                else if (('!' <= input[i]) && (input[i] <= '?')) {
-                    printf("%c -- 0x%x\n", input[i], input[i]);
+                else if (('!' <= retn[i]) && (retn[i] <= '?')) {
+                    printf("%c -- 0x%x\n", retn[i], retn[i]);
                 }
                     // parse blank spaces
                 else {
