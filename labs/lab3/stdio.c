@@ -18,8 +18,8 @@ int main() {
                 printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
             } else if (('A' <= input[i]) && (input[i] <= 'Z')){
                 printf("%c -- 0x%x\n", input[i], input[i]);
-            } else if (i == j){
-
+            } else if (('!' <= input[i]) && (input[i] <= '?')){
+                printf("%c -- 0x%x\n", input[i], input[i]);
             } else{
                 printf("  -- 0x20\n");
             }
