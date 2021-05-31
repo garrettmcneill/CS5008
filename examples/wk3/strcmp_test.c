@@ -3,8 +3,6 @@
 
 #define MAXC 200    /* constant - maximum characters in string */
 
-int i;
-
 void empty_stdin (void)
 {
     int c = getchar();
@@ -14,7 +12,7 @@ void empty_stdin (void)
 
 int main (void) {
 
-    char string[MAXC];    /* use constants for array bounds */
+    char input[MAXC];    /* use constants for array bounds */
 
     do {
         char c;     /* final character read */
@@ -22,7 +20,7 @@ int main (void) {
         /* prompt */
         fputs ("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
-        retn = scanf (" %199[^\n]%c", string, &c);
+        retn = scanf (" %199[^\n]%c", input, &c);
         if (retn == EOF) {      /* check the return against EOF */
             fputs ("(user canceled input)\n", stderr);
             return 0;
@@ -38,33 +36,31 @@ int main (void) {
         }
         else    /* good input, output string */
 
-
             // parse input for chars
-
-            for (i = 0; i < strlen(retn); i++) {
+            for (i = 0; i < strlen(input); i++) {
 
                 // parse & print lowercase chars
-                if (('a' <= retn[i]) && (retn[i] <= 'z')) {
-                    printf("%c -- 0x%x\n", retn[i] - 0x20, retn[i] - 0x20);
+                if (('a' <= input[i]) && (input[i] <= 'z')) {
+                    printf("%c -- 0x%x\n", input[i] - 0x20, input[i] - 0x20);
                 }
                     // PARSE & PRINT UPPERCASE CHARS
-                else if (('A' <= retn[i]) && (retn[i] <= 'Z')) {
-                    printf("%c -- 0x%x\n", retn[i], retn[i]);
+                else if (('A' <= input[i]) && (input[i] <= 'Z')) {
+                    printf("%c -- 0x%x\n", input[i], input[i]);
                 }
                     // parse & print punctuation!?
-                else if (('!' <= retn[i]) && (retn[i] <= '?')) {
-                    printf("%c -- 0x%x\n", retn[i], retn[i]);
+                else if (('!' <= input[i]) && (input[i] <= '?')) {
+                    printf("%c -- 0x%x\n", input[i], input[i]);
                 }
                     // parse blank spaces
                 else {
                     printf("  -- 0x20\n");
                 }
 
-            }
+        }
         // print line break at end because prompt shows it
         printf("\\n  -- 0x20\n");
 
-    } while (strcmp (string,"quit") != 0);
+    } while (strcmp (input,"quit") != 0);
 
     return 0;
 }
