@@ -15,9 +15,10 @@ int main(void) {
         /* prompt */
         fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
-
-
-
+        retn = scanf(" %199[^\n]%c", input, &c);
+        if (retn == (strcmp(input, "quit")) {      /* check the return against EOF */
+            return 0;
+        } else {
 
             // parse input for chars
             int i;
@@ -44,7 +45,7 @@ int main(void) {
             // print line break at end because prompt shows it
             printf("\\n  -- 0x20\n");
 
-
+        }
     } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
 
     return 0;
