@@ -29,7 +29,7 @@ int main(void) {
             empty_stdin();
         } else if (c != '\n') {   /* check c is '\n', else string too long */
             fprintf(stderr, "warning: input exceeds %d characters.\n",
-                    MAXC - 1);
+                    140 - 1);
             empty_stdin();
         } else {  /* good input, output string */
 
