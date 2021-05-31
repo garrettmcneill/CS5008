@@ -32,6 +32,13 @@ int main(void) {
             empty_stdin();
         } else {  /* good input, output string */
 
+
+            // hacky if to return 0
+            if (strcmp(input, "quit") != 0){
+                return  0;
+            }
+
+
             // parse input for chars
             int i;
             for (i = 0; i < strlen(input); i++) {
