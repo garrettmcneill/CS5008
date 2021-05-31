@@ -27,11 +27,11 @@ int main(void) {
         } else if (retn < 2) {    /* checking both string and c read */
             fputs("input failure.\n", stderr);
             empty_stdin();
-        } else if (c != '\n') {   /* check c is '\n', else string too long */
+        } /* else if (c != '\n') {
             fprintf(stderr, "warning: input exceeds %d characters.\n",
                     140 - 1);
             empty_stdin();
-        } else {  /* good input, output string */
+        }*/ else {  /* good input, output string */
 
 
 
