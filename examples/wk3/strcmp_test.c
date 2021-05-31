@@ -10,13 +10,12 @@ int main(void) {
     // do while loop to continuously ask for input unless user types quit
     do {
         // var declarations
-       // char c;
-       // int retn;   /* variable to save scanf return */
+        char c;
+        int retn;   /* variable to save scanf return */
 
-        // get user input
+        // get user input & validate
         fputs("input a string (QUIT for done): ", stdout);
-        /* read saving scanf return */
-        //retn = scanf(" %199[^\n]%c", input, &c);
+        retn = scanf(" %199[^\n]%c", input, &c);
 
         // check to see if user wants to quit
         if ( (strcmp(input, "QUIT") == 0 ) || (strcmp(input, "quit") == 0) ){
