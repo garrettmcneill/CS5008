@@ -15,7 +15,7 @@ int main(void) {
         /* prompt */
         fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
-      //  retn = scanf(" %199[^\n]%c", input, &c);
+        retn = scanf(" %199[^\n]%c", input, &c);
 
         // parse input for chars
         int i;
