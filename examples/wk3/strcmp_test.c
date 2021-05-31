@@ -33,11 +33,6 @@ int main(void) {
         } else {  /* good input, output string */
 
 
-            // hacky if to return 0
-            if (strcmp(input, "quit") != 0){
-                return  0;
-            }
-
 
             // parse input for chars
             int i;
