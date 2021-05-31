@@ -2,11 +2,6 @@
 #include <string.h>
 
 
-void empty_stdin(void) {
-    int c = getchar();
-    while (c != EOF && c != '\n')
-        c = getchar();
-}
 
 char input[140];    /* use constants for array bounds */
 
