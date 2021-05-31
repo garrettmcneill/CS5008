@@ -15,7 +15,7 @@ int main(void) {
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
 
-        if ((strcmp(input, "QUIT") == 0 || (strcmp(input, "quit")){
+        if ( (strcmp(input, "QUIT") == 0 ) || (strcmp(input, "quit")) ){
             printf("end program \n");
             return 0;
         } else {
