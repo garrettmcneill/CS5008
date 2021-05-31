@@ -1,23 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-
-char input[140];    // declare input array with max chars
+// declare input array with max chars
+char input[140];
 
 
 int main(void) {
 
+    // do while loop to continuously ask for input unless user types quit
     do {
-        char c;
-        int retn;   /* variable to save scanf return */
+        // var declarations
+       // char c;
+       // int retn;   /* variable to save scanf return */
 
+        // get user input
         fputs("input a string (QUIT for done): ", stdout);
         /* read saving scanf return */
-        retn = scanf(" %199[^\n]%c", input, &c);
+        //retn = scanf(" %199[^\n]%c", input, &c);
 
+        // check to see if user wants to quit
         if ( (strcmp(input, "QUIT") == 0 ) || (strcmp(input, "quit") == 0) ){
             printf("end program \n");
             return 0;
+
         } else {
 
             // parse input for chars
@@ -47,10 +52,6 @@ int main(void) {
 
         }
     } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
-
-        printf("end program 2\n");
-
-
 
     return 0;
 }
