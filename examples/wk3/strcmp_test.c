@@ -35,6 +35,9 @@ int main (void) {
             empty_stdin();
         }
         else    /* good input, output string */
+
+            int i;
+
             // parse input for chars
             for (i = 0; i < strlen(retn); i++) {
 
