@@ -13,8 +13,8 @@ int main(void) {
     do {
         char c;
         int retn;   /* variable to save scanf return */
-        /* prompt */
-        fputs("Enter a bunch of words ('quit' exits): ", stdout);
+
+        fgets("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
 
