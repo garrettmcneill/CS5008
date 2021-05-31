@@ -13,10 +13,10 @@ struct Stack {
 
 // function to create a stack of given capacity. It initializes size of
 // stack as 0
-struct Stack* createStack(unsigned capacity)
+struct Stack* createStack()
 {
     struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));
-    stack->capacity = capacity;
+    stack->capacity = 100;
     stack->top = -1;
     stack->array = (int*)malloc(stack->capacity * sizeof(int));
     return stack;
@@ -62,7 +62,7 @@ int peek(struct Stack* stack)
 // Driver program to test above functions
 int main()
 {
-    struct Stack* stack = createStack(100);
+    struct Stack* stack = createStack();
 
     push(stack, 10);
     push(stack, 20);
