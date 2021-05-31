@@ -37,6 +37,7 @@ int main (void) {
         else    /* good input, output string */
 
             // parse input for chars
+            int i;
             for (i = 0; i < strlen(input); i++) {
 
                 // parse & print lowercase chars
