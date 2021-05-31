@@ -14,7 +14,7 @@ int main(void) {
         char c;
         int retn;   /* variable to save scanf return */
 
-        fgets("Enter a bunch of words ('quit' exits): ", stdout);
+        fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
 
