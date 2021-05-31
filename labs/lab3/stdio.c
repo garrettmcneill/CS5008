@@ -10,8 +10,8 @@ int main(void) {
     // do while loop to continuously ask for input unless user types quit
     do {
         // var declarations
-        char c;
-        int retn;   /* variable to save scanf return */
+        //char c;
+        int retn;
 
         // get user input & validate
         fputs("input a string (QUIT for done): ", stdout);
