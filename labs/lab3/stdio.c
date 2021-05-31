@@ -25,7 +25,8 @@ int main() {
             }
 
         }
-
+        // print line break at end
+        printf("\\n  -- 0x20\n");
 
     } while (j > 0);
 
