@@ -19,6 +19,8 @@ int main(void) {
         if (retn == EOF) {      /* check the return against EOF */
             fputs("(user canceled input)\n", stderr);
             return 0;
+        } else if((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0)){
+            return 0;
         } else {
 
 
