@@ -7,14 +7,11 @@ char input[140];    // declare input array with max chars
 
 int main(void) {
 
-    // do while scheme for quitting when user says to quit loosely based on
-    // https://stackoverflow.com/questions/55033405/type-quit-to-quit-c-program/55033679
-    // validates input was read correctly and removes any
     do {
         char c;
         int retn;   /* variable to save scanf return */
 
-        fputs("Enter a bunch of words ('quit' exits): ", stdout);
+        fputs("input a string (QUIT for done): ", stdout);
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
 
@@ -44,6 +41,10 @@ int main(void) {
         printf("\\n  -- 0x20\n");
 
     } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
+
+        printf("end program \n");
+
+
 
     return 0;
 }
