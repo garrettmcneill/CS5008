@@ -9,6 +9,7 @@ int main(void) {
 
     // do while scheme for quitting when user says to quit loosely based on
     // https://stackoverflow.com/questions/55033405/type-quit-to-quit-c-program/55033679
+    // validates input was read correctly and removes any
     do {
         char c;     /* final character read */
         int retn;   /* variable to save scanf return */
@@ -16,7 +17,8 @@ int main(void) {
         fputs("Enter a bunch of words ('quit' exits): ", stdout);
         /* read saving scanf return */
         retn = scanf(" %199[^\n]%c", input, &c);
-        if (retn == (strcmp(input, "quit")) {      /* check the return against EOF */
+        if (retn == EOF) {      /* check the return against EOF */
+           // fputs("(user canceled input)\n", stderr);
             return 0;
         } else {
 
