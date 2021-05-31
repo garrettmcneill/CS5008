@@ -28,7 +28,7 @@ int main() {
             }
         }
 
-        // we ran out of letters in one string, so far all the same
+        // we ran out of letters in one string, so far all the same...
 
         if (strlen(s1) < strlen(s2)) {
             // return that s1 is less than s2
