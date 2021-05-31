@@ -17,8 +17,7 @@ int main() {
 
         // string match check for "quit" , "QUIT" , or "QUIT\n"
 
-        for (int k = 0; (k < strlen(s1))) && (k < strlen(s2);
-        k++){
+        for ( (int k = 0; (k < strlen(s1)) ) && (k < strlen(s2)); k++ ){
 
             if (s1[k] == s2[k]) {
                 // do nothin'
