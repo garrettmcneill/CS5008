@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAXC 200    /* constant - maximum characters in string */
 
 void empty_stdin(void) {
     int c = getchar();
@@ -9,9 +8,11 @@ void empty_stdin(void) {
         c = getchar();
 }
 
+char input[140];    /* use constants for array bounds */
+
+
 int main(void) {
 
-    char input[MAXC];    /* use constants for array bounds */
 
     do {
         char c;     /* final character read */
