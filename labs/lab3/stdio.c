@@ -27,18 +27,6 @@ int main() {
 
     } while (j > 0);
 
-/*
-    for (i=0; i< strlen(input); i++) {
-        printf("%c: %.3d 0x%x", input[i], input[i], input[i]);
-
-        if ( ('a' <= input[i]) && ( input[i] <= 'z') ) {
-            printf("-- upper case! %c\n", input[i]-0x20);
-        } else {
-            printf("\n");
-        }
-    }
-*/
-
 
 
 
