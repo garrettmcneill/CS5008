@@ -4,3 +4,4 @@
 #define VAL 5
 
 // recursion example
+int sum(int k);
