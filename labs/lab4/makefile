@@ -1,5 +1,5 @@
 example: exmain.c exsum.c exsum.h
-		gcc exmain.c exsum.c -o lab4
+		gcc exmain.c exsum.c -o example
 
 clean:
-		rm lab4 *.o
+		rm example *.o
