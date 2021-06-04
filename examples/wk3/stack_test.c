@@ -13,7 +13,7 @@ int isEmpty() {
     }
 }
 
-// trying a conditional expression
+// trying a conditional expression ...
 int isEmpty2() {
     return (top == -1)
            ? 1
