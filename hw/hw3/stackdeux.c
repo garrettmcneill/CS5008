@@ -58,7 +58,6 @@ int main() {
 
     int rVal;
     rVal = pop(myStackPtr);
-
     printf("Pop Return value = %d\n", rVal);
     push(myStackPtr,1);
     push(myStackPtr,2);
