@@ -4,7 +4,7 @@
 // Node data structure
 typedef struct NodeStruct {
     int val;
-    Node *nextPtr;
+    struct NodeStruct *nextPtr;
 } Node;
 
 // Linked "stack" data structure
