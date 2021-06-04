@@ -1,0 +1,19 @@
+Script started on Thu 03 Jun 2021 07:33:35 PM EDT
+[?1034hbash-4.2$ ls
+example.c  exmain.c  exsum.c  exsum.h  makefile  typescript
+bash-4.2$ make example
+gcc exmain.c exsum.c -o example
+bash-4.2$ ./example 
+
+sum of 5 = 15
+
+bash-4.2$ make clean
+rm example *.o
+rm: cannot remove ‘*.o’: No such file or directory
+make: *** [clean] Error 1
+bash-4.2$ ls
+example.c  exmain.c  exsum.c  exsum.h  makefile  typescript
+bash-4.2$ exit
+exit
+
+Script done on Thu 03 Jun 2021 07:33:53 PM EDT
