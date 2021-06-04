@@ -35,7 +35,7 @@ int push(int v) {
 int pop() {
     // empty check
     if (top <= -1) {
-        printf("STACK IS EMPTY!")
+        printf("STACK IS EMPTY!");
         return 0;
     }
 
