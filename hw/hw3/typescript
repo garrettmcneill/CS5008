@@ -1,0 +1,33 @@
+Script started on Thu 03 Jun 2021 11:33:53 PM EDT
+[?1034hbash-4.2$ make answers
+gcc stack.c -o prob1
+gcc stackdeux.c -o prob2
+bash-4.2$ ls
+makefile  prob1  prob2	stack.c  stackdeux.c  typescript
+bash-4.2$ ./prob1
+STACK IS EMPTY!
+Pop Return value = 0
+Pop Return value = 3
+Pop Return value = 5
+Pop Return value = 4
+Pop Return value = 6
+Pop Return value = 2
+bash-4.2$ ./prob2
+Pop Return value = 0
+Pop Return value = 3
+Pop Return value = 2
+Pop Return value = 5
+Pop Return value = 4
+Pop Return value = 6
+Pop Return value = 1
+bash-4.2$ make clean
+rm prob1
+rm prob2 *.o
+rm: cannot remove ‘*.o’: No such file or directory
+make: *** [clean] Error 1
+bash-4.2$ ls
+makefile  stack.c  stackdeux.c	typescript
+bash-4.2$ exit
+exit
+
+Script done on Thu 03 Jun 2021 11:34:29 PM EDT
