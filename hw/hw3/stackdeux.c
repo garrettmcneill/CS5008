@@ -3,18 +3,18 @@
 typedef struct NodeStruct {
     int val;
     int *nextPtr = NULL;
-}Node;
+} Node;
 
 struct LinkedStack {
     Node *headPtr = NULL;
 };
 
 
-void push(int d){
-    Node *tmpNode = malloc(sizeof(Node));
+void push(int d) {
+    Node *tmpNode = (Node *)malloc(sizeof(Node));
 
     // only do if node is not null
-    if (tmpNode != NULL){
+    if (tmpNode != NULL) {
         tmpNode->val = d;
         tmpNode->nextPtr = LinkedStack.headPtr;
         LinkedStack.headPtr = tmpNode;
@@ -23,13 +23,13 @@ void push(int d){
 }
 
 
-int pop(){
-    if ( LinkedStack.headPtr == NULL ){
+int pop() {
+    if (LinkedStack.headPtr == NULL) {
         return 0;
     }
 
     // Set current head to the next node, store current head value in temp value, free memory.
-    Node* tmpNodePtr = LinkedStack.headPtr;
+    Node *tmpNodePtr = LinkedStack.headPtr;
     int tmpVal = tmpNodePtr->val;
     LinkedStack.headPtr = tmpNodePtr->nextPtr;
 
@@ -41,14 +41,14 @@ int pop(){
 
 
 // Conditional expression to check if the head is null.
-void isEmpty(){
+void isEmpty() {
     return ( struct LinkedStack.headPtr == NULL )
     ? 1
     : 0;
 }
 
 
-int main(){
+int main() {
 
     rVal = pop();
     printf("Pop Return value = %d\n", rVal);
