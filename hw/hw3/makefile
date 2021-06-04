@@ -20,5 +20,5 @@ answers: stackdeux.c stack.c
 
 
 clean:
-	rm prob1 *.o
+	rm prob1
 	rm prob2 *.o
