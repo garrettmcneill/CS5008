@@ -19,22 +19,22 @@ void push(LinkedStack* stackPtr, int d) {
     // only do if node is not null
     if (tmpNode != NULL) {
         tmpNode->val = d;
-        tmpNode->nextPtr = LinkedStack.headPtr;
-        LinkedStack.headPtr = tmpNode;
+        tmpNode->nextPtr = stackPtr->headPtr;
+        stackPtr->headPtr = tmpNode;
     }
     return;
 }
 
 
 int pop(LinkedStack* stackPtr) {
-    if (LinkedStack.headPtr == NULL) {
+    if (stackPtr->headPtr == NULL) {
         return 0;
     }
 
     // Set current head to the next node, store current head value in temp value, free memory.
-    Node *tmpNodePtr = LinkedStack.headPtr;
+    Node *tmpNodePtr = stackPtr->headPtr;
     int tmpVal = tmpNodePtr->val;
-    LinkedStack.headPtr = tmpNodePtr->nextPtr;
+    stackPtr->headPtr = tmpNodePtr->nextPtr;
 
     // free it
     free(tmpNodePtr);
@@ -45,7 +45,7 @@ int pop(LinkedStack* stackPtr) {
 
 // Conditional expression to check if the head is null.
 void isEmpty(LinkedStack* stackPtr) {
-    return ( struct LinkedStack.headPtr == NULL )
+    return ( struct stackPtr->headPtr == NULL )
     ? 1
     : 0;
 }
