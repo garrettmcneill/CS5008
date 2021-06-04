@@ -32,6 +32,7 @@ int push(int v) {
     return 1;
 }
 
+//
 int pop() {
     // empty check
     if (top <= -1) {
