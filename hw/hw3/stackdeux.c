@@ -51,6 +51,14 @@ int isEmpty(LinkedStack* stackPtr) {
 }
 
 
+// Clear helper function to pop everything off the list
+int clearStack(LinkedStack* stackPtr){
+    while (!isEmpty(stackPtr)){
+        pop(stackPtr);
+    }
+}
+
+
 int main() {
 
     LinkedStack* myStackPtr = (LinkedStack*)malloc(sizeof(LinkedStack));
@@ -77,6 +85,9 @@ int main() {
     printf("Pop Return value = %d\n", rVal);
     rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
+
+    clearStack(myStackPtr);
+    free(myStackPtr);
 
     return 0;
 }
