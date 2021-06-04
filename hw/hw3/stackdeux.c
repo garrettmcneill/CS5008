@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct NodeStruct {
     int val;
@@ -11,7 +12,7 @@ typedef struct LinkedStackStruct {
 
 
 void push(LinkedStack* stackPtr, int d) {
-    Node *tmpNode = (Node *)malloc(sizeof(Node));
+    Node *tmpNode = (Node*)malloc(sizeof(Node));
 
     // only do if node is not null
     if (tmpNode != NULL) {
