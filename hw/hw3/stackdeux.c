@@ -45,7 +45,7 @@ int pop(LinkedStack* stackPtr) {
 
 // Conditional expression to check if the head is null.
 void isEmpty(LinkedStack* stackPtr) {
-    return ( struct stackPtr->headPtr == NULL )
+    return ( stackPtr->headPtr == NULL )
     ? 1
     : 0;
 }
