@@ -23,7 +23,7 @@ int isEmpty2() {
 int push(int v) {
     // check
     if (top >= 99) {
-        printf("STACK OVERFLOW!");
+        printf("STACK OVERFLOW!\n");
         return 0;
     }
     // increment top
@@ -35,7 +35,7 @@ int push(int v) {
 int pop() {
     // empty check
     if (top <= -1) {
-        printf("STACK IS EMPTY!");
+        printf("STACK IS EMPTY!\n");
         return 0;
     }
 
