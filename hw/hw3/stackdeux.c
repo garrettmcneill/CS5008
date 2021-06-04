@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Node data structure
 typedef struct NodeStruct {
     int val;
-    int *nextPtr;
+    Node *nextPtr;
 } Node;
 
+// Linked "stack" data structure
 typedef struct LinkedStackStruct {
     Node *headPtr;
 } LinkedStack;
@@ -51,7 +53,7 @@ void isEmpty(LinkedStack* stackPtr) {
 
 int main() {
 
-    LinkedStack* myStackPtr = malloc(sizeof(LinkedStack));
+    LinkedStack* myStackPtr = (LinkedStack*)malloc(sizeof(LinkedStack));
     myStackPtr->headPtr = NULL;
 
     rVal = pop(myStackPtr);
