@@ -2,15 +2,15 @@
 
 typedef struct NodeStruct {
     int val;
-    int *nextPtr = NULL;
+    int *nextPtr;
 } Node;
 
-struct LinkedStack {
-    Node *headPtr = NULL;
-};
+typedef struct LinkedStackStruct {
+    Node *headPtr;
+} LinkedStack;
 
 
-void push(int d) {
+void push(LinkedStack* stackPtr, int d) {
     Node *tmpNode = (Node *)malloc(sizeof(Node));
 
     // only do if node is not null
@@ -23,7 +23,7 @@ void push(int d) {
 }
 
 
-int pop() {
+int pop(LinkedStack* stackPtr) {
     if (LinkedStack.headPtr == NULL) {
         return 0;
     }
@@ -41,7 +41,7 @@ int pop() {
 
 
 // Conditional expression to check if the head is null.
-void isEmpty() {
+void isEmpty(LinkedStack* stackPtr) {
     return ( struct LinkedStack.headPtr == NULL )
     ? 1
     : 0;
@@ -50,25 +50,28 @@ void isEmpty() {
 
 int main() {
 
-    rVal = pop();
+    LinkedStack* myStackPtr = malloc(sizeof(LinkedStack));
+    myStackPtr->headPtr = NULL;
+
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    push(1);
-    push(2);
-    push(3);
-    rVal = pop();
+    push(myStackPtr,1);
+    push(myStackPtr,2);
+    push(myStackPtr,3);
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    rVal = pop();
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    push(4);
-    push(5);
-    rVal = pop();
+    push(myStackPtr,4);
+    push(myStackPtr,5);
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    rVal = pop();
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    push(6);
-    rVal = pop();
+    push(myStackPtr,6);
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
-    rVal = pop();
+    rVal = pop(myStackPtr);
     printf("Pop Return value = %d\n", rVal);
 
     return 0;
