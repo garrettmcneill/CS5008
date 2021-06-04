@@ -56,7 +56,9 @@ int main() {
     LinkedStack* myStackPtr = (LinkedStack*)malloc(sizeof(LinkedStack));
     myStackPtr->headPtr = NULL;
 
+    int rVal;
     rVal = pop(myStackPtr);
+
     printf("Pop Return value = %d\n", rVal);
     push(myStackPtr,1);
     push(myStackPtr,2);
