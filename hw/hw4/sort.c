@@ -54,7 +54,7 @@ int main() {
     printf("Source Array: \n");
     for(idx = 0; idx <100; ++idx){
         printf("%d ", randInts[idx]);
-        if (idx %6 == 5){
+        if (idx %20 == 19){
             printf("\n");
         }
     }
@@ -66,7 +66,7 @@ int main() {
     printf("Destination Array: \n");
     for(idx = 0; idx <100; ++idx){
         printf("%d ", randInts[idx]);
-        if (idx %6 == 5){
+        if (idx %20 == 19){
             printf("\n");
         }
     }
