@@ -29,7 +29,6 @@ void sort(int *arrayPtr, int arraySize) {
             arrayPtr[leastIdx] = arrayPtr[baseIdx];
             arrayPtr[baseIdx] = tmpValue;
         }
-
     }
 
     return;
