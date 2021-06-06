@@ -47,15 +47,29 @@ int main() {
     srand((unsigned) time(&t));
 
     for(idx = 0; idx <100; ++idx){
-        randInts[idx] = rand();
+        randInts[idx] = rand() % 99;
     }
 
+    // print unsorted array
+    printf("Source Array: \n");
+    for(idx = 0; idx <100; ++idx){
+        printf("%d ", randInts[idx]);
+        if (idx %6 == 5){
+            printf("\n");
+        }
+    }
+
+    // sort array
     sort(randInts, 100);
 
+    // print sorted array
+    printf("Destination Array: \n");
     for(idx = 0; idx <100; ++idx){
-        printf("randInts[%d] = %d\n", idx, randInts[idx]);
+        printf("%d ", randInts[idx]);
+        if (idx %6 == 5){
+            printf("\n");
+        }
     }
-
 
     return 0;
 }
