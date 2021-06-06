@@ -47,7 +47,7 @@ int main() {
     srand((unsigned) time(&t));
 
     for(idx = 0; idx <100; ++idx){
-        randInts[idx] = rand() % 99;
+        randInts[idx] = rand() % 100;
     }
 
     // print unsorted array
