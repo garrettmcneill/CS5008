@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void sort(int *arrayPtr, int arraySize) {
     if (arrayPtr == NULL || arraySize <= 0) {
@@ -38,11 +39,15 @@ void sort(int *arrayPtr, int arraySize) {
 int main() {
 
     int randInts[100];
-    // todo: populate with random numbers
 
+    time_t t;
     int idx;
+
+    // Intialize random number generator
+    srand((unsigned) time(&t));
+
     for(idx = 0; idx <100; ++idx){
-        randInts[idx] = 100 - idx;
+        randInts[idx] = rand();
     }
 
     sort(randInts, 100);
@@ -50,6 +55,7 @@ int main() {
     for(idx = 0; idx <100; ++idx){
         printf("randInts[%d] = %d\n", idx, randInts[idx]);
     }
+
 
     return 0;
 }
