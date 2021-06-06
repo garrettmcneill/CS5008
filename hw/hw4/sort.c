@@ -15,7 +15,7 @@ void sort(int *arrayPtr, int arraySize) {
         // find index of least value in the range of baseIdx+1 to arraySize-1
         leastIdx = baseIdx;
         leastValue = arrayPtr[leastIdx];
-        for (tmpIdx = baseIdx + 1; tmpIdx < arraySize - 1; ++tmpIdx) {
+        for (tmpIdx = baseIdx + 1; tmpIdx < arraySize; ++tmpIdx) {
             if (arrayPtr[tmpIdx] < leastValue) {
                 leastIdx = tmpIdx;
                 leastValue = arrayPtr[leastIdx];
