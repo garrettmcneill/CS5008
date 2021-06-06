@@ -63,7 +63,7 @@ int main() {
     sort(randInts, 100);
 
     // print sorted array
-    printf("Destination Array: \n");
+    printf("\n\nDestination Array: \n");
     for(idx = 0; idx <100; ++idx){
         printf("%02d ", randInts[idx]);
         if (idx %20 == 19){
