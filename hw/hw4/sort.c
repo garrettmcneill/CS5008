@@ -53,7 +53,7 @@ int main() {
     // print unsorted array
     printf("Source Array: \n");
     for(idx = 0; idx <100; ++idx){
-        printf("%d ", randInts[idx]);
+        printf("%2d ", randInts[idx]);
         if (idx %20 == 19){
             printf("\n");
         }
@@ -65,7 +65,7 @@ int main() {
     // print sorted array
     printf("Destination Array: \n");
     for(idx = 0; idx <100; ++idx){
-        printf("%d ", randInts[idx]);
+        printf("%2d ", randInts[idx]);
         if (idx %20 == 19){
             printf("\n");
         }
