@@ -66,7 +66,7 @@ bool is_palindrome(char *text) {
     // create dynamic array
     dynarray_t wordArray;
     dynarray_init(wordArray);
-    dynarray_expand(wordArray, textLen;
+    dynarray_expand(wordArray, textLen);
 
     // copy text into array
     for (idx = 0, idx < textLen; ++idx) {
