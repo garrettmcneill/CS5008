@@ -68,7 +68,35 @@ size_t sllist_size (sllist_t *list);
 /*
  * Return true if the given string is a palindrome; false otherwise.
  */
-bool is_palindrome(char *text);
+bool is_palindrome(char *text){
+
+    int textLen = strlen(text);
+
+    // create dynamic array
+    dynarray_t wordArray;
+    dynarray_init(wordArray);
+    dynarray_expand(wordArray, textLen;
+
+    // copy text into array
+    for (idx = 0, idx < textLen; ++idx){
+        dynarray_push(wordArray, text[idx]);
+    }
+
+    // check for palindrome
+    bool palindromeFlag = true;
+    char charFront, charBack;
+
+    while (dynarray_size(wordArray) > 1){
+        charFront = dynarray_dequeue(wordArray);
+        charBack = dynarray_pop(wordArray);
+        if (charFront != charBack){
+            palindromeFlag = false;
+            break;
+        }
+    }
+    return palindromeFlag;
+}
+
 
 /*
  * Returns the number of items equal to the given one in the list.
