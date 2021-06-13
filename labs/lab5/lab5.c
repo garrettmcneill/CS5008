@@ -62,7 +62,7 @@ size_t sllist_size(sllist_t *list) {
 bool is_palindrome(char *text) {
 
     int textLen = strlen(text);
-    int idx;
+    int halfLen, baseLen, idx;
 
     printf("is palindrome: textlen=%d \n", textLen);
     printf("is palindrome: text=%s \n", text);
@@ -70,15 +70,20 @@ bool is_palindrome(char *text) {
     // create dynamic array
     printf("creating dynamic array \n");
 
-    dynarray_t* wordArray = malloc(sizeof(dynarray_t));
-    dynarray_init(wordArray);
-    dynarray_expand(wordArray, textLen);
+    dynarray_t* queueArray = malloc(sizeof(dynarray_t));
+    dynarray_t* stackArray = malloc(sizeof(dynarray_t));
+    dynarray_init(queueArray);
+    dynarray_init(stackArray);
 
-    // copy text into array
-    printf("copying text into array \n");
-
-    for (idx = 0; idx < textLen; ++idx) {
-        dynarray_push(wordArray, (data_t)text[idx]);
+    // copy text into arrays
+    printf("copying text into arrays \n");
+    halfLen = textLen/2;
+    for (idx = 0; idx < halfLen; ++idx) {
+        dynarray_enqueue(queueArray, (data_t)text[idx]);
+    }
+    baseLen = halfLen + textLen %2 + 1;
+    for (idx = 0; idx < halfLen; ++idx) {
+        dynarray_push(stackArray, (data_t)text[baseLen+idx]);
     }
 
     // check for palindrome
@@ -88,8 +93,8 @@ bool is_palindrome(char *text) {
     data_t charFront, charBack;
 
     while (dynarray_size(wordArray) > 1) {
-        charFront = dynarray_dequeue(wordArray);
-        charBack = dynarray_pop(wordArray);
+        charFront = dynarray_dequeue(queueArray);
+        charBack = dynarray_pop(stackArray);
         printf("isPalindrome: front=%d, back=%d \n", charFront, charBack);
         if (charFront != charBack) {
             palindromeFlag = false;
