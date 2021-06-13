@@ -123,7 +123,7 @@ void inorder (node* np) {
 
     // recurse left
     if (np->left != NULL) {
-        preorder(np->left);
+        inorder(np->left);
     }
 
     // print value
@@ -132,7 +132,7 @@ void inorder (node* np) {
 
     // recurse right
     if (np->right != NULL) {
-        preorder(np->right);
+        inorder(np->right);
     }
 
     return;
@@ -143,12 +143,12 @@ void postorder (node* np) {
 
     // recurse left
     if (np->left != NULL) {
-        preorder(np->left);
+        postorder(np->left);
     }
 
     // recurse right
     if (np->right != NULL) {
-        preorder(np->right);
+        postorder(np->right);
     }
 
     // print value
