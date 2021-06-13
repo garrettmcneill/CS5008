@@ -70,7 +70,7 @@ bool is_palindrome(char *text) {
     dynarray_expand(wordArray, textLen);
 
     // copy text into array
-    for (idx = 0, idx < textLen; ++idx) {
+    for (idx = 0, idx < textLen; ++idx;) {
         dynarray_push(wordArray, text[idx]);
     }
 
