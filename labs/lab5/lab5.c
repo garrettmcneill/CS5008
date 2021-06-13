@@ -64,7 +64,8 @@ bool is_palindrome(char *text) {
     int textLen = strlen(text);
     int idx;
 
-    printf("entering is palindrome \n");
+    printf("is palindrome: textlen=%d \n", textLen);
+    printf("is palindrome: text=%s \n", text);
 
     // create dynamic array
     printf("creating dynamic array \n");
