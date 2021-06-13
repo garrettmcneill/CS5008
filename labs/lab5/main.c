@@ -35,9 +35,9 @@ int main() {
             // print string is/is not a palindrome
             printf("%s ", input);
             if (bTemp){
-                printf("is a palindrome. \n")
+                printf("is a palindrome. \n");
             } else{
-                printf("is not a palindrome. \n")
+                printf("is not a palindrome. \n");
             }
 
         }
