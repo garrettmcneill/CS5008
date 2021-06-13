@@ -4,9 +4,9 @@
  *         PROVIDED FUNCTIONS
  *************************************/
 
-slnode_t* malloc_slnode(data_t data) {
+slnode_t *malloc_slnode(data_t data) {
 
-    slnode_t *node = (slnode_t*)malloc(sizeof(slnode_t));
+    slnode_t *node = (slnode_t *) malloc(sizeof(slnode_t));
 
     if (node == NULL) {
         fprintf(stderr, "ERROR: Cannot allocate memory for link list node.");
@@ -35,7 +35,7 @@ void sllist_addfirst(sllist_t *list, data_t item) {
     list->size++;                               // increment the size tracker
 }
 
-bool sllist_contains (sllist_t *list, data_t item) {
+bool sllist_contains(sllist_t *list, data_t item) {
 
     slnode_t *n;
 
@@ -61,37 +61,62 @@ size_t sllist_size(sllist_t *list) {
 
 bool is_palindrome(char *text) {
 
-    return false;
+    int textLen = strlen(text);
+
+    // create dynamic array
+    dynarray_t wordArray;
+    dynarray_init(wordArray);
+    dynarray_expand(wordArray, textLen;
+
+    // copy text into array
+    for (idx = 0, idx < textLen; ++idx) {
+        dynarray_push(wordArray, text[idx]);
+    }
+
+    // check for palindrome
+    bool palindromeFlag = true;
+    char charFront, charBack;
+
+    while (dynarray_size(wordArray) > 1) {
+        charFront = dynarray_dequeue(wordArray);
+        charBack = dynarray_pop(wordArray);
+        if (charFront != charBack) {
+            palindromeFlag = false;
+            break;
+        }
+    }
+    return palindromeFlag;
+
 }
 
-size_t sllist_count (sllist_t *list, data_t item) {
+size_t sllist_count(sllist_t *list, data_t item) {
 
     return 0;
 }
 
-int sllist_find (sllist_t *list, data_t item) {
+int sllist_find(sllist_t *list, data_t item) {
 
     return -1;
 }
 
-void sllist_free (sllist_t *list) {
+void sllist_free(sllist_t *list) {
 
 }
 
-void sllist_addlast (sllist_t *list, data_t item) {
+void sllist_addlast(sllist_t *list, data_t item) {
 
 }
 
-bool sllist_is_equal (sllist_t *list1, sllist_t *list2) {
+bool sllist_is_equal(sllist_t *list1, sllist_t *list2) {
 
     return false;
 }
 
-void sllist_insert (sllist_t *list, data_t item, size_t index) {
+void sllist_insert(sllist_t *list, data_t item, size_t index) {
 
 }
 
-void sllist_remove (sllist_t *list, data_t item) {
+void sllist_remove(sllist_t *list, data_t item) {
 
 }
 
