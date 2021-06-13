@@ -92,7 +92,7 @@ bool is_palindrome(char *text) {
     bool palindromeFlag = true;
     data_t charFront, charBack;
 
-    while (dynarray_size(queueArray) > 1) {
+    while (dynarray_size(queueArray) > 0 && sizeof(stackArray) > 0) {
         charFront = dynarray_dequeue(queueArray);
         charBack = dynarray_pop(stackArray);
         printf("isPalindrome: front=%d, back=%d \n", charFront, charBack);
