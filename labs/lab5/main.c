@@ -16,6 +16,7 @@ int main() {
     do {
 
         int retn;
+        bool bTemp;
 
         // get user input & read returning scan return
         fputs("input a string (QUIT for done): ", stdout);
@@ -29,8 +30,15 @@ int main() {
         } else {
 
             // check for palindrome
+            bTemp = is_palindrome(input);
 
             // print string is/is not a palindrome
+            printf("%s ", input);
+            if (bTemp){
+                printf("is a palindrome. \n")
+            } else{
+                printf("is not a palindrome. \n")
+            }
 
         }
     } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
