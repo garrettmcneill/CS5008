@@ -10,12 +10,11 @@
 int main() {
 
     char input[140];
+    int retn;
+    bool bTemp;
 
     // do while loop to continuously ask for input unless user types quit
     do {
-
-        int retn;
-        bool bTemp;
 
         // get user input & read returning scan return
         fputs("input a string (QUIT for done): ", stdout);
@@ -27,7 +26,8 @@ int main() {
             return 0;
 
         } else {
-
+            printf("main: inputlen=%d \n",strlen(input));
+            printf("main: input=%s \n",input);
             // check for palindrome
             bTemp = is_palindrome(input);
 
