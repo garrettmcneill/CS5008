@@ -97,11 +97,66 @@ void insertNode (node* rp, char* s) {
 // ========================== BEGIN INSERT FUNCTION DEFS TO WALK TREE ==========================
 // define 3 functions - preorder, inorder, postorder to walk tree, printing out data (char)
 // associated with each node visited:
-void preorder (node* np) {}
+void preorder (node* np) {
+    // visit value, left, then right
 
-void inorder (node* np) {}
+    // print value
+    char c = (char)np->data;
+    printf("%c", c);
 
-void postorder (node* np) {}
+
+    // recurse left
+    if (np->left != NULL) {
+        preorder(np->left);
+    }
+
+    // recurse right
+    if (np->right != NULL) {
+        preorder(np->right);
+    }
+
+    return;
+}
+
+void inorder (node* np) {
+    // visit left, value, then right
+
+    // recurse left
+    if (np->left != NULL) {
+        preorder(np->left);
+    }
+
+    // print value
+    char c = (char)np->data;
+    printf("%c", c);
+
+    // recurse right
+    if (np->right != NULL) {
+        preorder(np->right);
+    }
+
+    return;
+}
+
+void postorder (node* np) {
+    // visit left, right, then value
+
+    // recurse left
+    if (np->left != NULL) {
+        preorder(np->left);
+    }
+
+    // recurse right
+    if (np->right != NULL) {
+        preorder(np->right);
+    }
+
+    // print value
+    char c = (char)np->data;
+    printf("%c", c);
+
+    return;
+}
 
 
 // ========================== END INSERT FUNCTIONS HERE TO WALK TREE ==========================
