@@ -26,8 +26,6 @@ int main() {
             return 0;
 
         } else {
-            printf("main: inputlen=%d \n",strlen(input));
-            printf("main: input=%s \n",input);
             // check for palindrome
             bTemp = is_palindrome(input);
 
