@@ -77,7 +77,7 @@ bool is_palindrome(char *text) {
     printf("copying text into array \n");
 
     for (idx = 0, idx < textLen; ++idx;) {
-        dynarray_push(wordArray, text[idx]);
+        dynarray_push(wordArray, (data_t)text[idx]);
     }
 
     // check for palindrome
