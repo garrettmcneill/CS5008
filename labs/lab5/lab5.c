@@ -75,7 +75,7 @@ bool is_palindrome(char *text) {
 
     // check for palindrome
     bool palindromeFlag = true;
-    char charFront, charBack;
+    data_t charFront, charBack;
 
     while (dynarray_size(wordArray) > 1) {
         charFront = dynarray_dequeue(wordArray);
