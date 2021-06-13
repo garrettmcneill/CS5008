@@ -69,7 +69,10 @@ void dynarray_free(dynarray_t *a) {
 
 void dynarray_push(dynarray_t *a, data_t item) {
 
+    printf("dynarray_push: size=%d, capacity=%d, item=%d\n", a->size, a->capacity, item);
+
     if (a->size+1 > a->capacity) {
+        printf("dynarray_push: data expanded...")
         dynarray_expand(a, a->capacity*2);          /* expand if necessary */
     }
     a->array[a->size++] = item;
