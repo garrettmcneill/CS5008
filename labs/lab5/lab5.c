@@ -62,6 +62,7 @@ size_t sllist_size(sllist_t *list) {
 bool is_palindrome(char *text) {
 
     int textLen = strlen(text);
+    int idx;
 
     // create dynamic array
     dynarray_t* wordArray = malloc(sizeof(dynarray_t));
