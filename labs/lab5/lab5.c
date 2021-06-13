@@ -64,17 +64,25 @@ bool is_palindrome(char *text) {
     int textLen = strlen(text);
     int idx;
 
+    printf("entering is palindrome \n");
+
     // create dynamic array
+    printf("creating dynamic array \n");
+
     dynarray_t* wordArray = malloc(sizeof(dynarray_t));
     dynarray_init(wordArray);
     dynarray_expand(wordArray, textLen);
 
     // copy text into array
+    printf("copying text into array \n");
+
     for (idx = 0, idx < textLen; ++idx;) {
         dynarray_push(wordArray, text[idx]);
     }
 
     // check for palindrome
+    printf("checking for palindrome \n");
+
     bool palindromeFlag = true;
     data_t charFront, charBack;
 
@@ -86,6 +94,9 @@ bool is_palindrome(char *text) {
             break;
         }
     }
+
+    printf("cleaning up memory \n");
+
     while(!dynarray_is_empty(wordArray)){
         dynarray_pop(wordArray);
     }
