@@ -104,10 +104,16 @@ bool is_palindrome(char *text) {
 
     printf("cleaning up memory \n");
 
-    while(!dynarray_is_empty(wordArray)){
-        dynarray_pop(wordArray);
+    while(!dynarray_is_empty(queueArray)){
+        dynarray_pop(queueArray);
     }
-    free(wordArray);
+    free(queueArray);
+
+    while(!dynarray_is_empty(stackArray)){
+        dynarray_pop(stackArray);
+    }
+    free(stackArray);
+
     return palindromeFlag;
 }
 
