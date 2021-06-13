@@ -85,6 +85,9 @@ bool is_palindrome(char *text) {
             break;
         }
     }
+    while(!dynarray_is_empty(wordArray)){
+        dynarray_pop(wordArray);
+    }
     free(wordArray);
     return palindromeFlag;
 }
