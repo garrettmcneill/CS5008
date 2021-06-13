@@ -64,11 +64,8 @@ bool is_palindrome(char *text) {
     int textLen = strlen(text);
     int halfLen, baseLen, idx;
 
-    printf("is palindrome: textlen=%d \n", textLen);
-    printf("is palindrome: text=%s \n", text);
 
     // create dynamic array
-    printf("creating dynamic array \n");
 
     dynarray_t* queueArray = malloc(sizeof(dynarray_t));
     dynarray_t* stackArray = malloc(sizeof(dynarray_t));
@@ -76,7 +73,6 @@ bool is_palindrome(char *text) {
     dynarray_init(stackArray);
 
     // copy text into arrays
-    printf("copying text into arrays \n");
     halfLen = textLen/2;
     for (idx = 0; idx < halfLen; ++idx) {
         dynarray_enqueue(queueArray, (data_t)text[idx]);
@@ -87,7 +83,6 @@ bool is_palindrome(char *text) {
     }
 
     // check for palindrome
-    printf("checking for palindrome \n");
 
     bool palindromeFlag = true;
     data_t charFront, charBack;
@@ -95,14 +90,12 @@ bool is_palindrome(char *text) {
     while (dynarray_size(queueArray) > 0 && sizeof(stackArray) > 0) {
         charFront = dynarray_dequeue(queueArray);
         charBack = dynarray_pop(stackArray);
-        printf("isPalindrome: front=%d, back=%d \n", charFront, charBack);
         if (charFront != charBack) {
             palindromeFlag = false;
             break;
         }
     }
 
-    printf("cleaning up memory \n");
 
     while(!dynarray_is_empty(queueArray)){
         dynarray_pop(queueArray);

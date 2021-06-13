@@ -25,8 +25,6 @@ void dynarray_expand(dynarray_t *a, size_t new_capacity) {
 
     size_t i;
 
-    printf("dynarray_expand: old=%d, new=%d \n", a->capacity, new_capacity);
-
     /* allocate new array */
     data_t *new_array = (data_t*)malloc(new_capacity * sizeof(data_t));
     if (!new_array) {
@@ -71,8 +69,6 @@ void dynarray_free(dynarray_t *a) {
 
 void dynarray_push(dynarray_t *a, data_t item) {
 
-    printf("dynarray_push: size=%d, capacity=%d, item=%d\n", a->size, a->capacity, item);
-
     if (a->size+1 > a->capacity) {
         dynarray_expand(a, a->capacity*2);          /* expand if necessary */
     }
@@ -97,9 +93,6 @@ data_t dynarray_top(dynarray_t *a) {
  *************************************/
 
 void dynarray_enqueue(dynarray_t *a, data_t item) {
-
-    printf("dynarray_enque: front=%d, size=%d, item=%d\n", a->front, a->size, item);
-
 
     if (a->size+1 > a->capacity) {
         dynarray_expand(a, a->capacity*2);          /* expand if necessary */
