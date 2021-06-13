@@ -6,11 +6,10 @@
 
 #include "lab5.h"
 
-char input[140];
-
 
 int main() {
 
+    char input[140];
 
     // do while loop to continuously ask for input unless user types quit
     do {

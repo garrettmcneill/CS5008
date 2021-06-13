@@ -64,7 +64,7 @@ bool is_palindrome(char *text) {
     int textLen = strlen(text);
 
     // create dynamic array
-    dynarray_t wordArray;
+    dynarray_t* wordArray = malloc(sizeof(dynarray_t));
     dynarray_init(wordArray);
     dynarray_expand(wordArray, textLen);
 
@@ -85,8 +85,8 @@ bool is_palindrome(char *text) {
             break;
         }
     }
+    free(wordArray);
     return palindromeFlag;
-
 }
 
 size_t sllist_count(sllist_t *list, data_t item) {
