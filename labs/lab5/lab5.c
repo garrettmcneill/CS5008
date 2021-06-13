@@ -81,7 +81,7 @@ bool is_palindrome(char *text) {
     for (idx = 0; idx < halfLen; ++idx) {
         dynarray_enqueue(queueArray, (data_t)text[idx]);
     }
-    baseLen = halfLen + textLen %2 + 1;
+    baseLen = halfLen + textLen %2;
     for (idx = 0; idx < halfLen; ++idx) {
         dynarray_push(stackArray, (data_t)text[baseLen+idx]);
     }

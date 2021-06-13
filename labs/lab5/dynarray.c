@@ -98,6 +98,9 @@ data_t dynarray_top(dynarray_t *a) {
 
 void dynarray_enqueue(dynarray_t *a, data_t item) {
 
+    printf("dynarray_enque: front=%d, size=%d, item=%d\n", a->front, a->size, item);
+
+
     if (a->size+1 > a->capacity) {
         dynarray_expand(a, a->capacity*2);          /* expand if necessary */
     }
