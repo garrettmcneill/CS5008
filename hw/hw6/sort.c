@@ -59,7 +59,9 @@ int main() {
     }
 
     // sort array
-    sort(randInts, 100);
+    //sort(randInts, 100);
+    qsort((void*)randInts, 100, sizeof(int), comparator);
+
 
     // print sorted array
     printf("\n\nDestination Array: \n");
@@ -73,3 +75,9 @@ int main() {
     return 0;
 }
 
+int comparator(const void *p, const void *q)
+{
+    int l = *((int  *)p);
+    int r = *((int  *)q);
+    return (l - r);
+}
