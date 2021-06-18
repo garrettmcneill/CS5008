@@ -1,5 +1,23 @@
 #include "lab6.h"
 
+// allocate & init singly linked list
+sllist_t* malloc_sllist(){
+
+    sllist_t* list = (sllist_t*) malloc(sizeof(sllist_t));
+
+    if (list == NULL) {
+        fprintf(stderr, "ERROR: Cannot allocate memory for linked list.");
+        exit(EXIT_FAILURE);
+    }
+
+    // take list and init it
+    sllist_init(list);
+
+    return list;
+}
+
+
+
 /**************************************
  *         PROVIDED FUNCTIONS
  *************************************/

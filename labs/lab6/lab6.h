@@ -12,7 +12,8 @@
  *          DEFINITIONS
  *************************************/
 
-typedef int data_t;
+// changed int to char pointer -G
+typedef char* data_t;
 
 /*
  * Singly-linked list node definition.
@@ -29,6 +30,12 @@ typedef struct {
     slnode_t *head;
     size_t size;
 } sllist_t;
+
+
+/*
+ *  Allocate & init singly linked list -G
+ */
+sllist_t* malloc_sllist();
 
 
 /**************************************

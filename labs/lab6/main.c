@@ -8,11 +8,45 @@
 
 int main() {
 
-	//Read data from datafile city.dat
-	
-	//Build an adjacency matrix based on the city.dat datafile
-	
-	//Create an alphabetized list of cities for selection by the user
+	//////// Read data from datafile city.dat ////////
+
+    sllist_t* cityListPtr = malloc_sllist();
+
+    char fromCityInput[25], toCityInput[25];
+    int interCityDistanceInput;
+    int tmpInt;
+
+    if (cityListPtr == NULL){
+        printf("cityList allocation failed!\n");
+        exit(-1);
+    }
+
+    // open file
+    FILE *cityFilePtr  = fopen("city.dat", "r");
+    // test if file exists
+    if (cityFilePtr == NULL ){
+        printf("File not found!\n");
+        exit(-1);
+    }
+
+    // read file, adding each city to linked list
+    do {
+        tmpInt = fscanf(cityFilePtr, "%s %s %d", fromCityInput, toCityInput, &interCityDistanceInput);
+
+        if (tmpInt < 3){
+            printf("Line could not be read.\n");
+        } else{
+            printf("%s %s %d", fromCityInput, toCityInput, interCityDistanceInput);
+        }
+
+    } while (tmpInt > 0);
+
+
+    //////// Build an adjacency matrix based on the city.dat datafile ////////
+
+
+
+    //////// Create an alphabetized list of cities for selection by the user ////////
 
 	//Display the cities from which to select using a number that your
 	//program assigns from the alphabetized list of cities that is
