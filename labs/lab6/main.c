@@ -35,11 +35,26 @@ int main() {
 
         if (tmpInt > 0 && tmpInt < 3){
             printf("Line could not be read.\n");
-        } else if(strlen(fromCityInput) > 0) {
+        } else {
+            if(strlen(fromCityInput) > 0){
+                // if fromCity not in list, add it
+                if( ! sllist_contains(cityListPtr, fromCityInput ) ){
+                    sllist_addfirst(cityListPtr, fromCityInput);
+                }
+            }
+            if(strlen(toCityInput) > 0){
+                // if fromCity not in list, add it
+                if( ! sllist_contains(cityListPtr, toCityInput ) ){
+                    sllist_addfirst(cityListPtr, toCityInput);
+                }
+            }
+
             printf("%s %s %d \n", fromCityInput, toCityInput, interCityDistanceInput);
         }
 
     } while (tmpInt > 0);
+
+
 
 
     //////// Build an adjacency matrix based on the city.dat datafile ////////

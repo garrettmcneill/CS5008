@@ -44,7 +44,18 @@ void sllist_init(sllist_t *list) {
 
 void sllist_addfirst(sllist_t *list, data_t item) {
 
-    slnode_t *new_node = malloc_slnode(item);   // allocate new node
+    int itemLen = strlen(item);
+    char* newPtr;
+
+    if (itemLen > 0){
+        newPtr = malloc(itemLen+1);
+        strncpy(newPtr, item, itemLen);
+        newPtr[itemLen] = '\0';
+    } else{
+        newPtr = NULL;
+    }
+
+    slnode_t *new_node = malloc_slnode(newPtr);   // allocate new node
 
     if (list->head != NULL) {                   // non-empty list:
         new_node->next = list->head;            //   set the new node's next ptr
@@ -59,7 +70,7 @@ bool sllist_contains (sllist_t *list, data_t item) {
 
     // iterate over the linked list, looking for 'item'
     for (n = list->head; n != NULL; n = n->next) {
-        if (n->data == item) {
+        if (strcmp(n->data, item) == 0) {  // switched this to string compare -G
             return true;
         }
     }
