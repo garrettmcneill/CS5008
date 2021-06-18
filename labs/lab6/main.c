@@ -33,7 +33,7 @@ int main() {
     do {
         tmpInt = fscanf(cityFilePtr, "%s %s %d", fromCityInput, toCityInput, &interCityDistanceInput);
 
-        if (tmpInt < 3){
+        if (tmpInt > 0 && tmpInt < 3){
             printf("Line could not be read.\n");
         } else{
             printf("%s %s %d \n", fromCityInput, toCityInput, interCityDistanceInput);
