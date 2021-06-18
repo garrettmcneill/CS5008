@@ -36,7 +36,7 @@ int main() {
         if (tmpInt < 3){
             printf("Line could not be read.\n");
         } else{
-            printf("%s %s %d", fromCityInput, toCityInput, interCityDistanceInput);
+            printf("%s %s %d \n", fromCityInput, toCityInput, interCityDistanceInput);
         }
 
     } while (tmpInt > 0);
