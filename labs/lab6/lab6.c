@@ -160,11 +160,6 @@ char **sllist_to_array(sllist_t *list){
         printf("LIST IS EMPTY.");
     }
 
-
-    printf("array copied..\n");
-
-
-
     // free linked list, but not data
     do{
         if(list->head != NULL){

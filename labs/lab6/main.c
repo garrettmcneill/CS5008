@@ -141,9 +141,10 @@ int main() {
 }
 
 // cityArrayComparator
-int cityArrayComparator(const void *p, const void *q)
-{
+int cityArrayComparator(const void *p, const void *q){
     char* l = (char  *)p;
     char* r = (char  *)q;
-    return (strcmp(l, r));
+    int rVal = strcmp(l, r);
+    printf("%s compared to %s is %d\n", l, r, rVal);
+    return rVal;
 }
