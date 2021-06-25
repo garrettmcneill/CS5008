@@ -120,3 +120,46 @@ void sllist_remove (sllist_t *list, data_t item) {
 
 }
 
+char **sllist_to_array(sllist_t *list){
+    char ** charPtrArray = NULL;
+    if(list = NULL){
+        printf("LIST IS NULL.");
+        return charPtrArray;
+    }
+
+    // determine length of list
+    int listlen = sllist_size(*list) + 1;
+
+    // allocate array of char pointers
+    charPtrArray = calloc(sizeof(char*), listlen);
+    if (charPtrArray == NULL){
+        printf("UNABLE TO ALLOCATE ARRAY.\n");
+        return charPtrArray;
+    }
+    charPtrArray[listlen] = NULL;
+
+    // copy data pointers to array
+    slnode_t* nextNode = list->head;
+    if (nextNode != NULL) {
+        int idx = 0;
+        do{
+            charPtrArray[idx] = nextNode->data;
+            nextNode = nextNode->next;
+            ++idx;
+        }while(nextNode != NULL);
+    }else{
+        printf("LIST IS EMPTY.");
+    }
+
+    // free linked list, but not data
+    do{
+        if(list->head != NULL){
+            nextNode = list->head;
+            list->head = list->head->next;
+            free(nextNode);
+        }
+    }while(list->head != NULL);
+    free(list);
+}
+
+

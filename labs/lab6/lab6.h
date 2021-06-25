@@ -111,4 +111,13 @@ void sllist_insert (sllist_t *list, data_t item, size_t index);
  */
 void sllist_remove (sllist_t *list, data_t item);
 
+/*
+ * Convert a single linked list into an array of pointers to string.
+ * The single linked list is deallocated.
+ * Returns - an array of char pointers
+ */
+char **sllist_to_array(sllist_t *list);
+
+
+
 #endif

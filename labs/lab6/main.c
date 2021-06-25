@@ -6,6 +6,11 @@
 
 #include "lab6.h"
 
+/*
+ * Forward declaration for city names. Included in .c for local use only.
+ */
+int cityArrayComparator(const void *p, const void *q);
+
 int main() {
 
 	//////// Read data from datafile city.dat ////////
@@ -55,13 +60,26 @@ int main() {
     } while (tmpInt > 0);
 
 
+    //////// Create an alphabetized list of cities for selection by the user ////////
+    char ** cityArray = sllist_to_array(cityListPtr);
+    cityListPtr = NULL;
+    int idx = 0;
+    int cityArraySize;
+    do{
+        if(cityArray[idx] == NULL){
+            cityArraySize = idx;
+            break;
+        }
+    }while(cityArray[idx] != NULL);
+
+    qsort((void*)cityArray, cityArraySize, sizeof(char *), cityArrayComparator);
 
 
     //////// Build an adjacency matrix based on the city.dat datafile ////////
 
 
 
-    //////// Create an alphabetized list of cities for selection by the user ////////
+
 
 	//Display the cities from which to select using a number that your
 	//program assigns from the alphabetized list of cities that is
@@ -106,7 +124,15 @@ int main() {
 	//                       Warsaw
 
 	//Continue to ask for two cities to map until the user selects 0
-	
+
 
     return EXIT_SUCCESS;
+}
+
+// cityArrayComparator
+int cityArrayComparator(const void *p, const void *q)
+{
+    char* l = (char  *)p;
+    char* r = (char  *)q;
+    return (strcmp(l, r));
 }
