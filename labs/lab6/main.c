@@ -76,7 +76,7 @@ int main() {
 
     // print sorted array
     for (idx = 0; idx < cityArraySize; ++idx) {
-        printf("%15s  ---  %2d\n", cityArray[idx + 1], idx);
+        printf("%15s  ---  %2d\n", cityArray[idx], idx);
     }
 
 
