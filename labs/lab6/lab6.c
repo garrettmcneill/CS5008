@@ -122,7 +122,7 @@ void sllist_remove (sllist_t *list, data_t item) {
 
 char **sllist_to_array(sllist_t *list){
     char ** charPtrArray = NULL;
-    if(list = NULL){
+    if(list == NULL){
         printf("LIST IS NULL.");
         return charPtrArray;
     }
