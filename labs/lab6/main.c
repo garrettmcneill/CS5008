@@ -53,8 +53,6 @@ int main() {
                     sllist_addfirst(cityListPtr, toCityInput);
                 }
             }
-
-            printf("%s %s %d \n", fromCityInput, toCityInput, interCityDistanceInput);
         }
 
     } while (tmpInt > 0);
