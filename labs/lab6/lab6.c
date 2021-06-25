@@ -128,7 +128,7 @@ char **sllist_to_array(sllist_t *list){
     }
 
     // determine length of list
-    int listlen = sllist_size(*list) + 1;
+    int listlen = sllist_size(list) + 1;
 
     // allocate array of char pointers
     charPtrArray = calloc(sizeof(char*), listlen);
