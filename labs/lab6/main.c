@@ -7,7 +7,7 @@
 #include "lab6.h"
 
 /*
- * Forward declaration for city names. Included in .c for local use only.
+ * Forward declaration for city names. Included in .c for local use only..
  */
 int cityArrayComparator(const void *p, const void *q);
 
