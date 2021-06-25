@@ -84,7 +84,6 @@ int main() {
 
 
 
-
     //Display the cities from which to select using a number that your
     //program assigns from the alphabetized list of cities that is
     //dynamically created from your city.dat file.  Example:

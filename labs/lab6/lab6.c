@@ -144,7 +144,6 @@ char **sllist_to_array(sllist_t *list){
         int idx = 0;
         do{
             charPtrArray[idx] = nextNode->data;
-            printf("copying string idx: %d, [%s]\n", idx, charPtrArray[idx]);
             nextNode = nextNode->next;
             ++idx;
         }while(nextNode != NULL);
