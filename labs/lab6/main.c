@@ -66,12 +66,15 @@ int main() {
     cityListPtr = NULL;
     int idx = 0;
     int cityArraySize;
+
+    // determine size of array
     do{
-        if(cityArray[idx] == NULL){
-            cityArraySize = idx;
-            break;
-        }
+        ++idx;
     }while(cityArray[idx] != NULL);
+    if(cityArray[idx] == NULL){
+        cityArraySize = idx;
+    }
+
 
     printf("array size = %d\n", cityArraySize);
 
