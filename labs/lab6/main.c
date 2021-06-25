@@ -74,9 +74,13 @@ int main() {
 
     qsort((void*)cityArray, cityArraySize, sizeof(char *), cityArrayComparator);
 
+    // print sorted array
+    for (idx = 0; idx < cityArraySize; ++idx){
+        printf("%15s  ---  %2d\n", cityArray[idx], idx);
+    }
+
 
     //////// Build an adjacency matrix based on the city.dat datafile ////////
-
 
 
 
