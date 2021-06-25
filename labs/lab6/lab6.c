@@ -151,6 +151,7 @@ char **sllist_to_array(sllist_t *list){
     if (nextNode != NULL) {
         int idx = 0;
         do{
+            printf("copying string idx: %d, [%s]\n", idx, nextNode->data);
             charPtrArray[idx] = nextNode->data;
             nextNode = nextNode->next;
             ++idx;
@@ -173,8 +174,6 @@ char **sllist_to_array(sllist_t *list){
         }
     }while(list->head != NULL);
     free(list);
-
-    printf("list freed..\n");
 
 }
 
