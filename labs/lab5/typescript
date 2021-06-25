@@ -1,0 +1,22 @@
+Script started on Thu 17 Jun 2021 10:00:06 PM EDT
+[?1034hbash-4.2$ ls
+dynarray.c  dynarray.h	lab5.c	lab5.h	main.c	makefile  typescript
+bash-4.2$ make queue
+gcc  -c lab5.c
+gcc  -c dynarray.c
+gcc  -c main.c
+gcc  -o queue lab5.o dynarray.o main.o
+bash-4.2$ ls
+dynarray.c  dynarray.o	lab5.h	main.c	makefile  typescript
+dynarray.h  lab5.c	lab5.o	main.o	queue
+bash-4.2$ ./queue 
+input a string (QUIT for done): somestring
+somestring is not a palindrome. 
+input a string (QUIT for done): tacocat
+tacocat is a palindrome. 
+input a string (QUIT for done): QUIT
+end program 
+bash-4.2$ exit
+exit
+
+Script done on Thu 17 Jun 2021 10:00:47 PM EDT
