@@ -130,10 +130,6 @@ char **sllist_to_array(sllist_t *list){
     // determine length of list
     int listlen = sllist_size(list) + 1;
 
-
-    printf("list len = %d\n", listlen);
-
-
     // allocate array of char pointers
     charPtrArray = calloc(sizeof(char*), listlen);
     if (charPtrArray == NULL){
@@ -141,10 +137,6 @@ char **sllist_to_array(sllist_t *list){
         return charPtrArray;
     }
     charPtrArray[listlen] = NULL;
-
-
-    printf("array allocated..\n");
-
 
     // copy data pointers to array
     slnode_t* nextNode = list->head;
