@@ -175,6 +175,7 @@ char **sllist_to_array(sllist_t *list){
     }while(list->head != NULL);
     free(list);
 
+    return charPtrArray;
 }
 
 
