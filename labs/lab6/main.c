@@ -62,6 +62,7 @@ int main() {
 
     //////// Create an alphabetized list of cities for selection by the user ////////
     char ** cityArray = sllist_to_array(cityListPtr);
+    printf("slist converted to array...\n");
     cityListPtr = NULL;
     int idx = 0;
     int cityArraySize;
@@ -72,7 +73,12 @@ int main() {
         }
     }while(cityArray[idx] != NULL);
 
+    printf("array size = %d\n", cityArraySize);
+
+
     qsort((void*)cityArray, cityArraySize, sizeof(char *), cityArrayComparator);
+
+    printf("array sorted\n");
 
     // print sorted array
     for (idx = 0; idx < cityArraySize; ++idx){
