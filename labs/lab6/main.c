@@ -121,7 +121,7 @@ int main() {
     // display list of cities a->z and prompt user for origin city
     // if 0... quit
     for (idx = 0; idx < cityArraySize; ++idx) {
-        printf("%15s  ---  %2d\n", cityArray[idx], idx + 1);
+        printf("%15s  ---  %2d\n", cityArray[idx], idx);
     }
     // display list of cities minus origin city and get destination city
 
