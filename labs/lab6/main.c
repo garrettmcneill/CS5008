@@ -181,7 +181,7 @@ int main() {
             if (idx == 0){
                 printf("\nPATH CITIES:     %s\n", cityArray[shortestPath[idx]]);
             } else {
-                printf("                   %s\n", cityArray[shortestPath[idx]]);
+                printf("                 %s\n", cityArray[shortestPath[idx]]);
             }
             ++idx;
         }
