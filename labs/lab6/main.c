@@ -298,8 +298,8 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         printf("Error: endIdx %d out of range", endIdx);
     }
 
-    printf("parameters validated\n");
-    printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
+    //printf("parameters validated\n");
+    //printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
 
     // allocate & init array for city struct
     City **cityListPtr = calloc(sizeof(City *), adjSize);
@@ -314,7 +314,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         cityListPtr[cityIdx]->processedFlag = false;
     }
 
-    printf("array allocated\n");
+    //printf("array allocated\n");
 
     do {
         // count unprocessed cities and find cheapest
@@ -333,7 +333,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
             }
         }
 
-        printf("cheapest city found %d\n", cheapestCityIdx);
+        //printf("cheapest city found %d\n", cheapestCityIdx);
         if (cheapestCityIdx < 0) {
             continue;
         }
@@ -344,13 +344,13 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         }
 
         // review neighbors, updating if necessary
-        printf("starting review of neighbors %d\n", cheapestCityIdx);
+        //printf("starting review of neighbors %d\n", cheapestCityIdx);
         for (neighborIdx = 0; neighborIdx < adjSize; ++neighborIdx) {
             if (!cityListPtr[neighborIdx]->processedFlag && adjacencies[cheapestCityIdx][neighborIdx] > 0) {
-                printf("neighbor %d of %d reviewed \n", neighborIdx, cheapestCityIdx);
+                //printf("neighbor %d of %d reviewed \n", neighborIdx, cheapestCityIdx);
                 if (cityListPtr[cheapestCityIdx]->minDistance + adjacencies[cheapestCityIdx][neighborIdx]
                     < cityListPtr[neighborIdx]->minDistance) {
-                    printf("     neighbor %d updated\n", neighborIdx);
+                    //printf("     neighbor %d updated\n", neighborIdx);
                     cityListPtr[neighborIdx]->minDistance = cityListPtr[cheapestCityIdx]->minDistance
                                                             + adjacencies[cheapestCityIdx][neighborIdx];
                     cityListPtr[neighborIdx]->parentIdx = cheapestCityIdx;
@@ -359,30 +359,30 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         }
         cityListPtr[cheapestCityIdx]->processedFlag = true;
 
-        printf("neighbors reviewed, unprocessed = %d\n", unprocessedCityCount);
+        //printf("neighbors reviewed, unprocessed = %d\n", unprocessedCityCount);
 
     } while (unprocessedCityCount > 0);
 
-    printf("main loop exited with unprocessed city count = %d\n", unprocessedCityCount);
+    //printf("main loop exited with unprocessed city count = %d\n", unprocessedCityCount);
 
     // calculate final path
     bool validResult = true;
     int pathLength = 1;
     cityIdx = endIdx;
 
-    printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
-    printf("starting loop\n");
+    //printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
+    //printf("starting loop\n");
 
     while ( cityIdx != startIdx ) {
 
-        printf("cityidx = %d \n", cityIdx);
+        //printf("cityidx = %d \n", cityIdx);
         if (!validResult){
             break;
         }
         ++pathLength;
         cityIdx = (cityIdx >= 0) ? cityListPtr[cityIdx]->parentIdx : -1;
 
-        printf("   and previous city = %d\n", cityIdx);
+        //printf("   and previous city = %d\n", cityIdx);
 
         // check if path to parent exists
         if (cityIdx < 0) {
@@ -390,7 +390,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         }
     }
 
-    printf("path length calculated %d \n", pathLength);
+    //printf("path length calculated %d \n", pathLength);
 
     int *rVal = NULL;
     int idx;
@@ -408,7 +408,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         rVal[pathLength] = -1;
         *minDistancePtr = cityListPtr[endIdx]->minDistance;
 
-        printf("path constructed \n");
+        //printf("path constructed \n");
 
     } else {
         *minDistancePtr = 0;
@@ -426,7 +426,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         cityListPtr = NULL;
     }
 
-    printf("city list cleaned up");
+    //printf("city list cleaned up");
 
     // return array of shortest path cities
     return rVal;
