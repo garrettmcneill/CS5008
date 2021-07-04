@@ -114,7 +114,7 @@ int main() {
             toCityIdx = findInArray(cityArray, cityArraySize, toCityInput);
             // store interCityDistance in adjacency[row][col]
             if (0 <= fromCityIdx && fromCityIdx < cityArraySize){
-                if (0 <= toCityIdx && toCityInput < cityArraySize){
+                if (0 <= toCityIdx && toCityIdx < cityArraySize){
                     adjMatrix[fromCityIdx][toCityIdx] = interCityDistanceInput;
                 } else {
                     printf("To city %s could not be found \n", toCityInput);
