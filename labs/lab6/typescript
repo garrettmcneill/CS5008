@@ -1,0 +1,153 @@
+Script started on Sun 04 Jul 2021 07:57:52 PM EDT
+[?1034hbash-4.2$ make map
+gcc  -c lab6.c
+gcc  -c main.c
+gcc  -o map lab6.o main.o
+bash-4.2$ ls
+city.dat  lab6.h  main.c  main.o    map
+lab6.c	  lab6.o  main.h  makefile  typescript
+bash-4.2$ ./map 
+
+
+Please select an origin city
+Enter a number associated with one of the cities below: 
+      Amsterdam  ---   1
+       Belgrade  ---   2
+         Berlin  ---   3
+           Bern  ---   4
+       Brussels  ---   5
+       Budapest  ---   6
+     Copenhagen  ---   7
+          Genoa  ---   8
+        Hamburg  ---   9
+         Lisbon  ---  10
+         Madrid  ---  11
+         Munich  ---  12
+         Naples  ---  13
+          Paris  ---  14
+         Prague  ---  15
+           Rome  ---  16
+        Trieste  ---  17
+         Vienna  ---  18
+         Warsaw  ---  19
+
+ TO QUIT ENTER -- 0 
+
+1
+
+
+Please select a destination city
+Enter a number associated with one of the cities below: 
+       Belgrade  ---   2
+         Berlin  ---   3
+           Bern  ---   4
+       Brussels  ---   5
+       Budapest  ---   6
+     Copenhagen  ---   7
+          Genoa  ---   8
+        Hamburg  ---   9
+         Lisbon  ---  10
+         Madrid  ---  11
+         Munich  ---  12
+         Naples  ---  13
+          Paris  ---  14
+         Prague  ---  15
+           Rome  ---  16
+        Trieste  ---  17
+         Vienna  ---  18
+         Warsaw  ---  19
+4
+
+ORIGIN:        Amsterdam
+DESTINATION:   Bern
+
+LENGTH:        558
+
+PATH CITIES:   Amsterdam
+               Bern
+
+
+
+Please select an origin city
+Enter a number associated with one of the cities below: 
+      Amsterdam  ---   1
+       Belgrade  ---   2
+         Berlin  ---   3
+           Bern  ---   4
+       Brussels  ---   5
+       Budapest  ---   6
+     Copenhagen  ---   7
+          Genoa  ---   8
+        Hamburg  ---   9
+         Lisbon  ---  10
+         Madrid  ---  11
+         Munich  ---  12
+         Naples  ---  13
+          Paris  ---  14
+         Prague  ---  15
+           Rome  ---  16
+        Trieste  ---  17
+         Vienna  ---  18
+         Warsaw  ---  19
+
+ TO QUIT ENTER -- 0 
+
+5
+
+
+Please select a destination city
+Enter a number associated with one of the cities below: 
+      Amsterdam  ---   1
+       Belgrade  ---   2
+         Berlin  ---   3
+           Bern  ---   4
+       Budapest  ---   6
+     Copenhagen  ---   7
+          Genoa  ---   8
+        Hamburg  ---   9
+         Lisbon  ---  10
+         Madrid  ---  11
+         Munich  ---  12
+         Naples  ---  13
+          Paris  ---  14
+         Prague  ---  15
+           Rome  ---  16
+        Trieste  ---  17
+         Vienna  ---  18
+         Warsaw  ---  19
+8
+
+
+No route exists between Brussels and Genoa. 
+ 
+
+
+Please select an origin city
+Enter a number associated with one of the cities below: 
+      Amsterdam  ---   1
+       Belgrade  ---   2
+         Berlin  ---   3
+           Bern  ---   4
+       Brussels  ---   5
+       Budapest  ---   6
+     Copenhagen  ---   7
+          Genoa  ---   8
+        Hamburg  ---   9
+         Lisbon  ---  10
+         Madrid  ---  11
+         Munich  ---  12
+         Naples  ---  13
+          Paris  ---  14
+         Prague  ---  15
+           Rome  ---  16
+        Trieste  ---  17
+         Vienna  ---  18
+         Warsaw  ---  19
+
+ TO QUIT ENTER -- 0 
+
+0
+bash-4.2$ exit
+exit
+
+Script done on Sun 04 Jul 2021 07:58:07 PM EDT
