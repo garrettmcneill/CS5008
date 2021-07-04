@@ -212,7 +212,7 @@ int main() {
         for (row = 0; row < cityArraySize; ++row) {
             if (adjMatrix[row] != NULL) {
                 free(adjMatrix[row]);
-                adjMatrix = NULL;
+                adjMatrix[row] = NULL;
             }
         }
         free(adjMatrix);
