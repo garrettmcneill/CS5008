@@ -143,6 +143,8 @@ int main() {
         if ( fromCityIdx < 1 || fromCityIdx > cityArraySize ){
             printf("You must enter the number associated with one of the cities in the list\n");
             break;
+        } else {
+            --fromCityIdx;
         }
 
         // display list of cities minus origin city and get destination city
@@ -157,11 +159,17 @@ int main() {
         if ( toCityIdx < 1 || toCityIdx > cityArraySize ){
             printf("You must enter the number associated with one of the cities in the list\n");
             break;
+        } else {
+            --toCityIdx;
         }
 
         // apply Dijkstra's algorithm to find shortest path & distance
 
         // print results of Dijkstra's
+        printf("ORIGIN:      %s\n", cityArray[fromCityIdx]);
+        printf("DESTINATION: %s\n", cityArray[toCityIdx]);
+
+
     } while( fromCityIdx > 0);
 
 
