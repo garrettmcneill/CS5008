@@ -369,6 +369,9 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
     bool validResult = true;
     int pathLength = 1;
     cityIdx = endIdx;
+
+    printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
+
     while (cityIdx != startIdx) {
 
         printf("cityidx = %s, ", cityIdx);
