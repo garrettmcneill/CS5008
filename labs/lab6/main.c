@@ -2,11 +2,6 @@
 
 const char inputFileName[] = "city.dat";
 
-// Forward declarations
-int cityArrayComparator(const void *p, const void *q);
-int findInArray(char **stringArray, int arraySize, char* target);
-int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr);
-
 
 int main() {
 
@@ -300,8 +295,34 @@ int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx
         printf("Error: endIdx %d out of range", endIdx);
     }
 
-    //todo: allocate arrays for distance and parent
-    //todo: allocate array for queue
+    // allocate dynamic array for cityQueue
+    // dynarray_t* cityQueue = malloc(sizeof(dynarray_t));
+    // dynarray_init(cityQueue);
+
+    // allocate & init array for city struct
+    City** cityListPtr = calloc(sizeof(City*), adjSize);
+    int cityIdx;
+    int unprocessedCityCount, cheapestCityIdx;
+
+    for (cityIdx = 0; cityIdx < adjSize; ++cityIdx){
+        cityListPtr[cityIdx] = malloc(sizeof(City));
+        cityListPtr[cityIdx]->cityIdx = cityIdx;
+        cityListPtr[cityIdx]->parentIdx = -1;
+        cityListPtr[cityIdx]->minDistance = (cityIdx == startIdx) ? 0 : INT_MAX;
+        cityListPtr[cityIdx]->processedFlag = false;
+    }
+
+    // count unprocessed cities and find cheapest
+    unprocessedCityCount = 0;
+    cheapestCityIdx = -1;
+    for (cityIdx = 0; cityIdx < adjSize; ++cityIdx){
+        if ( ! cityListPtr[cityIdx]->processedFlag ){
+            ++unprocessedCityCount;
+            if (cheapestCityIdx < 0 || cityListPtr[cityIdx]->minDistance < cityListPtr[cheapestCityIdx]->minDistance){
+                cheapestCityIdx = cityIdx;
+            }
+        }
+    }
 
     // stub
     int * rVal = calloc(sizeof(int), 3);
