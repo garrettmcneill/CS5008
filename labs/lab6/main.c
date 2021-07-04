@@ -187,8 +187,8 @@ int main() {
         }
         printf("\n");
 
-        free(shortestPath);
-        shortestPath = NULL;
+        //free(shortestPath);
+       // shortestPath = NULL;
     } while( fromCityIdx > 0);
 
 
