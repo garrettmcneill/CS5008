@@ -374,12 +374,12 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
 
     while (validResult && cityIdx != startIdx) {
 
-        printf("cityidx = %s, ", cityIdx);
+        printf("cityidx = %s \n", cityIdx);
 
         ++pathLength;
         cityIdx = (cityIdx >= 0) ? cityListPtr[cityIdx]->parentIdx : -1;
 
-        printf("previous city = %s\n", cityIdx);
+        printf("   and previous city = %s\n", cityIdx);
 
         // check if path to parent exists
         if (cityIdx < 0) {
