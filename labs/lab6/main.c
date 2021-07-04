@@ -146,7 +146,7 @@ int main() {
         }
         printf("\n TO QUIT ENTER -- 0 \n\n");
         scanf("%d", &fromCityIdx);
-        if ( fromCityIdx < 1 || fromCityIdx > cityArraySize ){
+        if ( fromCityIdx < 0 || fromCityIdx > cityArraySize ){
             printf("You must enter the number associated with one of the cities in the list\n");
             continue;
         } else {
@@ -167,7 +167,7 @@ int main() {
         }
         scanf("%d", &toCityIdx);
         if ( toCityIdx < 1 || toCityIdx > cityArraySize ){
-            printf("You must enter the number associated with one of the cities in the list\n");
+            printf("You must enter the number associated with one of the cities in the list.\n\n");
             continue;
         } else {
             --toCityIdx;
