@@ -105,8 +105,8 @@ int main() {
             toCityIdx = findInArray(cityArray, cityArraySize, toCityInput);
 
             // store interCityDistance in adjacency[row][col]
-            if (0 <= fromCityIdx && fromCityIdx < cityArraySize){
-                if (0 <= toCityIdx && toCityIdx < cityArraySize){
+            if (0 <= fromCityIdx && fromCityIdx < cityArraySize) {
+                if (0 <= toCityIdx && toCityIdx < cityArraySize) {
                     adjMatrix[fromCityIdx][toCityIdx] = interCityDistanceInput;
                 } else {
                     printf("To city %s could not be found \n", toCityInput);
@@ -135,14 +135,14 @@ int main() {
         }
         printf("\n TO QUIT ENTER -- 0 \n\n");
         scanf("%d", &fromCityIdx);
-        if ( fromCityIdx < 0 || fromCityIdx > cityArraySize ){
+        if (fromCityIdx < 0 || fromCityIdx > cityArraySize) {
             printf("You must enter the number associated with one of the cities in the list\n");
             continue;
         } else {
             --fromCityIdx;
         }
         printf("fromcityIdx = %d \n", fromCityIdx);
-        if (fromCityIdx < 0){
+        if (fromCityIdx < 0) {
             continue;
         }
 
@@ -155,7 +155,7 @@ int main() {
             }
         }
         scanf("%d", &toCityIdx);
-        if ( toCityIdx < 1 || toCityIdx > cityArraySize ){
+        if (toCityIdx < 1 || toCityIdx > cityArraySize) {
             printf("You must enter the number associated with one of the cities in the list.\n\n");
             continue;
         } else {
@@ -170,8 +170,8 @@ int main() {
         printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
         printf("LENGTH:        %d\n", shortestDistance);
         idx = 0;
-        while(shortestPath[idx] >= 0) {
-            if (idx == 0){
+        while (shortestPath[idx] >= 0) {
+            if (idx == 0) {
                 printf("\nPATH CITIES:   %s\n", cityArray[shortestPath[idx]]);
             } else {
                 printf("               %s\n", cityArray[shortestPath[idx]]);
@@ -184,7 +184,7 @@ int main() {
         free(shortestPath);
         shortestPath = NULL;
         //printf("shortest path freed\n");
-    } while( fromCityIdx >= 0);
+    } while (fromCityIdx >= 0);
 
 
     // clean up array and adjacency matrix
@@ -216,14 +216,13 @@ int main() {
 }
 
 
-
 /* Binary search to find a target in a sorted array of strings
  *  stringArray - a list of strings a->z
  *  arraySize - the number of entries in the array
  *  target - the string to be found
  * Returns the index of the matching entry, or 0.
  * */
-int findInArray(char **stringArray, int arraySize, char* target) {
+int findInArray(char **stringArray, int arraySize, char *target) {
     int botIdx = 0;
     int topIdx = arraySize - 1;
     int midIdx, compVal;
@@ -237,14 +236,14 @@ int findInArray(char **stringArray, int arraySize, char* target) {
         printf("findInArray: array size must be > 1.\n");
         return -1;
     }
-    if (target == NULL){
+    if (target == NULL) {
         printf("findInArray: target cannot be NULL.\n");
         return -1;
     }
 
     // check equal or out of range
     compVal = strcmp(target, stringArray[botIdx]);
-    if (compVal == 0){
+    if (compVal == 0) {
         return botIdx;
     } else if (compVal < 0) {
         printf("findInArray: target out of range");
@@ -258,12 +257,12 @@ int findInArray(char **stringArray, int arraySize, char* target) {
         return -1;
     }
 
-    while(topIdx - botIdx >= 2){
+    while (topIdx - botIdx >= 2) {
         midIdx = (topIdx + botIdx) / 2;
         compVal = strcmp(target, stringArray[midIdx]);
-        if(compVal == 0){
+        if (compVal == 0) {
             return midIdx;
-        } else if (compVal < 0){
+        } else if (compVal < 0) {
             topIdx = midIdx;
         } else {
             botIdx = midIdx;
@@ -279,19 +278,19 @@ int findInArray(char **stringArray, int arraySize, char* target) {
  * @param adjSize - size of the adjacency matrix
  * @param startIdx - the starting index
  * @param endIdx - the ending index
- * @param pathLengthPtr - a pointer to the integer variable that receives the shortest path length
+ * @param minDistancePtr - a pointer to the integer variable that receives the minimum distance
  * @return an array of the indices of the shortest path
  */
-int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr){
+int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, int *minDistancePtr) {
 
     // validate parameters
-    if (adjSize < 2){
+    if (adjSize < 2) {
         printf("Error: matrix too small");
     }
-    if (startIdx < 0 || adjSize <= startIdx){
+    if (startIdx < 0 || adjSize <= startIdx) {
         printf("Error: startIdx %d out of range", startIdx);
     }
-    if (endIdx < 0 || adjSize <= endIdx){
+    if (endIdx < 0 || adjSize <= endIdx) {
         printf("Error: endIdx %d out of range", endIdx);
     }
 
@@ -300,11 +299,11 @@ int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx
     // dynarray_init(cityQueue);
 
     // allocate & init array for city struct
-    City** cityListPtr = calloc(sizeof(City*), adjSize);
-    int cityIdx;
+    City **cityListPtr = calloc(sizeof(City *), adjSize);
+    int cityIdx, neighborIdx;
     int unprocessedCityCount, cheapestCityIdx;
 
-    for (cityIdx = 0; cityIdx < adjSize; ++cityIdx){
+    for (cityIdx = 0; cityIdx < adjSize; ++cityIdx) {
         cityListPtr[cityIdx] = malloc(sizeof(City));
         cityListPtr[cityIdx]->cityIdx = cityIdx;
         cityListPtr[cityIdx]->parentIdx = -1;
@@ -312,24 +311,61 @@ int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx
         cityListPtr[cityIdx]->processedFlag = false;
     }
 
-    // count unprocessed cities and find cheapest
-    unprocessedCityCount = 0;
-    cheapestCityIdx = -1;
-    for (cityIdx = 0; cityIdx < adjSize; ++cityIdx){
-        if ( ! cityListPtr[cityIdx]->processedFlag ){
-            ++unprocessedCityCount;
-            if (cheapestCityIdx < 0 || cityListPtr[cityIdx]->minDistance < cityListPtr[cheapestCityIdx]->minDistance){
-                cheapestCityIdx = cityIdx;
+    do {
+        // count unprocessed cities and find cheapest
+        unprocessedCityCount = 0;
+        cheapestCityIdx = -1;
+        for (cityIdx = 0; cityIdx < adjSize; ++cityIdx) {
+            if (!cityListPtr[cityIdx]->processedFlag) {
+                ++unprocessedCityCount;
+                if (cheapestCityIdx < 0 ||
+                    cityListPtr[cityIdx]->minDistance < cityListPtr[cheapestCityIdx]->minDistance) {
+                    cheapestCityIdx = cityIdx;
+                }
             }
         }
-    }
+        if (cheapestCityIdx < 0) {
+            continue;
+        }
+        // if we're at the end... end it
+        if (cheapestCityIdx == endIdx) {
+            break;
+        }
+        // review neighbors, updating if necessary
+        for (neighborIdx = 0; neighborIdx < adjSize; ++neighborIdx) {
+            if (!cityListPtr[neighborIdx]->processedFlag && adjacencies[cheapestCityIdx][neighborIdx] > 0) {
+                if (cityListPtr[cheapestCityIdx]->minDistance + adjacencies[cheapestCityIdx][neighborIdx]
+                    < cityListPtr[neighborIdx]->minDistance) {
+                    cityListPtr[neighborIdx]->minDistance = cityListPtr[cheapestCityIdx]->minDistance
+                                                            + adjacencies[cheapestCityIdx][neighborIdx];
+                    cityListPtr[neighborIdx]->parentIdx = cheapestCityIdx;
+                }
+            }
+        }
+        cityListPtr[cheapestCityIdx]->processedFlag = true;
 
-    // stub
-    int * rVal = calloc(sizeof(int), 3);
-    rVal[0] = startIdx;
-    rVal[1] = endIdx;
-    rVal[2] = -1;
-    *pathLengthPtr = 20;
+    } while (unprocessedCityCount > 0);
+
+    // calculate final path
+    int pathLength = 1;
+    cityIdx = endIdx;
+    while (cityIdx != startIdx) {
+        ++pathLength;
+        cityIdx = cityListPtr[cityIdx]->parentIdx;
+    }
+    int *rVal = calloc(sizeof(int), pathLength + 1 );
+    rVal[0] = startIdx; // store first value
+    int idx = pathLength -1;
+    cityIdx = endIdx;
+    // loop to store remaining values
+    while (cityIdx != startIdx) {
+        rVal[idx] = cityIdx;
+        cityIdx = cityListPtr[cityIdx]->parentIdx;
+        --idx;
+    }
+    rVal[pathLength] = -1;
+    *minDistancePtr = cityListPtr[endIdx]->minDistance;
+    // return array of shortest path cities
     return rVal;
 }
 
