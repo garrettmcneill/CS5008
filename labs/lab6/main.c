@@ -338,8 +338,6 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
             continue;
         }
 
-        printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
-
         // if we're at the end... end it
         if (cheapestCityIdx == endIdx) {
             break;
@@ -364,6 +362,8 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         printf("neighbors reviewed, unprocessed = %d\n", unprocessedCityCount);
 
     } while (unprocessedCityCount > 0);
+
+    printf("main loop exited with unprocessed city count = %d\n", unprocessedCityCount);
 
     // calculate final path
     bool validResult = true;
