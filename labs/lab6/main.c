@@ -128,7 +128,7 @@ int main() {
     do {
         // display list of cities a->z and prompt user for origin city
         // if 0... quit
-        printf("Please select an origin city\n");
+        printf("\n\nPlease select an origin city\n");
         printf("Enter a number associated with one of the cities below: \n");
         for (idx = 0; idx < cityArraySize; ++idx) {
             printf("%15s  ---  %2d\n", cityArray[idx], idx + 1);
