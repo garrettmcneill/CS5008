@@ -346,11 +346,13 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         }
 
         // review neighbors, updating if necessary
-        printf("starting review of neighbors\n");
+        printf("starting review of neighbors %d\n", cheapestCityIdx);
         for (neighborIdx = 0; neighborIdx < adjSize; ++neighborIdx) {
             if (!cityListPtr[neighborIdx]->processedFlag && adjacencies[cheapestCityIdx][neighborIdx] > 0) {
+                printf("neighbor %d of %d reviewed \n", neighborIdx, cheapestCityIdx);
                 if (cityListPtr[cheapestCityIdx]->minDistance + adjacencies[cheapestCityIdx][neighborIdx]
                     < cityListPtr[neighborIdx]->minDistance) {
+                    printf("     neighbor %d updated\n", neighborIdx);
                     cityListPtr[neighborIdx]->minDistance = cityListPtr[cheapestCityIdx]->minDistance
                                                             + adjacencies[cheapestCityIdx][neighborIdx];
                     cityListPtr[neighborIdx]->parentIdx = cheapestCityIdx;
