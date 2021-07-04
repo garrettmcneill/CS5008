@@ -141,7 +141,7 @@ int main() {
         } else {
             --fromCityIdx;
         }
-        printf("fromcityIdx = %d \n", fromCityIdx);
+        //printf("fromcityIdx = %d \n", fromCityIdx);
         if (fromCityIdx < 0) {
             continue;
         }
@@ -294,10 +294,6 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         printf("Error: endIdx %d out of range", endIdx);
     }
 
-    // allocate dynamic array for cityQueue
-    // dynarray_t* cityQueue = malloc(sizeof(dynarray_t));
-    // dynarray_init(cityQueue);
-
     // allocate & init array for city struct
     City **cityListPtr = calloc(sizeof(City *), adjSize);
     int cityIdx, neighborIdx;
@@ -347,24 +343,50 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
     } while (unprocessedCityCount > 0);
 
     // calculate final path
+    bool validResult = true;
     int pathLength = 1;
     cityIdx = endIdx;
     while (cityIdx != startIdx) {
         ++pathLength;
         cityIdx = cityListPtr[cityIdx]->parentIdx;
+        // check if path to parent exists
+        if(cityIdx < 0){
+            validResult = false;
+            break;
+        }
     }
-    int *rVal = calloc(sizeof(int), pathLength + 1 );
-    rVal[0] = startIdx; // store first value
-    int idx = pathLength -1;
-    cityIdx = endIdx;
-    // loop to store remaining values
-    while (cityIdx != startIdx) {
-        rVal[idx] = cityIdx;
-        cityIdx = cityListPtr[cityIdx]->parentIdx;
-        --idx;
+
+    int *rVal = NULL;
+    int idx;
+    if (validResult) {
+        *rVal = calloc(sizeof(int), pathLength + 1);
+        rVal[0] = startIdx; // store first value
+        idx = pathLength - 1;
+        cityIdx = endIdx;
+        // loop to store remaining values
+        while (cityIdx != startIdx) {
+            rVal[idx] = cityIdx;
+            cityIdx = cityListPtr[cityIdx]->parentIdx;
+            --idx;
+        }
+        rVal[pathLength] = -1;
+        *minDistancePtr = cityListPtr[endIdx]->minDistance;
+    } else{
+        *minDistancePtr = 0;
     }
-    rVal[pathLength] = -1;
-    *minDistancePtr = cityListPtr[endIdx]->minDistance;
+
+    // clean up cityListPtr
+    if (cityListPtr != NULL) {
+        for (cityIdx = 0; cityIdx < adjSize; ++cityIdx) {
+            if (cityListPtr[cityIdx] != NULL) {
+                free(cityListPtr[cityIdx]);
+                cityListPtr[cityIdx] = NULL;
+            }
+        }
+        free(cityListPtr);
+        cityListPtr = NULL;
+    }
+
     // return array of shortest path cities
     return rVal;
 }
@@ -376,53 +398,4 @@ int cityArrayComparator(const void *p, const void *q) {
     int rVal = strcmp(*l, *r);
     return rVal;
 }
-
-
-
-
-
-
-//Display the cities from which to select using a number that your
-//program assigns from the alphabetized list of cities that is
-//dynamically created from your city.dat file.  Example:
-//     Please select an origin city
-//     Enter a number associated with one of the cities below:
-//     Amsterdam    ---  1
-//     Belgrade     ---  2
-//     Bern         ---  3
-//     Genoa        ---  4
-//     Hamburg      ---  5
-//     Lisbon       ---  6
-//     Madrid       ---  7
-//     Munich       ---  8
-//     Naples       ---  9
-//     Paris        --- 10
-//     Warsaw       --- 11
-//
-//     TO QUIT ENTER --  0
-//
-//     $>
-
-//Have the user select an origin city, displaying the above list
-
-//Have the user select a destination city, removing the origin
-//city from the list
-
-//Apply Dijkstra's Algorithm to determine the optimal (shortest) path
-
-//Report three items:
-//     1. the names of the two cities, such as:
-//          ORIGIN:      Lisbon
-//          DESTINATION: Warsaw
-//     2. the length of the optimal path, such as:
-//          LENGTH:      1629
-//     3. the list of the cities visited along the optimal path, like:
-//          PATH CITIES: Lisbon
-//                       Madrid
-//                       Genoa
-//                       Trieste
-//                       Vienna
-//                       Warsaw
-
-//Continue to ask for two cities to map until the user selects 0
 
