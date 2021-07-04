@@ -337,7 +337,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
             break;
         }
 
-        printf("cheapest city found \n");
+        printf("cheapest city found %d\n", cheapestCityIdx);
 
         // review neighbors, updating if necessary
         for (neighborIdx = 0; neighborIdx < adjSize; ++neighborIdx) {
