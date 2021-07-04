@@ -1,10 +1,4 @@
-#include <ctype.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "lab6.h"
+#include "main.h"
 
 const char inputFileName[] = "city.dat";
 
@@ -191,15 +185,15 @@ int main() {
         }
         printf("\n");
 
-        printf("freeing shortest path\n");
+        //printf("freeing shortest path\n");
         free(shortestPath);
         shortestPath = NULL;
-        printf("shortest path freed\n");
+        //printf("shortest path freed\n");
     } while( fromCityIdx >= 0);
 
 
     // clean up array and adjacency matrix
-    printf("freeing city array\n");
+    //printf("freeing city array\n");
     if (cityArray != NULL) {
         for (row = 0; row < cityArraySize; ++row) {
             if (cityArray[row] != NULL) {
@@ -211,7 +205,7 @@ int main() {
         cityArray = NULL;
     }
 
-    printf("freeing adj matrix\n");
+    //printf("freeing adj matrix\n");
     if (adjMatrix != NULL) {
         for (row = 0; row < cityArraySize; ++row) {
             if (adjMatrix[row] != NULL) {
@@ -305,6 +299,9 @@ int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx
     if (endIdx < 0 || adjSize <= endIdx){
         printf("Error: endIdx %d out of range", endIdx);
     }
+
+    //todo: allocate arrays for distance and parent
+    //todo: allocate array for queue
 
     // stub
     int * rVal = calloc(sizeof(int), 3);
