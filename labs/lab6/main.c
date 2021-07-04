@@ -233,12 +233,18 @@ int findInArray(char **stringArray, int arraySize, char* target) {
         return -1;
     }
 
-    // todo check !equal! or out of range
-    if (strcmp(target, stringArray[botIdx]) < 0) {
+    // check equal or out of range
+    compVal = strcmp(target, stringArray[botIdx]);
+    if (compVal == 0){
+        return botIdx;
+    } else if (compVal < 0) {
         printf("findInArray: target out of range");
         return -1;
     }
-    if (strcmp(target, stringArray[topIdx]) > 0) {
+    compVal = strcmp(target, stringArray[topIdx]);
+    if (compVal == 0) {
+        return topIdx;
+    } else if (compVal > 0) {
         printf("findInArray: target out of range");
         return -1;
     }
