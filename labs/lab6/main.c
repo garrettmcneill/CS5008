@@ -183,7 +183,7 @@ int main() {
             free(shortestPath);
             shortestPath = NULL;
         } else {
-            printf("No route exists between %s and %s.", cityArray[fromCityIdx], cityArray[toCityIdx]);
+            printf("No route exists between %s and %s. \n \n", cityArray[fromCityIdx], cityArray[toCityIdx]);
         }
 
     } while (fromCityIdx >= 0);
