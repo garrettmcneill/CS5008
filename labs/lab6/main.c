@@ -166,24 +166,26 @@ int main() {
         shortestPath = findShortestPath(adjMatrix, cityArraySize, fromCityIdx, toCityIdx, &shortestDistance);
 
         // print results of Dijkstra's
-        printf("\nORIGIN:        %s\n", cityArray[fromCityIdx]);
-        printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
-        printf("LENGTH:        %d\n", shortestDistance);
-        idx = 0;
-        while (shortestPath[idx] >= 0) {
-            if (idx == 0) {
-                printf("\nPATH CITIES:   %s\n", cityArray[shortestPath[idx]]);
-            } else {
-                printf("               %s\n", cityArray[shortestPath[idx]]);
+        if (shortestPath != NULL) {
+            printf("\nORIGIN:        %s\n", cityArray[fromCityIdx]);
+            printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
+            printf("LENGTH:        %d\n", shortestDistance);
+            idx = 0;
+            while (shortestPath[idx] >= 0) {
+                if (idx == 0) {
+                    printf("\nPATH CITIES:   %s\n", cityArray[shortestPath[idx]]);
+                } else {
+                    printf("               %s\n", cityArray[shortestPath[idx]]);
+                }
+                ++idx;
             }
-            ++idx;
+            printf("\n");
+            free(shortestPath);
+            shortestPath = NULL;
+        } else {
+            printf("No route exists between %s and %s.", cityArray[fromCityIdx], cityArray[toCityIdx]);
         }
-        printf("\n");
 
-        //printf("freeing shortest path\n");
-        free(shortestPath);
-        shortestPath = NULL;
-        //printf("shortest path freed\n");
     } while (fromCityIdx >= 0);
 
 
