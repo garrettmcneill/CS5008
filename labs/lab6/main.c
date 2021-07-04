@@ -173,7 +173,7 @@ int main() {
         shortestPath = findShortestPath(adjMatrix, cityArraySize, fromCityIdx, toCityIdx, &shortestDistance);
 
         // print results of Dijkstra's
-        printf("\nORIGIN:      %s\n", cityArray[fromCityIdx]);
+        printf("\nORIGIN:        %s\n", cityArray[fromCityIdx]);
         printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
         printf("LENGTH:        %d\n", shortestDistance);
         idx = 0;
@@ -286,12 +286,10 @@ int findInArray(char **stringArray, int arraySize, char* target) {
 int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr){
     // stub
     int * rVal = calloc(sizeof(int), 3);
-    rVal[0] = 0;
-    rVal[1] = adjSize - 1;
+    rVal[0] = startIdx;
+    rVal[1] = endIdx;
     rVal[2] = -1;
-    printf("Path Length before = %d\n", *pathLengthPtr);
     *pathLengthPtr = 20;
-    printf("Path Length after = %d\n", *pathLengthPtr);
     return rVal;
 }
 
