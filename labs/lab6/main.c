@@ -152,6 +152,9 @@ int main() {
         } else {
             --fromCityIdx;
         }
+        if (fromCityIdx < 0){
+            continue;
+        }
 
         // display list of cities minus origin city and get destination city
         printf("Please select a destination city\n");
@@ -191,7 +194,7 @@ int main() {
         free(shortestPath);
         shortestPath = NULL;
         printf("shortest path freed\n");
-    } while( fromCityIdx > 0);
+    } while( fromCityIdx >= 0);
 
 
     // clean up array and adjacency matrix
