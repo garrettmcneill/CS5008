@@ -140,9 +140,24 @@ int main() {
         }
         printf("\n TO QUIT ENTER -- 0 \n\n");
         scanf("%d", &fromCityIdx);
-
+        if ( fromCityIdx < 1 || fromCityIdx > cityArraySize ){
+            printf("You must enter the number associated with one of the cities in the list\n");
+            break;
+        }
 
         // display list of cities minus origin city and get destination city
+        printf("Please select a destination city\n");
+        printf("Enter a number associated with one of the cities below: \n");
+        for (idx = 0; idx < cityArraySize; ++idx) {
+            if (idx != fromCityIdx) {
+                printf("%15s  ---  %2d\n", cityArray[idx], idx + 1);
+            }
+        }
+        scanf("%d", &toCityIdx);
+        if ( toCityIdx < 1 || toCityIdx > cityArraySize ){
+            printf("You must enter the number associated with one of the cities in the list\n");
+            break;
+        }
 
         // apply Dijkstra's algorithm to find shortest path & distance
 
