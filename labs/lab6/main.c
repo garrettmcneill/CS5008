@@ -179,9 +179,9 @@ int main() {
         idx = 0;
         while(shortestPath[idx] >= 0) {
             if (idx == 0){
-                printf("\nPATH CITIES: %s\n", cityArray[shortestPath[idx]]);
+                printf("\nPATH CITIES:     %s\n", cityArray[shortestPath[idx]]);
             } else {
-                printf("             %s\n", cityArray[shortestPath[idx]]);
+                printf("                   %s\n", cityArray[shortestPath[idx]]);
             }
             ++idx;
         }
