@@ -175,7 +175,7 @@ int main() {
         printf("\nORIGIN:      %s\n", cityArray[fromCityIdx]);
         printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
         printf("LENGTH:        %d\n", &shortestDistance);idx = 0;
-        do while(shortestPath[idx] >= 0) {
+        while(shortestPath[idx] >= 0) {
             if (idx == 0){
                 printf("PATH CITIES: %s", cityArray[shortestPath[idx]]);
             } else {
