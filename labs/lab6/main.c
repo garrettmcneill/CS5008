@@ -8,10 +8,11 @@
 
 const char inputFileName[] = "city.dat";
 
-/*
- * Forward declaration for city names. Included in .c for local use only..
- */
+// Forward declarations
 int cityArrayComparator(const void *p, const void *q);
+int findInArray(char **stringArray, int arraySize, char* target);
+int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr);
+
 
 int main() {
 
@@ -166,10 +167,22 @@ int main() {
         }
 
         // apply Dijkstra's algorithm to find shortest path & distance
+        int shortestDistance;
+        int *shortestPath;
+        shortestPath = findShortestPath(adjMatrix, cityArraySize, fromCityIdx, toCityIdx, &shortestDistance);
 
         // print results of Dijkstra's
-        printf("ORIGIN:      %s\n", cityArray[fromCityIdx]);
-        printf("DESTINATION: %s\n", cityArray[toCityIdx]);
+        printf("\nORIGIN:      %s\n", cityArray[fromCityIdx]);
+        printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
+        printf("LENGTH:        %d\n", &shortestDistance);idx = 0;
+        do while(shortestPath[idx] >= 0) {
+            if (idx == 0){
+                printf("PATH CITIES: %s", cityArray[shortestPath[idx]]);
+            } else {
+                printf("             %s", cityArray[shortestPath[idx]]);
+            }
+            ++idx;
+        }
 
 
     } while( fromCityIdx > 0);
@@ -196,8 +209,6 @@ int main() {
         free(adjMatrix);
         adjMatrix = NULL;
     }
-
-
 
     return EXIT_SUCCESS;
 }
@@ -259,6 +270,25 @@ int findInArray(char **stringArray, int arraySize, char* target) {
     return -1;
 }
 
+
+/**
+ * Apply Dijkstra's algorithm to find shortest path from the start to the end.
+ * @param adjacencies - square array of distances
+ * @param adjSize - size of the adjacency matrix
+ * @param startIdx - the starting index
+ * @param endIdx - the ending index
+ * @param pathLengthPtr - a pointer to the variable that receives the shortest path length
+ * @return an array of the indices of the shortest path
+ */
+int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr){
+    // stub
+    int * rVal = calloc(sizeof(int), 3);
+    rVal[0] = 0;
+    rVal[1] = adjSize - 1;
+    rVal[2] = -1;
+    *pathLengthPtr = 20;
+    return rVal;
+}
 
 // cityArrayComparator
 int cityArrayComparator(const void *p, const void *q) {
