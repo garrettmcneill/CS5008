@@ -285,6 +285,18 @@ int findInArray(char **stringArray, int arraySize, char* target) {
  * @return an array of the indices of the shortest path
  */
 int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr){
+
+    // validate parameters
+    if (adjSize < 2){
+        printf("Error: matrix too small");
+    }
+    if (startIdx < 0 || adjSize <= startIdx){
+        printf("Error: startIdx %d out of range", startIdx);
+    }
+    if (endIdx < 0 || adjSize <= endIdx){
+        printf("Error: endIdx %d out of range", endIdx);
+    }
+
     // stub
     int * rVal = calloc(sizeof(int), 3);
     rVal[0] = startIdx;
