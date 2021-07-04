@@ -163,7 +163,9 @@ int main() {
         }
 
         // apply Dijkstra's algorithm to find shortest path & distance
+        printf("before shortest path\n");
         shortestPath = findShortestPath(adjMatrix, cityArraySize, fromCityIdx, toCityIdx, &shortestDistance);
+        printf("back to the main\n");
 
         // print results of Dijkstra's
         if (shortestPath != NULL) {
