@@ -152,6 +152,7 @@ int main() {
         } else {
             --fromCityIdx;
         }
+        printf("fromcityIdx = %d \n", fromCityIdx);
         if (fromCityIdx < 0){
             continue;
         }
