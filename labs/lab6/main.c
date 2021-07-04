@@ -147,7 +147,7 @@ int main() {
         }
 
         // display list of cities minus origin city and get destination city
-        printf("Please select a destination city\n");
+        printf("\n\nPlease select a destination city\n");
         printf("Enter a number associated with one of the cities below: \n");
         for (idx = 0; idx < cityArraySize; ++idx) {
             if (idx != fromCityIdx) {
