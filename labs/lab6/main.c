@@ -177,9 +177,9 @@ int main() {
         printf("LENGTH:        %d\n", &shortestDistance);idx = 0;
         while(shortestPath[idx] >= 0) {
             if (idx == 0){
-                printf("PATH CITIES: %s", cityArray[shortestPath[idx]]);
+                printf("PATH CITIES: %s\n", cityArray[shortestPath[idx]]);
             } else {
-                printf("             %s", cityArray[shortestPath[idx]]);
+                printf("             %s\n", cityArray[shortestPath[idx]]);
             }
             ++idx;
         }
