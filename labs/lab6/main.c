@@ -132,6 +132,9 @@ int main() {
     fclose(cityFilePtr);
     cityFilePtr = NULL;
 
+    // declarations before loop
+    int shortestDistance = 100;
+    int *shortestPath;
 
     do {
         // display list of cities a->z and prompt user for origin city
@@ -167,14 +170,13 @@ int main() {
         }
 
         // apply Dijkstra's algorithm to find shortest path & distance
-        int shortestDistance;
-        int *shortestPath;
         shortestPath = findShortestPath(adjMatrix, cityArraySize, fromCityIdx, toCityIdx, &shortestDistance);
 
         // print results of Dijkstra's
         printf("\nORIGIN:      %s\n", cityArray[fromCityIdx]);
         printf("DESTINATION:   %s\n\n", cityArray[toCityIdx]);
-        printf("LENGTH:        %d\n", &shortestDistance);idx = 0;
+        printf("LENGTH:        %d\n", &shortestDistance);
+        idx = 0;
         while(shortestPath[idx] >= 0) {
             if (idx == 0){
                 printf("\nPATH CITIES: %s\n", cityArray[shortestPath[idx]]);
@@ -278,7 +280,7 @@ int findInArray(char **stringArray, int arraySize, char* target) {
  * @param adjSize - size of the adjacency matrix
  * @param startIdx - the starting index
  * @param endIdx - the ending index
- * @param pathLengthPtr - a pointer to the variable that receives the shortest path length
+ * @param pathLengthPtr - a pointer to the integer variable that receives the shortest path length
  * @return an array of the indices of the shortest path
  */
 int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx, int *pathLengthPtr){
@@ -287,7 +289,9 @@ int * findShortestPath(int ** adjacencies, int adjSize, int startIdx, int endIdx
     rVal[0] = 0;
     rVal[1] = adjSize - 1;
     rVal[2] = -1;
+    printf("Path Length before = %d\n", *pathLengthPtr);
     *pathLengthPtr = 20;
+    printf("Path Length after = %d\n", *pathLengthPtr);
     return rVal;
 }
 
