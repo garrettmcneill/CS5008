@@ -208,7 +208,7 @@ int main() {
  *  target - the string to be found
  * Returns the index of the matching entry, or 0.
  * */
-int findInArray(char **stringArray, int arraySize, string target) {
+int findInArray(char **stringArray, int arraySize, char* target) {
     int botIdx = 0;
     int topIdx = arraySize - 1;
     int midIdx, compVal;
