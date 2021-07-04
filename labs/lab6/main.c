@@ -359,7 +359,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
     int *rVal = NULL;
     int idx;
     if (validResult) {
-        *rVal = calloc(sizeof(int), pathLength + 1);
+        rVal = calloc(sizeof(int), pathLength + 1);
         rVal[0] = startIdx; // store first value
         idx = pathLength - 1;
         cityIdx = endIdx;
