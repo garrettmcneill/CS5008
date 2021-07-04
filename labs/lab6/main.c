@@ -177,12 +177,13 @@ int main() {
         printf("LENGTH:        %d\n", &shortestDistance);idx = 0;
         while(shortestPath[idx] >= 0) {
             if (idx == 0){
-                printf("PATH CITIES: %s\n", cityArray[shortestPath[idx]]);
+                printf("\nPATH CITIES: %s\n", cityArray[shortestPath[idx]]);
             } else {
                 printf("             %s\n", cityArray[shortestPath[idx]]);
             }
             ++idx;
         }
+        printf("\n");
 
 
     } while( fromCityIdx > 0);
