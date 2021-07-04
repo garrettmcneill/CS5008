@@ -299,6 +299,7 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
     }
 
     printf("parameters validated\n");
+    printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
 
     // allocate & init array for city struct
     City **cityListPtr = calloc(sizeof(City *), adjSize);
@@ -336,6 +337,8 @@ int *findShortestPath(int **adjacencies, int adjSize, int startIdx, int endIdx, 
         if (cheapestCityIdx < 0) {
             continue;
         }
+
+        printf("adj size = %d, startIdx = %d, endIdx = %d \n", adjSize, startIdx, endIdx);
 
         // if we're at the end... end it
         if (cheapestCityIdx == endIdx) {
