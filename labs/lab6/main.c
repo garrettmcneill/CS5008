@@ -110,8 +110,14 @@ int main() {
         } else {
             // determine from city index (row)
             fromCityIdx = findInArray(cityArray, cityArraySize, fromCityInput);
+
+            printf("fromcityidx = %d \n", fromCityIdx);
+
             // determine to city index (col)
             toCityIdx = findInArray(cityArray, cityArraySize, toCityInput);
+
+            printf("tocityidx = %d \n", toCityIdx);
+
             // store interCityDistance in adjacency[row][col]
             if (0 <= fromCityIdx && fromCityIdx < cityArraySize){
                 if (0 <= toCityIdx && toCityIdx < cityArraySize){
