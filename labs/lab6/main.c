@@ -187,12 +187,15 @@ int main() {
         }
         printf("\n");
 
-        //free(shortestPath);
-       // shortestPath = NULL;
+        printf("freeing shortest path");
+        free(shortestPath);
+        shortestPath = NULL;
+        printf("shortest path freed");
     } while( fromCityIdx > 0);
 
 
     // clean up array and adjacency matrix
+    printf("freeing city array");
     if (cityArray != NULL) {
         for (row = 0; row < cityArraySize; ++row) {
             if (cityArray[row] != NULL) {
@@ -203,6 +206,8 @@ int main() {
         free(cityArray);
         cityArray = NULL;
     }
+
+    printf("freeing adj matrix");
     if (adjMatrix != NULL) {
         for (row = 0; row < cityArraySize; ++row) {
             if (adjMatrix[row] != NULL) {
