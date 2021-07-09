@@ -70,7 +70,7 @@ void initMemo(long maxN) {
         fibArrayPtr = NULL;
     }
     fibArrayMaxIdx = maxN;
-    fibArrayPtr = malloc(sizeof(long) fibArrayMaxIdx);
+    fibArrayPtr = malloc(sizeof(long) *fibArrayMaxIdx);
     fibArrayPtr[0] = 0l;
     fibArrayPtr[1] = 1l;
     fibArrayIdx = 1;
