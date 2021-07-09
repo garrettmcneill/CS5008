@@ -94,6 +94,7 @@ int main() {
     end = clock();
     cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
 
+    printf("start = %lu | end = %lu\n" , start, end);
     printf("\n Time for fib() = %f", cpu_time_used);
 
     printf("\n- - - - - - - - - - - - - - - \n");
