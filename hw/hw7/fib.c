@@ -89,7 +89,7 @@ int main() {
     // declare total fib numbers to generate
     long itr;
     for (itr = 1; itr <= 100; itr++) {
-        printf("fib(%lu) = %20lu \n", itr, fib(itr));
+        printf("fib(%lu) = %25lu \n", itr, fib(itr));
     }
 
     gettimeofday(&endTime, NULL);  // end clock
@@ -100,9 +100,9 @@ int main() {
 
     printf("Memoized Version of fib():\n");
     gettimeofday(&startTime, NULL); // start clock
-    initMemo(50);
+    initMemo(100);
     for (itr = 1; itr <= 100; itr++) {
-        printf("fib(%lu) = %20lu \n", itr, mfib(itr));
+        printf("fib(%lu) = %25lu \n", itr, mfib(itr));
     }
 
     gettimeofday(&endTime, NULL);  // end clock
