@@ -1,7 +1,17 @@
 #include <stdio.h>
 
+// Memo variables & initial values
+long *fibArrayPtr = NULL;   // Pointer to the base of the fibonacci number array
+long fibArrayMaxIdx = 0;    // Size of the fibonacci number array
+long fibArrayIdx = 0;       // The index of the last fibonacci number calculated
 
-long fib(long n){
+
+/**
+ * Legacy fibonacci function from lab 3
+ * @param n
+ * @return
+ */
+long fib(long n) {
     // unsigned long array to store fib numbers up to n
     long f[n];
     long i;
@@ -11,24 +21,78 @@ long fib(long n){
     f[1] = 1;
 
     // loop through fib seq recursively
-    for (i = 2; i <= n; i++){
-        f[i] = f[i-1] + f[i-2];
+    for (i = 2; i <= n; i++) {
+        f[i] = f[i - 1] + f[i - 2];
     }
     return f[n];
 }
 
 
-int main(){
+/**
+ * Fibonacci function utilizing memoization.
+ * @param n
+ * @return
+ */
+long mfib(long n) {
+    int idx;
 
+    // special cases
+    if (n < 0) {
+        printf("Parameter of mfib must be greater than 0.\n");
+        return -1;
+    } else if (n > fibArrayMaxIdx) {
+        printf("Parameter of mfib cannot be larger than the maximum of %lu \n", fibArrayMaxIdx);
+        return -1;
+    } else if (n <= fibArrayIdx) {
+        return fibArrayPtr[n];
+    }
+
+    // normal case extends the array
+    for (idx = fibArrayIdx + 1; idx <= n; ++idx) {
+        fibArrayPtr[idx] = fibArrayPtr[idx - 1] + fibArrayPtr[idx - 2];
+    }
+    fibArrayIdx = n;
+
+    return fibArrayPtr[n];
+}
+
+
+/**
+ * Function allocates space for as many numbers that we will ever calculate.
+ * Initializes the first two values (0, 1)
+ * @param maxN
+ * @return
+ */
+void initMemo(long maxN) {
+    if (fibArrayPtr != NULL) {
+        free(fibArrayPtr);
+        fibArrayPtr = NULL;
+    }
+    fibArrayMaxIdx = maxN;
+    fibArrayPtr = malloc(sizeof(long), fibArrayMaxIdx);
+    fibArrayPtr[0] = 0l;
+    fibArrayPtr[1] = 1l;
+    fibArrayIdx = 1;
+}
+
+
+int main() {
+
+    printf("Non-Memoized Version of fib():\n");
     // declare total fib numbers to generate
-    long n = 2;
-    // declare iterator
     long itr;
+    for (itr = 1; itr <= 50; itr++) {
+        printf("fib(%lu) = %20lu \n", itr, fib(itr));
+    }
 
-    for(itr = n; itr < n+50; itr++)
-        printf(" %20lu ", fib(itr));
+    printf("\n- - - - - - - - - - - - - - - \n");
+    printf("Memoized Version of fib():\n");
 
-    printf("\n");
+    initMemo(50);
+    for (itr = 1; itr <= 50; itr++) {
+        printf("fib(%lu) = %20lu \n", itr, mfib(itr));
+    }
+
     return 0;
 }
 
