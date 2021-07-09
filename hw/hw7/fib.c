@@ -94,7 +94,7 @@ int main() {
 
     gettimeofday(&endTime, NULL);  // end clock
     durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    printf("\n Time for fib() = %ld mSecs", durationMsecs);
+    printf("\nTime for fib() = %ld mSecs", durationMsecs);
 
     printf("\n- - - - - - - - - - - - - - - \n");
 
@@ -107,7 +107,7 @@ int main() {
 
     gettimeofday(&endTime, NULL);  // end clock
     durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    printf("\n Time for fib() = %ld mSecs\n", durationMsecs);
+    printf("\nTime for fib() = %ld mSecs\n", durationMsecs);
 
     return 0;
 }
