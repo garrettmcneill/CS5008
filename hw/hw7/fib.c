@@ -81,32 +81,33 @@ void initMemo(long maxN) {
 int main() {
 
     //time keeper
-    clock_t start, end;
+    clock_t startClock, endClock;
     double cpu_time_used;
 
     printf("Non-Memoized Version of fib():\n");
-    start = clock();
+    startClock = clock();
     // declare total fib numbers to generate
     long itr;
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, fib(itr));
     }
-    end = clock();
-    cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
+    endClock = clock();
+    cpu_time_used = ((double) (endClock-startClock)) / CLOCKS_PER_SEC;
 
-    printf("start = %lu | end = %lu\n" , start, end);
+    printf("start = %lu | end = %lu\n" , startClock, endClock);
     printf("\n Time for fib() = %f", cpu_time_used);
 
     printf("\n- - - - - - - - - - - - - - - \n");
 
     printf("Memoized Version of fib():\n");
-    start = clock();
+    startClock = clock();
     initMemo(50);
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, mfib(itr));
     }
-    end = clock();
-    cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
+    endClock = clock();
+    cpu_time_used = ((double) (endClock-startClock)) / CLOCKS_PER_SEC;
+    printf("start = %lu | end = %lu\n" , startClock, endClock);
     printf("\n Time for fib() = %f\n", cpu_time_used);
 
     return 0;
