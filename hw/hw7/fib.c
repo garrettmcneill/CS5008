@@ -106,7 +106,7 @@ int main() {
     }
     end = clock();
     cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
-    printf("\n Time for fib() = %f", cpu_time_used);
+    printf("\n Time for fib() = %f\n", cpu_time_used);
 
     return 0;
 }
