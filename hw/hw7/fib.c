@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stlib.h>
 
 // Memo variables & initial values
 long *fibArrayPtr = NULL;   // Pointer to the base of the fibonacci number array
