@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Memo variables & initial values
 long *fibArrayPtr = NULL;   // Pointer to the base of the fibonacci number array
@@ -79,20 +80,33 @@ void initMemo(long maxN) {
 
 int main() {
 
+    //time keeper
+    clock_t start, end;
+    double cpu_time_used;
+
     printf("Non-Memoized Version of fib():\n");
+    start = clock();
     // declare total fib numbers to generate
     long itr;
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, fib(itr));
     }
+    end = clock();
+    cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
+
+    printf("\n Time for fib() = %f", cpu_time_used);
 
     printf("\n- - - - - - - - - - - - - - - \n");
-    printf("Memoized Version of fib():\n");
 
+    printf("Memoized Version of fib():\n");
+    start = clock();
     initMemo(50);
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, mfib(itr));
     }
+    end = clock();
+    cpu_time_used = ((double) (end-start)) / CLOCKS_PER_SEC;
+    printf("\n Time for fib() = %f", cpu_time_used);
 
     return 0;
 }
