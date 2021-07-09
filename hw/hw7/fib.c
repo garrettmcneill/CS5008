@@ -81,34 +81,33 @@ void initMemo(long maxN) {
 int main() {
 
     //time keeper
-    clock_t startClock, endClock;
-    double cpu_time_used;
+    struct timeval startTime, endTime;
+    long durationMsecs;
 
     printf("Non-Memoized Version of fib():\n");
-    startClock = clock();
+    gettimeofday(&startTime, NULL); // start clock
     // declare total fib numbers to generate
     long itr;
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, fib(itr));
     }
-    endClock = clock();
-    cpu_time_used = ((double) (endClock-startClock)) / CLOCKS_PER_SEC;
 
-    printf("start = %lu | end = %lu\n" , startClock, endClock);
-    printf("\n Time for fib() = %f", cpu_time_used);
+    gettimeofday(&endTime, NULL);  // end clock
+    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
+    printf("\n Time for fib() = %ld mSecs", durationMsecs);
 
     printf("\n- - - - - - - - - - - - - - - \n");
 
     printf("Memoized Version of fib():\n");
-    startClock = clock();
+    gettimeofday(&startTime, NULL); // start clock
     initMemo(50);
     for (itr = 1; itr <= 50; itr++) {
         printf("fib(%lu) = %20lu \n", itr, mfib(itr));
     }
-    endClock = clock();
-    cpu_time_used = ((double) (endClock-startClock)) / CLOCKS_PER_SEC;
-    printf("start = %lu | end = %lu\n" , startClock, endClock);
-    printf("\n Time for fib() = %f\n", cpu_time_used);
+
+    gettimeofday(&endTime, NULL);  // end clock
+    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
+    printf("\n Time for fib() = %ld mSecs", durationMsecs);
 
     return 0;
 }
