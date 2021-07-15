@@ -13,7 +13,7 @@ long fibArrayIdx = 0;       // The index of the last fibonacci number calculated
  * @param n
  * @return
  */
-long fib(long n) {
+long fib2(long n) {
     // unsigned long array to store fib numbers up to n
     long f[n + 1];
     long i;
@@ -27,6 +27,16 @@ long fib(long n) {
         f[i] = f[i - 1] + f[i - 2];
     }
     return f[n];
+}
+
+unsigned long long fib(int n) {
+    if (n < 1) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fib(n-2) + fib(n-1);
+    }
 }
 
 
