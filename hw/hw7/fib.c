@@ -40,7 +40,7 @@ long mfib(long n) {
 
     // special cases
     if (n < 0) {
-        printf("Parameter of mfib must be greater than 0.\n");
+        printf("Parameter of mfib must be greater than or equal to 0.\n");
         return -1;
     } else if (n > fibArrayMaxIdx) {
         printf("Parameter of mfib cannot be larger than the maximum of %lu \n", fibArrayMaxIdx);
@@ -71,7 +71,7 @@ void initMemo(long maxN) {
         fibArrayPtr = NULL;
     }
     fibArrayMaxIdx = maxN;
-    fibArrayPtr = malloc(sizeof(long) *fibArrayMaxIdx);
+    fibArrayPtr = malloc(sizeof(long) * (fibArrayMaxIdx + 1));
     fibArrayPtr[0] = 0l;
     fibArrayPtr[1] = 1l;
     fibArrayIdx = 1;
@@ -88,7 +88,7 @@ int main() {
     printf("Non-Memoized Version of fib():\n");
     // declare total fib numbers to generate
     long itr;
-    for (itr = 1; itr <= 50; itr+=5) {
+    for (itr = 0; itr <= 50; itr+=5) {
         gettimeofday(&startTime, NULL); // start clock
         printf("fib(%lu) = %25lu \n", itr, fib(itr));
         gettimeofday(&endTime, NULL);  // end clock
@@ -99,13 +99,13 @@ int main() {
     printf("\n- - - - - - - - - - - - - - - \n\n");
 
     printf("Memoized Version of fib():\n");
-    initMemo(50);
-    for (itr = 1; itr < 90; itr+=5) {
+    initMemo(86);
+    for (itr = 0; itr <= 85; itr+=5) {
         gettimeofday(&startTime, NULL); // start clock
         printf("fib(%lu) = %25lu \n", itr, mfib(itr));
         gettimeofday(&endTime, NULL);  // end clock
         durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-        printf("\nTime for fib() = %ld mSecs\n", durationMsecs);
+        printf("\nTime for mfib() = %ld mSecs\n", durationMsecs);
     }
 
     return 0;
