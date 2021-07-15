@@ -84,6 +84,7 @@ int main() {
     //time keeper
     struct timeval startTime, endTime;
     long durationMsecs;
+    double durationSecs;
 
     printf("Non-Memoized Version of fib():\n");
     // declare total fib numbers to generate
@@ -93,7 +94,8 @@ int main() {
         printf("fib(%lu) = %25lu \n", itr, fib(itr));
         gettimeofday(&endTime, NULL);  // end clock
         durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-        printf("\nTime for fib() = %ld mSecs", durationMsecs);
+        durationSecs = (1.0 * durationMsecs) / 1000000.0;
+        printf("time taken (sec) = %10.6f \n\n", durationSecs);
     }
 
     printf("\n- - - - - - - - - - - - - - - \n\n");
@@ -105,7 +107,8 @@ int main() {
         printf("fib(%lu) = %25lu \n", itr, mfib(itr));
         gettimeofday(&endTime, NULL);  // end clock
         durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-        printf("\nTime for mfib() = %ld mSecs\n", durationMsecs);
+        durationSecs = (1.0 * durationMsecs) / 1000000.0;
+        printf("time taken (sec) = %10.6f \n\n", durationSecs);
     }
 
     return 0;
