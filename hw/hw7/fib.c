@@ -15,7 +15,7 @@ long fibArrayIdx = 0;       // The index of the last fibonacci number calculated
  */
 long fib(long n) {
     // unsigned long array to store fib numbers up to n
-    long f[n];
+    long f[n + 1];
     long i;
 
     // where fib(0) = 0, fib (1) = 1
@@ -104,7 +104,7 @@ int main() {
     initMemo(86);
     for (itr = 0; itr <= 85; itr+=5) {
         gettimeofday(&startTime, NULL); // start clock
-        printf("fib(%lu) = %lu \n", itr, mfib(itr));
+        printf("mfib(%lu) = %lu \n", itr, mfib(itr));
         gettimeofday(&endTime, NULL);  // end clock
         durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
         durationSecs = (1.0 * durationMsecs) / 1000000.0;
