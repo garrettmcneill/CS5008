@@ -78,6 +78,7 @@ void initMemo(long maxN) {
 }
 
 
+// ========================== MAIN PROGRAM  ==========================
 int main() {
 
     //time keeper
@@ -85,29 +86,27 @@ int main() {
     long durationMsecs;
 
     printf("Non-Memoized Version of fib():\n");
-    gettimeofday(&startTime, NULL); // start clock
     // declare total fib numbers to generate
     long itr;
-    for (itr = 1; itr <= 50; itr++) {
+    for (itr = 1; itr <= 50; itr+=5) {
+        gettimeofday(&startTime, NULL); // start clock
         printf("fib(%lu) = %25lu \n", itr, fib(itr));
+        gettimeofday(&endTime, NULL);  // end clock
+        durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
+        printf("\nTime for fib() = %ld mSecs", durationMsecs);
     }
 
-    gettimeofday(&endTime, NULL);  // end clock
-    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    printf("\nTime for fib() = %ld mSecs", durationMsecs);
-
-    printf("\n- - - - - - - - - - - - - - - \n");
+    printf("\n- - - - - - - - - - - - - - - \n\n");
 
     printf("Memoized Version of fib():\n");
-    gettimeofday(&startTime, NULL); // start clock
     initMemo(50);
-    for (itr = 1; itr <= 50; itr++) {
+    for (itr = 1; itr < 90; itr+=5) {
+        gettimeofday(&startTime, NULL); // start clock
         printf("fib(%lu) = %25lu \n", itr, mfib(itr));
+        gettimeofday(&endTime, NULL);  // end clock
+        durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
+        printf("\nTime for fib() = %ld mSecs\n", durationMsecs);
     }
-
-    gettimeofday(&endTime, NULL);  // end clock
-    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    printf("\nTime for fib() = %ld mSecs\n", durationMsecs);
 
     return 0;
 }
