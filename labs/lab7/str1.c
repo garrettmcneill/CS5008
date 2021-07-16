@@ -8,7 +8,6 @@ int main() {
 
 	printf("%s\n", str);
  	                         			
-	// Anything else?
 	return 0;
 }
 
