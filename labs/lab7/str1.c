@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-	char str[] = "hakuna matata!";
-	
-	printf("hakuna matata!\n"); 	// this line should copy
-					// "hakuna matata!"
- 	                         	// into our char array
+	char str[15];
+
+    strncpy(str, "hakuna matata!", 15);
+
 	printf("%s\n", str);
  	                         			
 	// Anything else?
