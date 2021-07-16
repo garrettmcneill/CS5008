@@ -59,6 +59,11 @@ int main(){
 		printf("%d ", *(array + x) );
 	}
 	printf("\n");
+
+	// free it from memory
+	free(array);
+	array = NULL;
+
 	return 0;
 
 }
