@@ -36,7 +36,7 @@ int main(){
 	// Reason: we do not want to use uninitialized variables.
 
 	if (n2 > n1){
-	    for (i = n1, i < n2, ++i){
+	    for (i = n1; i < n2; ++i){
             *(a1 + i) = 0;
 	    }
 	}
