@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main() {
+int main() {
 	char str[] = "hakuna matata!";
 	
 	printf("hakuna matata!"); 	// this line should copy 
@@ -9,5 +9,6 @@ void main() {
 	printf("%s\n", str);
  	                         			
 	// Anything else?
+	return 0;
 }
 
