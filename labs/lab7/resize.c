@@ -27,14 +27,14 @@ int main(){
 	printf("\nEnter new array size: ");
 	int n2=0;
 	scanf("%d",&n2);
+    printf("resizing array from %d to %d\n", n1, n2);
 
-	//Dynamically change the array to size n2
+    //Dynamically change the array to size n2
 	int* a2 = realloc(a1,n2);
     a1 = NULL;
 
 	// If the new array is a larger size, set all new members to 0. 
 	// Reason: we do not want to use uninitialized variables.
-
 	if (n2 > n1){
 	    for (i = n1; i < n2; ++i){
             *(a2 + i) = 0;
@@ -44,7 +44,7 @@ int main(){
 
 	for(i=0; i<n2;i++){
 		//Print each element out (to make sure things look right)
-		printf("%d ", *(a2 + 1));
+		printf("%d ", *(a2 + i));
 	}
 	printf("\n");
 	
