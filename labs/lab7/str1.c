@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void main() {
-	char str[];
+	char str[] = "hakuna matata!";
 	
 	printf("hakuna matata!"); 	// this line should copy 
 					// "hakuna matata!"
