@@ -3,7 +3,7 @@
 int main() {
 	char str[] = "hakuna matata!";
 	
-	printf("hakuna matata!"); 	// this line should copy 
+	printf("hakuna matata!\n"); 	// this line should copy
 					// "hakuna matata!"
  	                         	// into our char array
 	printf("%s\n", str);
