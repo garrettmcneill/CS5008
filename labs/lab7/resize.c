@@ -4,7 +4,7 @@
 
 int main(){
 	// Allows user to generate random numbers
-	srand(time(NULL));
+	// srand(time(NULL));
 
 	// Allows user to specify the original array size, 
 	// stored in variable n1.
