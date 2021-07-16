@@ -29,7 +29,7 @@ int main(){
 	scanf("%d",&n2);
 
 	//Dynamically change the array to size n2
-    int a2 = realloc(a1,n2);
+	int* a2 = realloc(a1,n2);
     a1 = NULL;
 
 	// If the new array is a larger size, set all new members to 0. 
