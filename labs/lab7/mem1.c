@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void square(int num) {
-	num = num * num;
+void square(int *numPtr) {
+	*numPtr = *numPtr * *numPtr;
 }
 
 int main() {
 	int x = 4;
-	square(x);
+	square(&x);
 	printf("%d\n", x);
 	return 0;
 }
