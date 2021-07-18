@@ -1,0 +1,105 @@
+Script started on Sun 18 Jul 2021 10:38:06 AM EDT
+[?1034hbash-4.2$ ls
+fib.c  makefile  typescript
+bash-4.2$ make fib
+gcc  -c fib.c
+gcc  -o fib fib.o
+bash-4.2$ ls
+fib  fib.c  fib.o  makefile  typescript
+bash-4.2$ ./fib 
+Non-Memoized Version of fib():
+fib(0) = 0 
+time taken (sec) =   0.000045 
+
+fib(5) = 5 
+time taken (sec) =   0.000016 
+
+fib(10) = 55 
+time taken (sec) =   0.000018 
+
+fib(15) = 610 
+time taken (sec) =   0.000032 
+
+fib(20) = 6765 
+time taken (sec) =   0.000211 
+
+fib(25) = 75025 
+time taken (sec) =   0.001870 
+
+fib(30) = 832040 
+time taken (sec) =   0.013532 
+
+fib(35) = 9227465 
+time taken (sec) =   0.072107 
+
+fib(40) = 102334155 
+time taken (sec) =   0.802575 
+
+fib(45) = 1134903170 
+time taken (sec) =   8.941764 
+
+fib(50) = 12586269025 
+time taken (sec) =  98.635750 
+
+
+- - - - - - - - - - - - - - - 
+
+Memoized Version of fib():
+mfib(0) = 0 
+time taken (sec) =   0.000013 
+
+mfib(5) = 5 
+time taken (sec) =   0.000005 
+
+mfib(10) = 55 
+time taken (sec) =   0.000005 
+
+mfib(15) = 610 
+time taken (sec) =   0.000005 
+
+mfib(20) = 6765 
+time taken (sec) =   0.000005 
+
+mfib(25) = 75025 
+time taken (sec) =   0.000035 
+
+mfib(30) = 832040 
+time taken (sec) =   0.000005 
+
+mfib(35) = 9227465 
+time taken (sec) =   0.000004 
+
+mfib(40) = 102334155 
+time taken (sec) =   0.000012 
+
+mfib(45) = 1134903170 
+time taken (sec) =   0.000005 
+
+mfib(50) = 12586269025 
+time taken (sec) =   0.000027 
+
+mfib(55) = 139583862445 
+time taken (sec) =   0.000038 
+
+mfib(60) = 1548008755920 
+time taken (sec) =   0.000002 
+
+mfib(65) = 17167680177565 
+time taken (sec) =   0.000002 
+
+mfib(70) = 190392490709135 
+time taken (sec) =   0.000007 
+
+mfib(75) = 2111485077978050 
+time taken (sec) =   0.000028 
+
+mfib(80) = 23416728348467685 
+time taken (sec) =   0.000002 
+
+mfib(85) = 259695496911122585 
+time taken (sec) =   0.000002 
+
+bash-4.2$ exit
+exit
+
+Script done on Sun 18 Jul 2021 10:40:24 AM EDT
