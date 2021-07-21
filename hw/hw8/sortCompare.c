@@ -2,8 +2,11 @@
 
 int main(int argc, char *argv[]) {
 
-    //Constants
+    // Constants
     int MAXVAL = 1024000;
+
+    // Local vars
+    int idx;
 
     if (argc < 2) {
         printf("Not enough arguments passed at creation of program ");
@@ -20,7 +23,7 @@ int main(int argc, char *argv[]) {
     srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
-        randInts[idx] = rand() % MAXVAL;
+        sortArray[idx] = rand() % MAXVAL;
     }
 
     insertionSort(sortArray, numElements);
