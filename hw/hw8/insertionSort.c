@@ -6,7 +6,7 @@
  * @param array - the array to be sorted.
  * @param elements - the number of elements in an array.
  */
-void insertionSort(int array[], int elements) {
+void insertionSort(int intArray[], int elements) {
 
     int valueToInsert;
     int holePosition;
