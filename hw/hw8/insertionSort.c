@@ -15,7 +15,8 @@ void insertionSort(int intArray[], int elements) {
     int moveCount = 0;
 
     //time keeper
-    struct timeval startTime, endTime;
+    struct timeval startTime;
+    struct timeval endTime;
     long durationMsecs;
     double durationSecs;
 

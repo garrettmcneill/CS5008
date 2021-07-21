@@ -3,8 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
+#include <string.h>
+
 
 /**
  * Insertion sort, implementation from: https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_program_in_c.htm
