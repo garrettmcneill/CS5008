@@ -15,13 +15,12 @@ void insertionSort(int intArray[], int elements) {
     int moveCount = 0;
 
     //time keeper
-    struct timeval startTime;
-    struct timeval endTime;
+    clock_t startTime, endTime;
     long durationMsecs;
     double durationSecs;
 
     // loop through all numbers
-    gettimeofday(&startTime, NULL); // start clock
+    startTime = clock(); // start clock
     for(i = 1; i < elements; i++) {
 
         // select a value to be inserted.
@@ -49,9 +48,9 @@ void insertionSort(int intArray[], int elements) {
         printf("Iteration %d#:",i);
 
     }
-    gettimeofday(&endTime, NULL);  // end clock
-    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    durationSecs = (1.0 * durationMsecs) / 1000000.0;
+    endTime = clock();  // end clock
+    durationSecs = ((double ) (endTime - startTime)) / CLOCKS_PER_SEC;
+
 
     printf("- - - - Insertion Sort - - - -\n");
     printf("Sorting an array of size: %ld\n", elements);
