@@ -16,7 +16,7 @@ void insertionSort(int intArray[], int elements) {
 
     //time keeper
     clock_t startTime, endTime;
-    long durationMsecs;
+    long timeDiff;
     double durationSecs;
 
     // loop through all numbers
@@ -49,10 +49,13 @@ void insertionSort(int intArray[], int elements) {
 
     }
     endTime = clock();  // end clock
-    durationSecs = ((double ) (endTime - startTime)) / CLOCKS_PER_SEC;
+    timeDiff = (endTime - startTime);
+    durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;
+
+    printf("\n\n start time: %ld, end time: %ld, diff: %ld \n", startTime, endTime, timeDiff);
 
 
-    printf("- - - - Insertion Sort - - - -\n");
+    printf("\n\n- - - - Insertion Sort - - - -\n");
     printf("Sorting an array of size: %ld\n", elements);
     printf("%ld comparisons, %ld moves \n", compareCount, moveCount);
     printf("time taken (sec) = %10.6f \n\n", durationSecs);
