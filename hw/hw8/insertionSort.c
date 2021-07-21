@@ -11,7 +11,8 @@ void insertionSort(int array[], int elements) {
     int valueToInsert;
     int holePosition;
     int i;
-    int compareCount = 0, moveCount = 0;
+    int compareCount = 0;
+    int moveCount = 0;
 
     //time keeper
     struct timeval startTime, endTime;
