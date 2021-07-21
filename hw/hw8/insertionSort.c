@@ -35,17 +35,17 @@ void insertionSort(int intArray[], int elements) {
             intArray[holePosition] = intArray[holePosition-1];
             ++moveCount; // increment move counter
             holePosition--;
-            printf(" item moved : %d\n" , intArray[holePosition]);
+        //    printf(" item moved : %d\n" , intArray[holePosition]);
         }
 
         if(holePosition != i) {
-            printf(" item inserted : %d, at position : %d\n" , valueToInsert,holePosition);
+        //    printf(" item inserted : %d, at position : %d\n" , valueToInsert,holePosition);
             // insert the number at hole position
             intArray[holePosition] = valueToInsert;
             ++moveCount; // increment move counter
         }
 
-        printf("Iteration %d#:",i);
+       // printf("Iteration %d#:",i);
 
     }
     endTime = clock();  // end clock
