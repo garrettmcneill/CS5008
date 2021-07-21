@@ -1,7 +1,6 @@
 #include "insertionSort.h"
 
 
-
 /**
  * Insertion sort, implementation from: https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_program_in_c.htm
  * @param array - the array to be sorted.
@@ -46,7 +45,6 @@ void insertionSort(int array[], int elements) {
         }
 
         printf("Iteration %d#:",i);
-        display();
 
     }
     gettimeofday(&endTime, NULL);  // end clock
