@@ -26,8 +26,8 @@ void shellSort(int intArray[], int elements) {
     }
     */
 
-    while ( interval < 1.72 * ( elements ^ (1.0 /3.0) ) ){
-        interval = 1.72 * ( interval ^ ( 1.0/3.0 ) );
+    while ( interval < 1.72 * pow(elements, (1.0/3.0)) ){
+        interval = 1.72 * pow(interval, (1.0/3.0) );
     }
 
     while(interval > 0) {
@@ -52,7 +52,7 @@ void shellSort(int intArray[], int elements) {
         }
 
         //interval = (interval -1) /3;
-        interval = ( ( (1.0 * interval)/1.72 )^3.0 );
+        interval = pow( ( (1.0 * interval) /1.72 ), 3.0 );
         i++;
     }
     endTime = clock();  // end clock
