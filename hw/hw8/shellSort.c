@@ -12,6 +12,8 @@ void shellSort(int intArray[], int elements) {
     int interval = 1;
     int i = 0;
     int compareCount = 0, moveCount = 0;
+    double base, exp, result;
+    int limit;
 
     //time keeper
     clock_t startTime, endTime;
@@ -25,9 +27,15 @@ void shellSort(int intArray[], int elements) {
         interval = interval*3 +1;
     }
     */
+    base = elements;
+    exp = (1.0/3.0);
+    result = 1.72 * pow(base, exp);
+    limit = result;
 
-    while ( interval < 1.72 * pow(elements, (1.0/3.0)) ){
-        interval = 1.72 * pow(interval, (1.0/3.0) );
+    while ( interval < limit ){
+        base = interval;
+        result = 1.72 * pow(base, exp);
+        interval = result;
     }
 
     while(interval > 0) {
@@ -52,9 +60,13 @@ void shellSort(int intArray[], int elements) {
         }
 
         //interval = (interval -1) /3;
-        interval = pow( ( (1.0 * interval) /1.72 ), 3.0 );
+        base = (1.0 * interval) / 1.72;
+        exp = 3.0;
+        result = pow(base, exp);
+        interval = result;
         i++;
     }
+
     endTime = clock();  // end clock
     timeDiff = (endTime - startTime);
     durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;

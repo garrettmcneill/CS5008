@@ -7,6 +7,6 @@
 #include <stdbool.h>
 #include <time.h>
 
-#endif
-
 void shellSort(int intArray[], int elements);
+
+#endif
