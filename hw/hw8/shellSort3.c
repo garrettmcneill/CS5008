@@ -64,7 +64,7 @@ void shellSort3(int intArray[], int elements) {
     timeDiff = (endTime - startTime);
     durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;
 
-    printf("- - - - Shell Sort 2 - - - -\n");
+    printf("- - - - Shell Sort 3 - - - -\n");
     printf("Sorting an array of size: %ld\n", elements);
     printf("%ld comparisons, %ld moves \n", compareCount, moveCount);
     printf("time taken (sec) = %10.6f \n\n", durationSecs);
