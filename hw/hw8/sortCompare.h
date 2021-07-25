@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "shellSort.h"
 #include "insertionSort.h"
+
+#include "shellSort.h"
+#include "shellSort1.h"
 
 #endif

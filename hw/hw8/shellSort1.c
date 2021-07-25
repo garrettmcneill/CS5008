@@ -1,4 +1,4 @@
-#include "shellSort.h"
+#include "shellSort1.h"
 
 /**
  * Shell sort, implementation from https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
@@ -6,7 +6,7 @@
  * @param intArray - the array to be sorted.
  * @param elements - the number of elements in the array.
  */
-void shellSort(int intArray[], int elements) {
+void shellSort1(int intArray[], int elements) {
     int inner, outer;
     int valueToInsert;
     int interval = 1;
@@ -22,9 +22,20 @@ void shellSort(int intArray[], int elements) {
 
     startTime = clock(); // start clock
 
-
+    /*
     while(interval < elements/3) {  //fixed this... <= should be <... didn't work for n=12
         interval = interval*3 +1;
+    }
+    */
+    base = elements;
+    exp = (1.0/3.0);
+    result = 1.72 * pow(base, exp);
+    limit = result;
+
+    while ( interval < limit ){
+        base = interval;
+        result = 1.72 * pow(base, exp);
+        interval = result;
     }
 
     while(interval > 0) {
@@ -48,8 +59,11 @@ void shellSort(int intArray[], int elements) {
             printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
-        interval = (interval -1) /3;
-
+        //interval = (interval -1) /3;
+        base = (1.0 * interval) / 1.72;
+        exp = 3.0;
+        result = pow(base, exp);
+        interval = result;
         i++;
     }
 
