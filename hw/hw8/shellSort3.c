@@ -1,4 +1,4 @@
-#include "shellSort2.h"
+#include "shellSort3.h"
 
 /**
  * Shell sort, implementation from https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
@@ -6,7 +6,7 @@
  * @param intArray - the array to be sorted.
  * @param elements - the number of elements in the array.
  */
-void shellSort2(int intArray[], int elements) {
+void shellSort3(int intArray[], int elements) {
     int inner, outer;
     int valueToInsert;
     int interval = 1;
