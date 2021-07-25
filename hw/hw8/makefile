@@ -6,11 +6,14 @@
 CC=gcc
 CFLAGS= -lm
 
-sort: shellSort.o insertionSort.o sortCompare.o
-	$(CC) $(CFLAGS) -o sort sortCompare.o shellSort.o insertionSort.o
+sort: shellSort.o shellSort1.o insertionSort.o sortCompare.o
+	$(CC) $(CFLAGS) -o sort sortCompare.o shellSort.o shellSort1.o insertionSort.o
 
 shellSort.o: shellSort.c shellSort.h
 	$(CC) $(CFLAGS) -c shellSort.c
+
+shellSort1.o: shellSort1.c shellSort1.h
+	$(CC) $(CFLAGS) -c shellSort1.c
 
 insertionSort.o: insertionSort.c insertionSort.h
 	$(CC) $(CFLAGS) -c insertionSort.c
