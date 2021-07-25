@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     // allocate array of size n from argument
     int *sortArray = calloc(sizeof(int), numElements);
 
-    // Intialize random number generator
+    // Intialize random number generator for insertionSort
     srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
@@ -27,7 +27,16 @@ int main(int argc, char *argv[]) {
     }
 
     insertionSort(sortArray, numElements);
-    //shellSort(sortArray, numElements);
+
+    // Intialize random number generator for shellSort
+    srand(12345);
+
+    for(idx = 0; idx < numElements; ++idx){
+        sortArray[idx] = rand() % MAXVAL;
+    }
+
+    shellSort(sortArray, numElements);
+
 
     // free from memory
     free(sortArray);
