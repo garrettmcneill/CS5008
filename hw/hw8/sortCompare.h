@@ -5,6 +5,6 @@
 #include <string.h>
 
 #include "shellSort.h"
-//#include "insertionSort.h"
+#include "insertionSort.h"
 
 #endif
