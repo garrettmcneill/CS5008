@@ -14,11 +14,11 @@ void shellSort(int intArray[], int elements) {
     int compareCount = 0, moveCount = 0;
 
     //time keeper
-    struct timeval startTime, endTime;
-    long durationMsecs;
+    clock_t startTime, endTime;
+    long timeDiff;
     double durationSecs;
 
-    gettimeofday(&startTime, NULL); // start clock
+    startTime = clock(); // start clock
 
     /*
     while(interval < elements/3) {  //fixed this... <= should be <... didn't work for n=12
@@ -55,9 +55,9 @@ void shellSort(int intArray[], int elements) {
         interval = ( ( (1.0 * interval)/1.72 )^3.0 );
         i++;
     }
-    gettimeofday(&endTime, NULL);  // end clock
-    durationMsecs = (endTime.tv_usec - startTime.tv_usec) + (endTime.tv_sec - startTime.tv_sec) * 1000000;
-    durationSecs = (1.0 * durationMsecs) / 1000000.0;
+    endTime = clock();  // end clock
+    timeDiff = (endTime - startTime);
+    durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;
 
     printf("- - - - Insertion Sort - - - -\n");
     printf("Sorting an array of size: %ld\n", elements);
