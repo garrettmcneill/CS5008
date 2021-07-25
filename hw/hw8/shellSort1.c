@@ -22,11 +22,6 @@ void shellSort1(int intArray[], int elements) {
 
     startTime = clock(); // start clock
 
-    /*
-    while(interval < elements/3) {  //fixed this... <= should be <... didn't work for n=12
-        interval = interval*3 +1;
-    }
-    */
     base = elements;
     exp = (1.0/3.0);
     result = 1.72 * pow(base, exp);
@@ -36,6 +31,7 @@ void shellSort1(int intArray[], int elements) {
         base = interval;
         result = 1.72 * pow(base, exp);
         interval = result;
+        printf("interval: %d \n", interval);
     }
 
     while(interval > 0) {
