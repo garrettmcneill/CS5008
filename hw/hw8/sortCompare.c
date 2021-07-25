@@ -26,7 +26,8 @@ int main(int argc, char *argv[]) {
         sortArray[idx] = rand() % MAXVAL;
     }
 
-    insertionSort(sortArray, numElements);
+    //insertionSort(sortArray, numElements);
+    shellSort(sortArray, numElements);
 
     // free from memory
     free(sortArray);
