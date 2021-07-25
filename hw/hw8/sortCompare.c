@@ -50,7 +50,19 @@ int main(int argc, char *argv[]) {
         sortArray[idx] = rand() % MAXVAL;
     }
 
-    shellSort1(sortArray, numElements);
+    //shellSort1(sortArray, numElements);
+
+
+    // - - - - SHELL SORT 2 - - - - //
+    // Intialize random number generator
+    srand(12345);
+
+    for(idx = 0; idx < numElements; ++idx){
+        sortArray[idx] = rand() % MAXVAL;
+    }
+
+    shellSort2(sortArray, numElements);
+
 
 
     // free from memory
