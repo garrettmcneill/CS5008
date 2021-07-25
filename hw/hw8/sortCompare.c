@@ -64,6 +64,18 @@ int main(int argc, char *argv[]) {
     shellSort2(sortArray, numElements);
 
 
+    // - - - - SHELL SORT 3 - - - - //
+    // Intialize random number generator
+    srand(12345);
+
+    for(idx = 0; idx < numElements; ++idx){
+        sortArray[idx] = rand() % MAXVAL;
+    }
+
+    shellSort3(sortArray, numElements);
+
+
+
 
     // free from memory
     free(sortArray);

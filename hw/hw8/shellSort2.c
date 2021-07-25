@@ -27,12 +27,12 @@ void shellSort2(int intArray[], int elements) {
     result = log(base);
     i = result + 0.5;
     base = 2.0;
-    exp = result;
+    exp = i;
     result = pow(base, exp) -1.0;
     interval = result + 0.5;
 
 
-    while(interval > 0) {
+    while(i >= 1) {
         printf("i %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
