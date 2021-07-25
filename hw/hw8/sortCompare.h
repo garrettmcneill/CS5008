@@ -8,5 +8,6 @@
 
 #include "shellSort.h"
 #include "shellSort1.h"
+#include "shellSort2.h"
 
 #endif

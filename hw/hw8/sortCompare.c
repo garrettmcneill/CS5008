@@ -44,11 +44,11 @@ int main(int argc, char *argv[]) {
 
     // - - - - SHELL SORT 1 - - - - //
     // Intialize random number generator
-    srand(12345);
+//    srand(12345);
 
-    for(idx = 0; idx < numElements; ++idx){
-        sortArray[idx] = rand() % MAXVAL;
-    }
+//    for(idx = 0; idx < numElements; ++idx){
+//        sortArray[idx] = rand() % MAXVAL;
+//    }
 
     //shellSort1(sortArray, numElements);
 
