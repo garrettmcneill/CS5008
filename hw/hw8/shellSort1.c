@@ -60,7 +60,7 @@ void shellSort1(int intArray[], int elements) {
         base = (1.0 * interval) / 1.72;
         exp = 3.0;
         result = pow(base, exp);
-        interval = result;
+        interval = result + 0.5;
         i++;
     }
 
