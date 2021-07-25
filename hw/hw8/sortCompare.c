@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     }
 
     //insertionSort(sortArray, numElements);
-    shellSort(sortArray, numElements);
+    //shellSort(sortArray, numElements);
 
     // free from memory
     free(sortArray);
