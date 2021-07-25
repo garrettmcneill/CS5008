@@ -29,12 +29,12 @@ void shellSort(int intArray[], int elements) {
     */
     base = elements;
     exp = (1.0/3.0);
-    result = 1.72 * pow(base, exp);
+    result = 1.72 * std::pow(base, exp);
     limit = result;
 
     while ( interval < limit ){
         base = interval;
-        result = 1.72 * pow(base, exp);
+        result = 1.72 * std::pow(base, exp);
         interval = result;
     }
 
@@ -62,7 +62,7 @@ void shellSort(int intArray[], int elements) {
         //interval = (interval -1) /3;
         base = (1.0 * interval) / 1.72;
         exp = 3.0;
-        result = pow(base, exp);
+        result = std::pow(base, exp);
         interval = result;
         i++;
     }
