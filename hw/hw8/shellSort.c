@@ -20,12 +20,18 @@ void shellSort(int intArray[], int elements) {
 
     gettimeofday(&startTime, NULL); // start clock
 
+    /*
     while(interval < elements/3) {  //fixed this... <= should be <... didn't work for n=12
         interval = interval*3 +1;
     }
+    */
+
+    while ( interval < 1.72 * ( elements ^ (1.0 /3.0) ) ){
+        interval = 1.72 * ( interval ^ ( 1.0/3.0 ) );
+    }
 
     while(interval > 0) {
-        printf("iteration %d#:",i);
+        printf("iteration %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
@@ -45,7 +51,8 @@ void shellSort(int intArray[], int elements) {
             printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
-        interval = (interval -1) /3;
+        //interval = (interval -1) /3;
+        interval = ( ( (1.0 * interval)/1.72 )^3.0 );
         i++;
     }
     gettimeofday(&endTime, NULL);  // end clock
