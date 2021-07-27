@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
         sortArray[idx] = rand() % MAXVAL;
     }
 
-    //shellSort1(sortArray, numElements);
+    shellSort1(sortArray, numElements);
 
 
     // - - - - SHELL SORT 2 - - - - //
