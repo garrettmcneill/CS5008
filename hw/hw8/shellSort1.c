@@ -26,17 +26,17 @@ void shellSort1(int intArray[], int elements) {
     exp = (1.0/3.0);
     result = 1.72 * pow(base, exp);
     limit = result;
-    printf("limit: %d \n", limit);
+//    printf("limit: %d \n", limit);
 
     while ( interval < limit ){
         base = interval;
         result = 1.72 * pow(base, exp);
         interval = result + 0.5;
-        printf("interval: %d \n", interval);
+    //    printf("interval: %d \n", interval);
     }
 
     while(interval > 0) {
-        printf("iteration %d#:, interval %d \n", i, interval);
+    //    printf("iteration %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
@@ -48,12 +48,12 @@ void shellSort1(int intArray[], int elements) {
                 intArray[inner] = intArray[inner - interval];
                 ++moveCount; // increment move counter
                 inner -=interval;
-                printf(" item moved :%d\n",intArray[inner]);
+            //    printf(" item moved :%d\n",intArray[inner]);
             }
 
             intArray[inner] = valueToInsert;
             ++moveCount; // increment move counter
-            printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
+        //    printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
         //interval = (interval -1) /3;

@@ -1,7 +1,7 @@
 #include "shellSort2.h"
 
 /**
- * Shell sort, implementation from https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
+ * Shell sort, implementation loosely based on https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
  *
  * @param intArray - the array to be sorted.
  * @param elements - the number of elements in the array.
@@ -33,7 +33,7 @@ void shellSort2(int intArray[], int elements) {
 
 
     while(i >= 1) {
-        printf("i %d#:, interval %d \n", i, interval);
+    //    printf("i %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
@@ -45,12 +45,12 @@ void shellSort2(int intArray[], int elements) {
                 intArray[inner] = intArray[inner - interval];
                 ++moveCount; // increment move counter
                 inner -=interval;
-                printf(" item moved :%d\n",intArray[inner]);
+    //            printf(" item moved :%d\n",intArray[inner]);
             }
 
             intArray[inner] = valueToInsert;
             ++moveCount; // increment move counter
-            printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
+    //        printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
         --i;
