@@ -1,7 +1,7 @@
 #include "shellSort1.h"
 
 /**
- * Shell sort, implementation from https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
+ * Shell sort, implementation loosely based on https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_program_in_c.htm
  *
  * @param intArray - the array to be sorted.
  * @param elements - the number of elements in the array.
