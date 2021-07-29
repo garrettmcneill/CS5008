@@ -28,7 +28,7 @@ void shellSort(int intArray[], int elements) {
     }
 
     while(interval > 0) {
-        //printf("iteration %d#:, interval %d \n", i, interval);
+        printf("iteration %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
