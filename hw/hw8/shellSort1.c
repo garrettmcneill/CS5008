@@ -13,7 +13,6 @@ void shellSort1(int intArray[], int elements) {
     int i = 0;
     int compareCount = 0, moveCount = 0;
     double base, exp, result;
-    int limit;
 
     //time keeper
     clock_t startTime, endTime;
@@ -25,8 +24,8 @@ void shellSort1(int intArray[], int elements) {
     base = elements;
     exp = (1.0/3.0);
     result = 1.72 * pow(base, exp);
-    limit = result;
-    printf("limit: %d \n", limit);
+    interval = result;
+    printf("Interval: %d \n", interval);
 
 /*    while ( interval < limit ){
         base = interval;
