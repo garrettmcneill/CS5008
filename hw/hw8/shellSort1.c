@@ -28,11 +28,12 @@ void shellSort1(int intArray[], int elements) {
     limit = result;
     printf("limit: %d \n", limit);
 
-    while ( interval <= limit ){
+    while ( interval < limit ){
         base = interval;
         result = 1.72 * pow(base, exp);
         interval = result + 0.5;
         printf("interval: %d \n", interval);
+        printf("limit: %d\n", limit);
         printf("result: %d\n", result);
     }
     printf("end first while loop...starting second\n");
