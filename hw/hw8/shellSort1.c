@@ -27,16 +27,7 @@ void shellSort1(int intArray[], int elements) {
     interval = result;
     printf("Interval: %d \n", interval);
 
-/*    while ( interval < limit ){
-        base = interval;
-        result = 1.72 * pow(base, exp);
-        interval =  result + 0.5;
-        printf("interval: %d \n", interval);
-        printf("limit: %d\n", limit);
-        printf("result: %f\n - - - - - - - - \n", result);
-    }
-    printf("end first while loop...starting second\n");
-*/
+
     while(interval > 0) {
         printf("iteration %d#:, interval %d \n", i, interval);
 
@@ -58,11 +49,10 @@ void shellSort1(int intArray[], int elements) {
         //    printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
-        //interval = (interval -1) /3;
-        base = (1.0 * interval) / 1.72;
-        exp = 3.0;
-        result = pow(base, exp);
-        interval = result + 0.5;
+        base = interval;
+        exp = (1.0/3.0);
+        result = 1.72 * pow(base, exp);
+        interval = result;
         i++;
     }
     printf("end second while loop\n");
