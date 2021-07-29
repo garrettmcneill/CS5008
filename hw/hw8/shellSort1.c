@@ -25,11 +25,11 @@ void shellSort1(int intArray[], int elements) {
     exp = (1.0/3.0);
     result = 1.72 * pow(base, exp);
     interval = result;
-    printf("Interval: %d \n", interval);
+  //  printf("Interval: %d \n", interval);
 
 
     while(interval > 0) {
-        printf("iteration %d#:, interval %d \n", i, interval);
+    //    printf("iteration %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
@@ -60,7 +60,7 @@ void shellSort1(int intArray[], int elements) {
         }
         i++;
     }
-    printf("end second while loop\n");
+   // printf("end second while loop\n");
 
     endTime = clock();  // end clock
     timeDiff = (endTime - startTime);
