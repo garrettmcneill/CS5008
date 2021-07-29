@@ -22,25 +22,25 @@ int main(int argc, char *argv[]) {
 
     // - - - - INSERTION SORT - - - - //
     // Intialize random number generator
-    srand(12345);
+/*    srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
         sortArray[idx] = rand() % MAXVAL;
     }
 
     insertionSort(sortArray, numElements);
-
+*/
 
     // - - - - SHELL SORT - - - - //
     // Intialize random number generator
-    srand(12345);
+/*    srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
         sortArray[idx] = rand() % MAXVAL;
     }
 
     shellSort(sortArray, numElements);
-
+*/
 
     // - - - - SHELL SORT 1 - - - - //
     // Intialize random number generator
@@ -55,25 +55,25 @@ int main(int argc, char *argv[]) {
 
     // - - - - SHELL SORT 2 - - - - //
     // Intialize random number generator
-    srand(12345);
+/*    srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
         sortArray[idx] = rand() % MAXVAL;
     }
 
     shellSort2(sortArray, numElements);
-
+*/
 
     // - - - - SHELL SORT 3 - - - - //
     // Intialize random number generator
-    srand(12345);
+/*    srand(12345);
 
     for(idx = 0; idx < numElements; ++idx){
         sortArray[idx] = rand() % MAXVAL;
     }
 
     shellSort3(sortArray, numElements);
-
+*/
 
 
 
