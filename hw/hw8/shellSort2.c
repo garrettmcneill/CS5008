@@ -65,6 +65,7 @@ void shellSort2(int intArray[], int elements) {
     durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;
 
     printf("- - - - Shell Sort 2 - - - -\n");
+    printf("Algo: { 2^i - 1 | 1 <= i <= [log n] } \n");
     printf("Sorting an array of size: %ld\n", elements);
     printf("%ld comparisons, %ld moves \n", compareCount, moveCount);
     printf("time taken (sec) = %10.6f \n\n", durationSecs);

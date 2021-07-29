@@ -31,7 +31,7 @@ void shellSort1(int intArray[], int elements) {
     while ( interval < limit ){
         base = interval;
         result = 1.72 * pow(base, exp);
-        interval = (int) result + 1;
+        interval =  (int) result + 0.5;
         printf("interval: %d \n", interval);
         printf("limit: %d\n", limit);
         printf("result: %f\n - - - - - - - - \n", result);
