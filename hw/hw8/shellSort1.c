@@ -53,10 +53,11 @@ void shellSort1(int intArray[], int elements) {
         base = interval;
         exp = (1.0/3.0);
         result = 1.72 * pow(base, exp);
-        interval = result + 0.5;
-        interval = (oldInterval == interval)    // stop interval from getting stuck at 2
-                ? interval - 1
-                : interval;
+        interval = result;
+        // ensure interval is less than old interval
+        while (interval >= oldInterval){
+            --interval;
+        }
         i++;
     }
     printf("end second while loop\n");
