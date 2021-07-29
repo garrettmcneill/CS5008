@@ -9,7 +9,7 @@
 void shellSort1(int intArray[], int elements) {
     int inner, outer;
     int valueToInsert;
-    int interval = 1;
+    int interval = 1, oldInterval;
     int i = 0;
     int compareCount = 0, moveCount = 0;
     double base, exp, result;
@@ -49,10 +49,14 @@ void shellSort1(int intArray[], int elements) {
         //    printf(" item inserted :%d, at position :%d\n",valueToInsert,inner);
         }
 
+        oldInterval = interval;
         base = interval;
         exp = (1.0/3.0);
         result = 1.72 * pow(base, exp);
-        interval = result;
+        interval = result + 0.5;
+        interval = (oldInterval == interval)    // stop interval from getting stuck at 2
+                ? interval - 1
+                : interval;
         i++;
     }
     printf("end second while loop\n");
