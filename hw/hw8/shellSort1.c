@@ -51,7 +51,7 @@ void shellSort1(int intArray[], int elements) {
                 intArray[inner] = intArray[inner - interval];
                 ++moveCount; // increment move counter
                 inner -=interval;
-                printf(" item moved :%d\n",intArray[inner]);
+            //    printf(" item moved :%d\n",intArray[inner]);
             }
 
             intArray[inner] = valueToInsert;
