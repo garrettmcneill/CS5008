@@ -39,7 +39,7 @@ void shellSort4(int intArray[], int elements) {
 
         // calculate interval (3^i - 1) / 2
         base = 3;
-        exp = t;
+        exp = i;
         result = ( pow(base, exp) - 1 ) / 2;
         interval = result;
         printf("i %d#:, interval %d \n", i, interval);
