@@ -12,6 +12,7 @@ void shellSort4(int intArray[], int elements) {
     int interval = 1;
     int i = 0;
     int compareCount = 0, moveCount = 0;
+    int t = 0;
     double base;
     double exp;
     double result;
@@ -23,18 +24,25 @@ void shellSort4(int intArray[], int elements) {
 
     startTime = clock(); // start clock
 
-    base = elements;
-    result = log(base);
-    i = result + 0.5;
-    base = 2.0;
-    exp = i;
-    result = pow(base, exp);
-    interval = result + 0.5;
+    // loop to find value of t
+    result = 4; // (3^2 -1 = 4)
+    while (result < elements){
+        base = 3;
+        exp = t+2;
+        result = ( pow(base, exp) - 1 ) / 2;
+        ++t;
+    }
 
+    // count down to 1
+    i = t;
+    while(i > 0) {
+        // calculate interval (3^i - 1) / 2
+        base = 3;
+        exp = t;
+        result = ( pow(base, exp) - 1 ) / 2;
+        interval = result;
 
-    while(i >= 0) {
         //    printf("i %d#:, interval %d \n", i, interval);
-
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
             inner = outer;
@@ -54,10 +62,6 @@ void shellSort4(int intArray[], int elements) {
         }
 
         --i;
-        base = 2;
-        exp = i;
-        result = pow(base, exp);
-        interval = result + 0.5;
     }
 
     endTime = clock();  // end clock
