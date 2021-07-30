@@ -36,15 +36,14 @@ void shellSort4(int intArray[], int elements) {
     // count down to 1
     i = t;
     while(i > 0) {
-        printf("i %d#:, interval %d \n", i, interval);
 
         // calculate interval (3^i - 1) / 2
         base = 3;
         exp = t;
         result = ( pow(base, exp) - 1 ) / 2;
         interval = result;
+        printf("i %d#:, interval %d \n", i, interval);
 
-        //    printf("i %d#:, interval %d \n", i, interval);
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
             inner = outer;
