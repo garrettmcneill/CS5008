@@ -36,6 +36,8 @@ void shellSort4(int intArray[], int elements) {
     // count down to 1
     i = t;
     while(i > 0) {
+        printf("i %d#:, interval %d \n", i, interval);
+
         // calculate interval (3^i - 1) / 2
         base = 3;
         exp = t;
