@@ -10,5 +10,6 @@
 #include "shellSort1.h"
 #include "shellSort2.h"
 #include "shellSort3.h"
+#include "shellSort4.h"
 
 #endif
