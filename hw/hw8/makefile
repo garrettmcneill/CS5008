@@ -8,7 +8,7 @@ CC=gcc
 CFLAGS= -lm
 
 sort: shellSort.o shellSort1.o shellSort2.o shellSort3.o shellSort4.o insertionSort.o sortCompare.o
-	$(CC) $(CFLAGS) -o sort sortCompare.o shellSort.o shellSort1.o shellSort2.o shellSort3.o insertionSort.o
+	$(CC) $(CFLAGS) -o sort sortCompare.o shellSort.o shellSort1.o shellSort2.o shellSort3.o shellSort4.o insertionSort.o
 
 shellSort.o: shellSort.c shellSort.h
 	$(CC) $(CFLAGS) -c shellSort.c
