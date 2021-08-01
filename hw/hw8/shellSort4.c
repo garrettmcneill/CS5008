@@ -31,7 +31,7 @@ void shellSort4(int intArray[], int elements) {
         exp = t+2;
         result = ( pow(base, exp) - 1 ) / 2;
         ++t;
-        printf("t: %d, result: %f \n", t, result);
+    //    printf("t: %d, result: %f \n", t, result);
     }
 
     // count down to 1
