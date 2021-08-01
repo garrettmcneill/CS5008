@@ -33,7 +33,7 @@ void shellSort2(int intArray[], int elements) {
 
 
     while(i >= 1) {
-        printf("i %d#:, interval %d \n", i, interval);
+    //    printf("i %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
