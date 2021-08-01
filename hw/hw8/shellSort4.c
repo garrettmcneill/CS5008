@@ -71,7 +71,8 @@ void shellSort4(int intArray[], int elements) {
     durationSecs = ((double) timeDiff) / CLOCKS_PER_SEC;
 
     printf("- - - - Shell Sort 4 - - - -\n");
-    printf("Algo: { (3^1 - 1) / 2  | 1 <= i <= t where t is the smallest integer \n such that (3^(t-2) -1) / 2 >= n} \n");
+    printf("Algo: { (3^1 - 1) / 2  | 1 <= i <= t where t is the smallest integer \n      "
+           "such that (3^(t-2) -1) / 2 >= n} \n");
     printf("Sorting an array of size: %ld\n", elements);
     printf("%ld comparisons, %ld moves \n", compareCount, moveCount);
     printf("time taken (sec) = %10.6f \n\n", durationSecs);
