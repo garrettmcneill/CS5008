@@ -1,0 +1,122 @@
+Script started on Sun 01 Aug 2021 08:55:51 PM EDT
+[?1034hbash-4.2$ make sort
+gcc -lm -c shellSort.c
+gcc -lm -c shellSort1.c
+gcc -lm -c shellSort2.c
+gcc -lm -c shellSort3.c
+gcc -lm -c shellSort4.c
+gcc -lm -c insertionSort.c
+gcc -lm -c sortCompare.c
+gcc -lm -o sort sortCompare.o shellSort.o shellSort1.o shellSort2.o shellSort3.o shellSort4.o insertionSort.o
+bash-4.2$ ./sort 25000
+
+
+ start time: 0, end time: 460000, diff: 460000 
+
+
+- - - - Insertion Sort - - - -
+Sorting an array of size: 25000
+154925644 comparisons, 154950631 moves 
+time taken (sec) =   0.460000 
+
+- - - - Shell Sort 1 - - - -
+Algo: { 1.72n^(1/3), 1 } 
+Sorting an array of size: 25000
+4336470 comparisons, 4461408 moves 
+time taken (sec) =   0.020000 
+
+- - - - Shell Sort 2 - - - -
+Algo: { 2^i - 1 | 1 <= i <= [log n] } 
+Sorting an array of size: 25000
+557676 comparisons, 805640 moves 
+time taken (sec) =   0.010000 
+
+- - - - Shell Sort 3 - - - -
+Algo: { 2^i | 1 <= i <= [log n] } 
+Sorting an array of size: 25000
+2299720 comparisons, 2572673 moves 
+time taken (sec) =   0.010000 
+
+- - - - Shell Sort 4 - - - -
+Algo: { (3^1 - 1) / 2  | 1 <= i <= t where t is the smallest integer 
+         such that (3^(t-2) -1) / 2 >= n } 
+Sorting an array of size: 25000
+515439 comparisons, 725682 moves 
+time taken (sec) =   0.000000 
+
+bash-4.2$ ./sort 50000
+
+
+ start time: 0, end time: 1920000, diff: 1920000 
+
+
+- - - - Insertion Sort - - - -
+Sorting an array of size: 50000
+621340848 comparisons, 621390833 moves 
+time taken (sec) =   1.920000 
+
+- - - - Shell Sort 1 - - - -
+Algo: { 1.72n^(1/3), 1 } 
+Sorting an array of size: 50000
+14284697 comparisons, 14534622 moves 
+time taken (sec) =   0.060000 
+
+- - - - Shell Sort 2 - - - -
+Algo: { 2^i - 1 | 1 <= i <= [log n] } 
+Sorting an array of size: 50000
+1228911 comparisons, 1774828 moves 
+time taken (sec) =   0.010000 
+
+- - - - Shell Sort 3 - - - -
+Algo: { 2^i | 1 <= i <= [log n] } 
+Sorting an array of size: 50000
+5489815 comparisons, 6085720 moves 
+time taken (sec) =   0.030000 
+
+- - - - Shell Sort 4 - - - -
+Algo: { (3^1 - 1) / 2  | 1 <= i <= t where t is the smallest integer 
+         such that (3^(t-2) -1) / 2 >= n } 
+Sorting an array of size: 50000
+1297994 comparisons, 1753713 moves 
+time taken (sec) =   0.010000 
+
+bash-4.2$ ./sort 100000
+
+
+ start time: 0, end time: 7540000, diff: 7540000 
+
+
+- - - - Insertion Sort - - - -
+Sorting an array of size: 100000
+2491999279 comparisons, 2492099263 moves 
+time taken (sec) =   7.540000 
+
+- - - - Shell Sort 1 - - - -
+Algo: { 1.72n^(1/3), 1 } 
+Sorting an array of size: 100000
+40821323 comparisons, 41321231 moves 
+time taken (sec) =   0.150000 
+
+- - - - Shell Sort 2 - - - -
+Algo: { 2^i - 1 | 1 <= i <= [log n] } 
+Sorting an array of size: 100000
+2828320 comparisons, 4020142 moves 
+time taken (sec) =   0.030000 
+
+- - - - Shell Sort 3 - - - -
+Algo: { 2^i | 1 <= i <= [log n] } 
+Sorting an array of size: 100000
+15932524 comparisons, 17224333 moves 
+time taken (sec) =   0.070000 
+
+- - - - Shell Sort 4 - - - -
+Algo: { (3^1 - 1) / 2  | 1 <= i <= t where t is the smallest integer 
+         such that (3^(t-2) -1) / 2 >= n } 
+Sorting an array of size: 100000
+3135069 comparisons, 4102215 moves 
+time taken (sec) =   0.030000 
+
+bash-4.2$ exit
+exit
+
+Script done on Sun 01 Aug 2021 08:56:32 PM EDT
