@@ -43,7 +43,7 @@ void shellSort4(int intArray[], int elements) {
         exp = i;
         result = ( pow(base, exp) - 1 ) / 2;
         interval = result;
-    //    printf("i %d#:, interval %d \n", i, interval);
+        printf("i %d#:, interval %d \n", i, interval);
 
         for(outer = interval; outer < elements; outer++) {
             valueToInsert = intArray[outer];
