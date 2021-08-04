@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NTHREADS 40
+#define NTHREADS 10000
 
 // shared variable
 int counter = 0;
