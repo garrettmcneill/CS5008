@@ -17,4 +17,5 @@ thread3.o: thread3.c
 
 
 clean:
+	rm *.o
 	rm t3
