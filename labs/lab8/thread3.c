@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NROWS 10000
+#define NROWS 8000
 
 // shared variable
 long counter = 0;
