@@ -9,7 +9,6 @@
 #include <pthread.h>
 
 #define NROWS 10000
-#define NGROUPS 4
 
 // shared variable
 long counter = 0;
@@ -25,6 +24,7 @@ void *thread2(void *vargp) {
     counter = counter + 5;
     return NULL;
 }
+
 // thread function for group 3
 void *thread3(void *vargp) {
     counter = counter - 2;
@@ -43,45 +43,36 @@ int main() {
     // the size of an array is a size_t (max size is an unsigned_int on most
     // platforms.) therefore we cannot have an array bigger than 32,768...
     // so we must use a 2-dimensional array.
-    pthread_t tid[NROWS][NGROUPS];
-    int row, group;
+    pthread_t tid1[NROWS];
+    pthread_t tid2[NROWS];
+    pthread_t tid3[NROWS];
+    pthread_t tid4[NROWS];
+
+    int row;
 
     printf("Counter starts at %ld \n", counter);
 
     // create and run the thread groups
     for (row = 0; row < NROWS; ++row) {
-        for (group = 0; group < NGROUPS; ++group){
-
-            // printf("i: %ld, group: %ld \n", row, group);
-            switch(group){
-                case 0:
-                    pthread_create(&(tid[row][group]), NULL, thread1, NULL);
-                    break;
-                case 1:
-                    pthread_create(&(tid[row][group]), NULL, thread2, NULL);
-                    break;
-                case 2:
-                    pthread_create(&(tid[row][group]), NULL, thread3, NULL);
-                    break;
-                case 3:
-                    pthread_create(&(tid[row][group]), NULL, thread4, NULL);
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        // printf("i: %ld, group: %ld \n", row, group);
+        pthread_create(&(tid1[row]), NULL, thread1, NULL);
+        pthread_create(&(tid2[row]), NULL, thread2, NULL);
+        pthread_create(&(tid3[row]), NULL, thread3, NULL);
+        pthread_create(&(tid4[row]), NULL, thread4, NULL);
     }
-    printf("%d rows of %d groups of threads created \n", NROWS, NGROUPS);
+
+    printf("%d of rows created in each thread group \n", NROWS);
 
     //wait until all threads are done
     for (row = 0; row < NROWS; ++row) {
-        for (group = 0; group <NGROUPS; ++group){
-            printf("joining row: %d, group: %d \n", row, group);
-            pthread_join(tid[row][group], NULL);
-        }
+        printf("joining row: %d \n", row);
+        pthread_join(tid1[row], NULL);
+        pthread_join(tid2[row], NULL);
+        pthread_join(tid3[row], NULL);
+        pthread_join(tid4[row], NULL);
     }
-    printf("%d rows of %d groups of threads joined \n", NROWS, NGROUPS);
+
+    printf("%d rows joined in each thread group\n", NROWS);
 
     // print final counter
     printf("Counter ends at %ld\n", counter);
