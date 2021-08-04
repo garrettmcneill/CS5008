@@ -8,35 +8,67 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NTHREADS 10000
+#define NTHREADS 40000
 
 // shared variable
 int counter = 0;
 
 // thread to be executed - unspecified variable arguments
-void *thread (void *vargp) {
-  counter = counter +1;
-  return NULL;
+void *thread1(void *vargp) {
+    counter = counter + 1;
+    return NULL;
 }
 
+void *thread2(void *vargp) {
+    counter = counter + 5;
+    return NULL;
+}
+
+void *thread3(void *vargp) {
+    counter = counter - 2;
+    return NULL;
+}
+
+void *thread4(void *vargp) {
+    counter = counter - 10;
+    return NULL;
+}
+
+
 int main() {
-  // array to keep Pthread IDs of created threads
-  pthread_t tid[NTHREADS];
-  int i;
+    // array to keep Pthread IDs of created threads
+    pthread_t tid[NTHREADS];
+    int i, group;
 
-  printf("Counter starts at %d\n", counter);
-  
-  // create and run the thread
-  for (i=0; i < NTHREADS; ++i){
-    pthread_create(&(tid[i]), NULL, thread, NULL);
-  }
+    printf("Counter starts at %d\n", counter);
 
-  //wait until all threads are done
-  for (i=0; i < NTHREADS; ++i){
-    pthread_join(tid[i], NULL);
-  }
+    // create and run the thread
+    for (i = 0; i < NTHREADS; ++i) {
+        group = (i % 4) + 1;
+        switch(group){
+            case 1:
+                pthread_create(&(tid[i]), NULL, thread1, NULL);
+                break;
+            case 2:
+                pthread_create(&(tid[i]), NULL, thread2, NULL);
+                break;
+            case 3:
+                pthread_create(&(tid[i]), NULL, thread3, NULL);
+                break;
+            case 4:
+                pthread_create(&(tid[i]), NULL, thread4, NULL);
+                break;
+            default:
+                break;
+        }
+    }
 
-  printf("Counter ends at %d\n", counter);
+    //wait until all threads are done
+    for (i = 0; i < NTHREADS; ++i) {
+        pthread_join(tid[i], NULL);
+    }
 
-  return 0;
+    printf("Counter ends at %d\n", counter);
+
+    return 0;
 }
