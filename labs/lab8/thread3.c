@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NTHREADS 40000
+#define NTHREADS 40000l //updated to long
 
 // shared variable
 long counter = 0;
@@ -40,7 +40,7 @@ void *thread4(void *vargp) {
 int main() {
     // array to keep Pthread IDs of created threads
     pthread_t tid[NTHREADS];
-    int i, group;
+    long i, group;  // changed int i to long i
 
     printf("Counter starts at %ld \n", counter);
 
@@ -48,7 +48,7 @@ int main() {
     for (i = 0; i < NTHREADS; ++i) {
         // group # is the (index mod 4) + 1
         group = (i % 4) + 1;
-        // printf("i: %d, group: %d \n", i, group);
+        // printf("i: %ld, group: %ld \n", i, group);
         switch(group){
             case 1:
                 pthread_create(&(tid[i]), NULL, thread1, NULL);
@@ -66,14 +66,14 @@ int main() {
                 break;
         }
     }
-    printf("%d threads created \n", NTHREADS);
+    printf("%ld threads created \n", NTHREADS);
 
     //wait until all threads are done
     for (i = 0; i < NTHREADS; ++i) {
-        printf("joining i: %d \n", i);
+        printf("joining i: %ld \n", i);
         pthread_join(tid[i], NULL);
     }
-    printf("%d threads joined \n", NTHREADS);
+    printf("%ld threads joined \n", NTHREADS);
 
     // print final counter
     printf("Counter ends at %ld\n", counter);
