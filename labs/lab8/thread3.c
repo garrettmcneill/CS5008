@@ -48,7 +48,7 @@ int main() {
     for (i = 0; i < NTHREADS; ++i) {
         // group # is the (index mod 4) + 1
         group = (i % 4) + 1;
-        printf("i: %d, group: %d \n", i, group);
+        // printf("i: %d, group: %d \n", i, group);
         switch(group){
             case 1:
                 pthread_create(&(tid[i]), NULL, thread1, NULL);
@@ -70,6 +70,7 @@ int main() {
 
     //wait until all threads are done
     for (i = 0; i < NTHREADS; ++i) {
+        printf("joining i: %d \n", i);
         pthread_join(tid[i], NULL);
     }
     printf("%d threads joined \n", NTHREADS);
