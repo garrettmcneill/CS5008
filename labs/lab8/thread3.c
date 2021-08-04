@@ -48,23 +48,30 @@ int main() {
     pthread_t tid3[NROWS];
     pthread_t tid4[NROWS];
 
-    int row;
+    int row, createErr;
+    int maxRowsCreated = 0;
 
     printf("Counter starts at %ld \n", counter);
 
     // create and run the thread groups
     for (row = 0; row < NROWS; ++row) {
         // printf("i: %ld, group: %ld \n", row, group);
-        pthread_create(&(tid1[row]), NULL, thread1, NULL);
-        pthread_create(&(tid2[row]), NULL, thread2, NULL);
-        pthread_create(&(tid3[row]), NULL, thread3, NULL);
-        pthread_create(&(tid4[row]), NULL, thread4, NULL);
+        createErr = pthread_create(&(tid1[row]), NULL, thread1, NULL);
+        if (createErr != 1) break; // end loop if error
+        createErr = pthread_create(&(tid2[row]), NULL, thread2, NULL);
+        if (createErr != 1) break;
+        createErr = pthread_create(&(tid3[row]), NULL, thread3, NULL);
+        if (createErr != 1) break;
+        createErr = pthread_create(&(tid4[row]), NULL, thread4, NULL);
+        if (createErr != 1) break;
+
+        ++maxRowsCreated;
     }
 
     printf("%d of rows created in each thread group \n", NROWS);
 
     //wait until all threads are done
-    for (row = 0; row < NROWS; ++row) {
+    for (row = 0; row < maxRowsCreated; ++row) {
         printf("joining row: %d \n", row);
         pthread_join(tid1[row], NULL);
         pthread_join(tid2[row], NULL);
@@ -79,3 +86,11 @@ int main() {
 
     return 0;
 }
+
+
+/* Note: my process cannot join more than 32,000 threads.
+ I suspect this is due to the size of an int which can hold a value
+ no greater than 32,767.
+
+We do not
+ */
