@@ -8,10 +8,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NTHREADS 10000
+#define NTHREADS 40000
 
 // shared variable
-int counter = 0;
+long counter = 0;
 
 // thread function for group 1
 void *thread1(void *vargp) {
@@ -42,7 +42,7 @@ int main() {
     pthread_t tid[NTHREADS];
     int i, group;
 
-    printf("Counter starts at %d\n", counter);
+    printf("Counter starts at %ld \n", counter);
 
     // create and run the thread groups
     for (i = 0; i < NTHREADS; ++i) {
@@ -73,7 +73,7 @@ int main() {
     }
 
     // print final counter
-    printf("Counter ends at %d\n", counter);
+    printf("Counter ends at %ld\n", counter);
 
     return 0;
 }
