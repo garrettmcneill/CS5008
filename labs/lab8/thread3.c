@@ -57,13 +57,13 @@ int main() {
     for (row = 0; row < NROWS; ++row) {
         // printf("i: %ld, group: %ld \n", row, group);
         createErr = pthread_create(&(tid1[row]), NULL, thread1, NULL);
-        if (createErr != 1) break; // end loop if error
+        if (createErr != 0) break; // end loop if error
         createErr = pthread_create(&(tid2[row]), NULL, thread2, NULL);
-        if (createErr != 1) break;
+        if (createErr != 0) break;
         createErr = pthread_create(&(tid3[row]), NULL, thread3, NULL);
-        if (createErr != 1) break;
+        if (createErr != 0) break;
         createErr = pthread_create(&(tid4[row]), NULL, thread4, NULL);
-        if (createErr != 1) break;
+        if (createErr != 0) break;
 
         ++maxRowsCreated;
     }
