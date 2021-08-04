@@ -72,7 +72,7 @@ int main() {
 
     //wait until all threads are done
     for (row = 0; row < maxRowsCreated; ++row) {
-        printf("joining row: %d \n", row);
+      //  printf("joining row: %d \n", row);
         pthread_join(tid1[row], NULL);
         pthread_join(tid2[row], NULL);
         pthread_join(tid3[row], NULL);
@@ -88,9 +88,5 @@ int main() {
 }
 
 
-/* Note: my process cannot join more than 32,000 threads.
- I suspect this is due to the size of an int which can hold a value
- no greater than 32,767.
-
-We do not
+/* Note: my process cannot create more than 32,752 threads.
  */
