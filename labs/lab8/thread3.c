@@ -13,22 +13,24 @@
 // shared variable
 int counter = 0;
 
-// thread to be executed - unspecified variable arguments
+// thread function for group 1
 void *thread1(void *vargp) {
     counter = counter + 1;
     return NULL;
 }
 
+// thread function for group 2
 void *thread2(void *vargp) {
     counter = counter + 5;
     return NULL;
 }
-
+// thread function for group 3
 void *thread3(void *vargp) {
     counter = counter - 2;
     return NULL;
 }
 
+// thread function for group 4
 void *thread4(void *vargp) {
     counter = counter - 10;
     return NULL;
