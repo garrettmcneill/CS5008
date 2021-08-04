@@ -68,7 +68,7 @@ int main() {
         ++maxRowsCreated;
     }
 
-    printf("%d rows created in each thread group \n", NROWS);
+    printf("%d rows created in each thread group \n", maxRowsCreated);
 
     //wait until all threads are done
     for (row = 0; row < maxRowsCreated; ++row) {
@@ -79,7 +79,7 @@ int main() {
         pthread_join(tid4[row], NULL);
     }
 
-    printf("%d rows joined in each thread group\n", NROWS);
+    printf("%d rows joined in each thread group\n", maxRowsCreated);
 
     // print final counter
     printf("Counter ends at %ld\n", counter);
