@@ -66,11 +66,13 @@ int main() {
                 break;
         }
     }
+    printf("%d threads created \n", NTHREADS);
 
     //wait until all threads are done
     for (i = 0; i < NTHREADS; ++i) {
         pthread_join(tid[i], NULL);
     }
+    printf("%d threads joined \n", NTHREADS);
 
     // print final counter
     printf("Counter ends at %ld\n", counter);
