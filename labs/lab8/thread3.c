@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NROWS 8000
+#define NROWS 10000
 
 // shared variable
 long counter = 0;
@@ -68,7 +68,7 @@ int main() {
         ++maxRowsCreated;
     }
 
-    printf("%d of rows created in each thread group \n", NROWS);
+    printf("%d rows created in each thread group \n", NROWS);
 
     //wait until all threads are done
     for (row = 0; row < maxRowsCreated; ++row) {
