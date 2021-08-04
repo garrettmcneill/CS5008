@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NTHREADS 40000
+#define NTHREADS 40
 
 // shared variable
 int counter = 0;
@@ -44,9 +44,11 @@ int main() {
 
     printf("Counter starts at %d\n", counter);
 
-    // create and run the thread
+    // create and run the thread groups
     for (i = 0; i < NTHREADS; ++i) {
+        // group # is the (index mod 4) + 1
         group = (i % 4) + 1;
+        printf("i: %d, group: %d \n", i, group);
         switch(group){
             case 1:
                 pthread_create(&(tid[i]), NULL, thread1, NULL);
