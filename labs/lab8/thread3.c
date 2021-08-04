@@ -72,6 +72,7 @@ int main() {
         pthread_join(tid[i], NULL);
     }
 
+    // print final counter
     printf("Counter ends at %d\n", counter);
 
     return 0;
