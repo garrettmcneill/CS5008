@@ -197,7 +197,7 @@ int main(int argc, char *argv[]) {
         retn = scanf(" %199[^\n]", inputBuff);
 
         if ( retn == 0 ) {
-            printf("You did not input a word! Try again. \n");
+            printf("You must input a word. \n");
             continue;
         }
 
