@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
 
         // check to see if user wants to quit
         if ((strcmp(inputBuff, "QUIT") == 0) || (strcmp(inputBuff, "quit") == 0)) {
-            printf("end program \n");
+            printf("\n\nend program \n\n");
             return 0;
 
         } else {
@@ -211,9 +211,9 @@ int main(int argc, char *argv[]) {
             rVal = search(head, inputBuff);
 
             if (rVal == 1) {
-                printf("Success! %s was found in %s \n", inputBuff, fileNamePtr);
+                printf("Success! %s was found in %s \n\n", inputBuff, fileNamePtr);
             } else{
-                printf("Oh no! %s was not found in %s \n", inputBuff, fileNamePtr);
+                printf("Oh no! %s was not found in %s \n\n", inputBuff, fileNamePtr);
             }
 
         }
