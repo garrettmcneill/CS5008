@@ -146,11 +146,11 @@ int main(int argc, char *argv[]) {
 
 
     printf("\n\n- - - Trie Word Lookup Program - - -\n");
-    printf("- - - Garrett McNeill | NEU 21 - - -\n");
+    printf("- - - Garrett McNeill | CS5008 - - -\n");
 
     // cmd line argument validation
     if (argc < 2) {
-        printf("Not enough arguments passed at the execution of the program.\n");
+        printf("You must specify one file name as an argument.\n");
         return -1;
     }
 
@@ -184,8 +184,7 @@ int main(int argc, char *argv[]) {
     fclose(filePtr);
     filePtr = NULL;
 
-
-    // read out number of words loaded
+    // Print out number of words loaded
     printf("Filename: %s \n", fileNamePtr);
     printf("Number of words loaded: %d \n\n", wordCount);
 
@@ -196,7 +195,7 @@ int main(int argc, char *argv[]) {
         fputs("Input a word that you would like to search for (QUIT for done): ", stdout);
         retn = scanf(" %199[^\n]", inputBuff);
 
-        if (retn = 0){
+        if (retn = 0) {
             printf("You did not input a word! Try again. \n");
             continue;
         }
@@ -212,7 +211,7 @@ int main(int argc, char *argv[]) {
 
             if (rVal == 1) {
                 printf("Success! %s was found in %s \n\n", inputBuff, fileNamePtr);
-            } else{
+            } else {
                 printf("Oh no! %s was not found in %s \n\n", inputBuff, fileNamePtr);
             }
 
@@ -220,45 +219,5 @@ int main(int argc, char *argv[]) {
 
     } while ((strcmp(inputBuff, "quit") != 0) && (strcmp(inputBuff, "QUIT") != 0));
 
-    /*
-
-    insert(head, "hello");
-    printf("%d ", search(head, "hello"));    // print 1
-
-    insert(head, "helloworld");
-    printf("%d ", search(head, "helloworld"));    // print 1
-
-    printf("%d ", search(head, "helll"));    // print 0 (Not present)
-
-    insert(head, "hell");
-    printf("%d ", search(head, "hell"));        // print 1
-
-    insert(head, "h");
-    printf("%d \n", search(head, "h"));        // print 1 + newline
-
-    deletion(&head, "hello");
-    printf("%d ", search(head, "hello"));    // print 0 (hello deleted)
-    printf("%d ", search(head, "helloworld"));    // print 1
-    printf("%d \n", search(head, "hell"));    // print 1 + newline
-
-    deletion(&head, "h");
-    printf("%d ", search(head, "h"));        // print 0 (h deleted)
-    printf("%d ", search(head, "hell"));        // print 1
-    printf("%d\n", search(head, "helloworld"));    // print 1 + newline
-
-    deletion(&head, "helloworld");
-    printf("%d ", search(head, "helloworld"));    // print 0
-    printf("%d ", search(head, "hell"));        // print 1
-
-    deletion(&head, "hell");
-    printf("%d\n", search(head, "hell"));    // print 0 + newline
-
-    if (head == NULL) {
-        printf("Trie empty!!\n");        // Trie is empty now
-    }
-
-    printf("%d ", search(head, "hell"));        // print 0
-
-     */
     return 0;
 }
