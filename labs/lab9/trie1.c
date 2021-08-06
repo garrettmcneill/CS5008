@@ -162,7 +162,7 @@ int main(int argc, char *argv[]) {
     // open input file
     filePtr = fopen(fileNamePtr, "r");
     // test if file exists
-    if (cityFilePtr == NULL) {
+    if (filePtr == NULL) {
         printf("File not found!\n");
         exit(-1);
     }
