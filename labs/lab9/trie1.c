@@ -138,12 +138,14 @@ int main(int argc, char *argv[]) {
     char *fileNamePtr = NULL;
     FILE *filePtr;
     char inputBuff[200];
+    char *searchWord = NULL;
 
     int wordCount = 0;
     int tmpInt;
+    int retn;
 
 
-    printf("- - - Trie Word Lookup Program - - -\n");
+    printf("\n\n- - - Trie Word Lookup Program - - -\n");
     printf("- - - Garrett McNeill | NEU 21 - - -\n");
 
     // cmd line argument validation
@@ -185,9 +187,32 @@ int main(int argc, char *argv[]) {
 
     // read out number of words loaded
     printf("Filename: %s \n", fileNamePtr);
-    printf("Number of words loaded: %d \n", wordCount);
+    printf("Number of words loaded: %d \n\n", wordCount);
 
 
+    do {
+
+        // Prompt user for a search word
+        fputs("Input a word that you would like to search for (QUIT for done): ")
+        retn = scanf(" %199[^\n]", input);
+
+
+        // check to see if user wants to quit
+        if ((strcmp(inputBuff, "QUIT") == 0) || (strcmp(inputBuff, "quit") == 0)) {
+            printf("end program \n");
+            return 0;
+
+        } else {
+            int rVal;
+            rVal = search(head, inputBuff);
+
+            if (rVal == 1) {
+                printf("Success! %s was found in %s", inputBuff, fileNamePtr);
+            }
+
+        }
+
+    } while ((strcmp(input, "quit") != 0) && (strcmp(input, "QUIT") != 0));
 
     /*
 
