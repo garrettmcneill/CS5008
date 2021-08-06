@@ -194,7 +194,7 @@ int main(int argc, char *argv[]) {
 
         // Prompt user for a search word
         fputs("Input a word that you would like to search for (QUIT for done): ", stdout);
-        retn = scanf(" %199[^\n]", input);
+        retn = scanf(" %199[^\n]", inputBuff);
 
 
         // check to see if user wants to quit
