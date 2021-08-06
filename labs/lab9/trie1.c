@@ -212,6 +212,8 @@ int main(int argc, char *argv[]) {
 
             if (rVal == 1) {
                 printf("Success! %s was found in %s \n", inputBuff, fileNamePtr);
+            } else{
+                printf("Oh no! %s was not found in %s \n", inputBuff, fileNamePtr);
             }
 
         }
