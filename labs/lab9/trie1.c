@@ -211,7 +211,7 @@ int main(int argc, char *argv[]) {
             rVal = search(head, inputBuff);
 
             if (rVal == 1) {
-                printf("Success! %s was found in %s", inputBuff, fileNamePtr);
+                printf("Success! %s was found in %s \n", inputBuff, fileNamePtr);
             }
 
         }
