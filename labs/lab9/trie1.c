@@ -143,8 +143,8 @@ int main(int argc, char *argv[]) {
     int tmpInt;
 
 
-    printf("- - - Trie Word Lookup Program - - -");
-    printf("- - - Garrett McNeill | NEU 21 - - -");
+    printf("- - - Trie Word Lookup Program - - -\n");
+    printf("- - - Garrett McNeill | NEU 21 - - -\n");
 
     // cmd line argument validation
     if (argc < 2) {
@@ -184,8 +184,8 @@ int main(int argc, char *argv[]) {
 
 
     // read out number of words loaded
-    printf("Filename: %s", fileNamePtr);
-    printf("Number of words loaded: %d", wordCount);
+    printf("Filename: %s \n", fileNamePtr);
+    printf("Number of words loaded: %d \n", wordCount);
 
 
 
