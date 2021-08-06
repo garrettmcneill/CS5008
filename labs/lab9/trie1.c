@@ -189,6 +189,8 @@ int main(int argc, char *argv[]) {
     printf("Number of words loaded: %d \n\n", wordCount);
 
 
+    //////// Game Loop ////////
+
     do {
 
         // Prompt user for a search word
