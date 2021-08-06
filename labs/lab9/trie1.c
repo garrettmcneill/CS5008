@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
         fputs("Input a word that you would like to search for (QUIT for done): ", stdout);
         retn = scanf(" %199[^\n]", inputBuff);
 
-        if ( retn == 0 ) {
+        if ( retn = 0 ) {
             printf("You did not input a word! Try again. \n");
             continue;
         }
