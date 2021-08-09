@@ -1,0 +1,36 @@
+Script started on Sun 08 Aug 2021 09:07:46 PM EDT
+[?1034hbash-4.2$ make trie
+gcc -Wall -c trie1.c
+gcc -Wall -o trie trie1.o
+bash-4.2$ ./trie words20k
+
+
+- - - Trie Word Lookup Program - - -
+- - - Garrett McNeill | CS5008 - - -
+Filename: words20k 
+Number of words loaded: 20000 
+
+Input a word that you would like to search for (QUIT for done): northeastern
+Success! northeastern was found in words20k 
+
+Input a word that you would like to search for (QUIT for done): computer
+Success! computer was found in words20k 
+
+Input a word that you would like to search for (QUIT for done): science
+Success! science was found in words20k 
+
+Input a word that you would like to search for (QUIT for done): rouc x
+Oh no! roux was not found in words20k 
+
+Input a word that you would like to search for (QUIT for done): institute
+Success! institute was found in words20k 
+
+Input a word that you would like to search for (QUIT for done): quit
+
+
+end program 
+
+bash-4.2$ exit
+exit
+
+Script done on Sun 08 Aug 2021 09:08:14 PM EDT
