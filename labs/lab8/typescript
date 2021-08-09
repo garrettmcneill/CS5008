@@ -1,0 +1,35 @@
+Script started on Tue 03 Aug 2021 09:21:29 PM EDT
+[?1034hbash-4.2$ make t3
+gcc -lpthread -c thread3.c
+gcc -lpthread -o t3 thread3.o
+bash-4.2$ ls
+makefile  t3  thread3.c  thread3.o  typescript
+bash-4.2$ ./t3 
+Counter starts at 0 
+8188 rows created in each thread group 
+8188 rows joined in each thread group
+Counter ends at -49123
+bash-4.2$ ./t3 
+Counter starts at 0 
+8188 rows created in each thread group 
+8188 rows joined in each thread group
+Counter ends at -49122
+bash-4.2$ ./t3 
+Counter starts at 0 
+8188 rows created in each thread group 
+8188 rows joined in each thread group
+Counter ends at -49121
+bash-4.2$ ./t3 
+Counter starts at 0 
+8188 rows created in each thread group 
+8188 rows joined in each thread group
+Counter ends at -49122
+bash-4.2$ ./t3 
+Counter starts at 0 
+8188 rows created in each thread group 
+8188 rows joined in each thread group
+Counter ends at -49122
+bash-4.2$ exit
+exit
+
+Script done on Tue 03 Aug 2021 09:21:53 PM EDT
